@@ -87,7 +87,7 @@ staticVariable = 42;
 ### Built-In Types
 * In C#, all basic data types are objects
   * More on this later
-* A [list](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/primitive-types.pngraw=true) of a common types and their official .NET class name
+* A [list](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/primitive-types.png?raw=true) of a common types and their official .NET class name
   * The built in data types have short names that differ from typical class name conventions
     * Generally we will use the short names for each
 
@@ -335,8 +335,7 @@ Console.WriteLine(hours);
 * `%` or modules is one you might not know
   * This is similar to the `remainder operator`
     * It returns the integer remainder of dividing the two operands.
-
-
+* Image of the [Arithmetic Operators](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/arithmetic-operators.png?raw=true)
 
 
 

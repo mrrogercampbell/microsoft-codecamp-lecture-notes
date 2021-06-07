@@ -8,5 +8,6 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 
 ## Table of Content
 * [Unit 1: Introduction to Programming in C#](https://education.launchcode.org/intro-to-programming-csharp/index.html)
-   1. [Chapter 1, 2, 3 Review Lecture](./chapter-1-2-3-review-lecture.md)
-   2. [Chapter 4 Lecture](./chapter-4-lecture.md)
+  * [Chapter 1, 2, 3 Review Lecture](./unit-1/chapter-1-2-3-review-lecture.md)
+  * [Chapter 4 Lecture](./unit-1/chapter-4-lecture.md)
+  * [Chapter 5 Lecture](./unit-1/chapter-5-lecture.md)

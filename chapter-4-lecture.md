@@ -87,15 +87,23 @@ staticVariable = 42;
 ### Built-In Types
 * In C#, all basic data types are objects
   * More on this later
-* A [list](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/c-sharp-built-in-types.png?raw=true) of a common types and their official .NET class name
+* A [list](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/primitive-types.pngraw=true) of a common types and their official .NET class name
   * The built in data types have short names that differ from typical class name conventions
     * Generally we will use the short names for each
 
 ### Primitive Types
 * Are basic building block of a program
+* Primitive types can be assigned a value directly.
+* The value assigned is stored on the stack as opposed to the heap.
   * All of the types listed in the previous image were `primitive types`
+    * **Gotcha**: Strings are not primitive types in C#
   * They allow us to build more complex data structures
+  * Great article: [C# Variables: Primitive and Non-primitive Types](https://www.jeremyshanks.com/c-variables-primitive-nonprimitive-types/)
 
+### Non-primitive Types
+* Non-primitive types are also called reference types due to the fact that the identifer references the location of the value stored in the variable
+  * The reason for this is that non-primitive types are from the `object class` and not predefined in C#.
+    * More on `classes` later
 ### Reference and Value Types
 * Types in C# are grouped into two categories:
   * **Value Types**: directly store the `data` within itself
@@ -154,7 +162,8 @@ Console.WriteLine((Double.Parse("17.8")).GetType());
 // Output: System.Double
 ```
 ## Variables
-* A `variable` is a name that refers and or stores a value for later use
+* A `variable` is a name that refers a value for later use
+  * That value maybe stored within the variable or be a reference to where the value is stored in memory
 
 ### Declaring and Initializing Variables
 * When you create a variable it is called `Variable declaration` or `declaration`
@@ -228,7 +237,109 @@ name = "Roger the loser";
 
 ### Naming Variables
 #### Valid Variable Names
-* 
+* There are some basic [guidelines](https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/naming-guidelines) that C# enforces:
+  1. Use only the characters 0-9, a-z, A-Z, and underscore. In other words, do not use special characters or whitespace (space, tab, and so on).
+  2. Do not start a variable name with a number.
+  3. Avoid starting a variable name with an underscore. Doing so is a convention used by some C# developers to mean something very specific about the variable, and should be avoided.
+  4. Do not use keywords, which are words reserved by C# for use by the language itself. We’ll discuss these in detail in a moment.
+#### Good Variables Names
+* Basic concept here is that you should use descriptive variable names so that someone else is able to infer what you code is doing.
+* Don't be this person:
+```C#
+double x = 5.75;
+const double y = 3.14;
+double z = y * Math.Pow(x, 2);
+Console.WriteLine(z);
+```
+* Be this person:
+```C#
+double radiusOfCircle = 5.75;
+const double pi = 3.14;
+double areaOfCircle = pi * Math.Pow(radiusOfCircle, 2);
+Console.WriteLine(areaOfCircle);
+```
+#### Camel Case Variable Name
+* This is a convention that is used in a lot of programming languages
+  * Conventions are not formal rules, but your peers will most likely be expecting you to use them
+* It allows you to write multiple words for a variable name without needing spacing between each word
+* Examples:
+```C#
+string bestDogInTheWorld = "Doc";
+string bestInstructorOnTheNet = "Roger";
+bool isHeReallyThatFullOfHimSelf = true;
+```
+* Basic stipulations of camel case:
+  * Variable names:
+    1. are joined together to omit spaces,
+    2. start with a lowercase letter, and
+    3. capitalize each internal word.
+
+#### Keywords
+* **Keywords**: are a collection of words that are reserved for the use of the C# language
+  * ie: `Keywords` or `Reserved Words`
+  * These are words that are a formal part of the C# language
+    * ie: `const`, `string`, `int`, `bool`
+  * **Gotchas**:
+    * Console and Console.WriteLine may seem like keywords, they are actually slightly different things.
+    * They are entities (an system and a method, respectively) that are available by default in most C# environments.
+* If you attempt to use a `keyword` for anything other than its actually purpose you will receive an error:
+```C#
+int const = "Will this work?!";
+
+/*
+Outputs:
+error CS1525: Unexpected symbol `const'
+error CS1525: Unexpected symbol `='
+*/
+```
+
+## Expressions and Evaluations
+* An `expression` is a combination of values, variables, operators, and calls to methods.
+  * An expression can be thought of as a formula that is made up of multiple pieces
+* The `evaluation` of an `expression` produces a value, known as the return value.
+  * We say: `"An expression returns a value."`
+```C#
+Console.WriteLine(1 + 1);
+// Output: 2
+```
+* `Expression` can be placed on the right-hand side of a `assignment statement`
+```C#
+int multiple = 1 * 2;
+Console.WriteLine(multiple);
+// Output: 2
+```
+
+## Operations
+### Operators and Operands
+* **Operators**: are one or more character that represent a computation
+  * ie: Like when we add, subtract, multiply, and or divide something
+* **Operands**: are the values an `operator` work on
+* Example:
+```C#
+2000 * 5000
+// Operator = *
+// Operands = 2000 and 5000
+```
+* You can use variables in the place of an `operand` and your code will still work:
+```C#
+double minutes = 645;
+double hours = minutes / 60;
+Console.WriteLine(hours);
+// Output: 10.75
+```
+
+#### Arithmetic Operators
+* These are some of the most commonly-used operators
+* They perform the most basic math function we all know and long
+  * But hate to do in our head... Or at least I do
+* `%` or modules is one you might not know
+  * This is similar to the `remainder operator`
+    * It returns the integer remainder of dividing the two operands.
+
+
+
+
+
 
 
 ## Exercises: Data and Variables - Solution

@@ -88,8 +88,72 @@ staticVariable = 42;
 ### Built-In Types
 * In C#, all basic data types are objects
   * More on this later
+* A [list](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/c-sharp-built-in-types.png?raw=true) of a common types and their official .NET class name
+  * The built in data types have short names that differ from typical class name conventions
+    * Generally we will use the short names for each
 
+### Primitive Types
+* Are basic building block of a program
+  * All of the types listed in the previous image were `primitive types`
+  * They allow us to build more complex data structures
 
+### Reference and Value Types
+* Types in C# are grouped into two categories:
+  * **Value Types**: directly store the `data` within itself
+    * ie: it stores the actually value within itself
+  * Examples of `Value type` `data types`:
+    * bool
+    * char
+    * init
+    * float
+```C#
+int number = 1;
+string name = "Johnny";
+```
+  * **Reference Types**: stores a the address where the value i being stored
+    * ie: points to the memory location that store the data
+      * [Example](https://www.tutorialsteacher.com/Content/images/csharp/raference-type-memory-allocation.png)
+        * The system selects a random location in memory (0x803200) for the variable s.
+        * The value of a variable s is 0x600000, which is the memory address of the actual data value.
+        * Thus, reference type stores the address of the location where the actual value is stored instead of the value itself
+    * Example of `Reference type` `data types`:
+      * String
+      * Array (even if their elements are value types)
+      * Class
+
+### Boxing
+* **Boxing**: is the process of converting a `value type` to a `reference type`
+* **Unboxing**: is the process of converting a `reference type` to a `value` type
+* C# is known as a `unified type` system because it implicitly boxes values types to be treated as objects
+* [Boxing Example](https://replit.com/@rc1336/boxing-example#main.cs):
+```C#
+int i = 123;     // This is a value type.
+object o = i;    // Boxing the value type into a reference type.
+int j = (int)o;  // Unboxing the reference type back into a value type.
+```
+## Type Conversion
+* Type conversion is just what the name suggest
+  * When you convert one data type to another
+* Ask students:
+  * What is an instance where you would want to perform `type conversion`?
+    * When a program accepts user input and we need to convert it store the data properly within a Database
+* C# provides `Type conversion functions`
+  * These allow us to convert values to different data types.
+  * `Int32.Parse` - will attempt to convert its argument into a `init`
+  * `Double.Parse` -  will attempt to convert its arguments into a double
+```C#
+Console.WriteLine(Int32.Parse("2345"));
+// Output: 2345
+
+Console.WriteLine((Int32.Parse("2345")).GetType());
+// Output: System.Int32
+
+Console.WriteLine(Double.Parse("17"));
+// Output: 17
+
+Console.WriteLine((Double.Parse("17.8")).GetType());
+// Output: System.Double
+```
 ## Exercises: Data and Variables - Solution
 ```C#
 using System;

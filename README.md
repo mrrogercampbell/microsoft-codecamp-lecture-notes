@@ -5,9 +5,13 @@ This Code Camp is a FREE course to train 30-40 transitioning military personnel 
 
 Graduates of the online course will receive full-time job offers at Microsoft.
 
-
 ## Table of Content
 * [Unit 1: Introduction to Programming in C#](https://education.launchcode.org/intro-to-programming-csharp/index.html)
   * [Chapter 1, 2, 3 Review Lecture](./unit-1/chapter-1-2-3-review-lecture.md)
   * [Chapter 4 Lecture](./unit-1/chapter-4-lecture.md)
   * [Chapter 5 Lecture](./unit-1/chapter-5-lecture.md)
+
+
+# Templates
+* [Lecture Notes Quick Start Guide](./templates/lecture-quick-start.md) - Provides you with a quick start guide on how to rapidly develop a lecture guide based on my architecture.
+* [Lecture Notes Template](./templates/lecture-template.md) - Provides you with a template to assist in rapidly developing a lecture notes guide based on my architecture.

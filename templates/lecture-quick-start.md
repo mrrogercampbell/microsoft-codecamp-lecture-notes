@@ -1,4 +1,6 @@
-* This is a example document to showcase how you would create a `lecture notes` document. I have written this based on [Chapter 5](https://education.launchcode.org/intro-to-programming-csharp/chapters/booleans-and-conditionals/index.html)
+# Lecture Notes Quick Start Guide
+* This is a `Quick Start` guide showcases how to  create a `lecture notes` document.
+  * I have written this based on [Chapter 5](https://education.launchcode.org/intro-to-programming-csharp/chapters/booleans-and-conditionals/index.html)
 * Things to be aware of:
   * Bullets are meant for notes
   * Key terms should be encapsulated in backticks:

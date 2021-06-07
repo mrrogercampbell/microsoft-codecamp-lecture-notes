@@ -1,5 +1,7 @@
 # Chapters 1, 2, and 3 Review
+## Table of Content
 - [Chapters 1, 2, and 3 Review](#chapters-1-2-and-3-review)
+  - [Table of Content](#table-of-content)
   - [Chapter 1: Introduction](#chapter-1-introduction)
     - [Why Learn to Code?](#why-learn-to-code)
     - [Why Learn C Sharp?](#why-learn-c-sharp)

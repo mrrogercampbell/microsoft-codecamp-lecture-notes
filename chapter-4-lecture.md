@@ -292,7 +292,6 @@ error CS1525: Unexpected symbol `const'
 error CS1525: Unexpected symbol `='
 */
 ```
-
 ## Expressions and Evaluations
 * An `expression` is a combination of values, variables, operators, and calls to methods.
   * An expression can be thought of as a formula that is made up of multiple pieces
@@ -308,7 +307,6 @@ int multiple = 1 * 2;
 Console.WriteLine(multiple);
 // Output: 2
 ```
-
 ## Operations
 ### Operators and Operands
 * **Operators**: are one or more character that represent a computation
@@ -337,72 +335,126 @@ Console.WriteLine(hours);
     * It returns the integer remainder of dividing the two operands.
 * Image of the [Arithmetic Operators](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/arithmetic-operators.png?raw=true)
 
+#### More on the Modulus
+* The `modulus operator` (%) is common in programming
+  * But what the hell does it do??!!
+  * `%` operator returns the remainder obtained by carrying out integer division of the first operand by the second operand
+  * ie:
+    * 12 % 4 is 0
+      * 4 divides 12 evenly (that is, there is no remainder)
+    * 13 % 7 is 6
+    * 6 % 2 is 0
+    * 7 % 2 is 1
 
-
-
-
-## Exercises: Data and Variables - Solution
 ```C#
-using System;
-
-class MainClass {
-  public static void Main (string[] args) {
-    // FORK this starter file and save it to your own Repl.it account.
-    
-    // Declare and assign the variables here:
-    string shuttleName = "Determination";
-    int shuttleSpeed = 17500;
-    int distanceToMarsKm = 225000000;
-    int distanceToMoonKm = 384400;
-    double milesPerKilometer = 0.621;
-
-
-    // Code your solution to exercises B and C here:
-
-    // B | A:
-      // Create and assign a miles to Mars variable. 
-      // You can get the miles to Mars by multiplying the distance to Mars in kilometers by the miles per kilometer.
-    double distanceToMarsMiles = distanceToMarsKm * milesPerKilometer;
-    Console.WriteLine(distanceToMarsMiles);
-      // Gotcha:
-        // If attempt to assign the distanceToMarsMiles varaibale the int type you will throw an error because milesPerKilometer is a double and can not be covered back to a int
-
-
-    // B | B: 
-      // Next, we need a variable to hold the hours it would take to get to Mars. 
-      // To get the hours, you need to divide the miles to Mars by the shuttle’s speed.
-    double hoursToMars = distanceToMarsMiles / shuttleSpeed;
-    Console.WriteLine(hoursToMars);
-        // Gotcha:
-            // If attempt to assign the hoursToMars varaibale the int type you will throw an error because the result of your equation is a double
-
-
-      // B | C:
-        // Finally, declare a variable and assign it the value of days to Mars. 
-        // In order to get the days it will take to reach Mars, you need to divide the hours it will take to reach Mars by 24.
-      double daysToMars = hoursToMars / 24;
-      Console.WriteLine(daysToMars);
-
-      // C:
-      Console.WriteLine(shuttleName + " will take " + daysToMars + " days to reach Mars.");
-        // Gotchas:
-          // You must add `+ signs` to concat each variable to the sentence
-          // In order to get proper spacing you must add extra space to the end and beingin of each string
-
-    // Code your solution to exercise D here:
-
-    double distanceToTheMoonMiles = distanceToMoonKm * milesPerKilometer;
-    Console.WriteLine(distanceToTheMoonMiles);
-
-    double hoursToTheMoon = distanceToTheMoonMiles / shuttleSpeed;
-    Console.WriteLine(hoursToTheMoon);
-
-    double daysToTheMoon = hoursToTheMoon / 24;
-    Console.WriteLine(daysToTheMoon);
-
-      Console.WriteLine(shuttleName + " will take " + daysToTheMoon + " days to reach the Moon.");
-
-    
-  }
-}
+Console.WriteLine(12 % 4);
+Console.WriteLine(13 % 7);
+Console.WriteLine(6 % 2);
+Console.WriteLine(7 % 2);
 ```
+
+#### More on Exponentiation
+* The `Math.Pow()` method is needed to do these types of calculations
+  * It can only use `double` `data types`!
+* For cleaner code be sure when you store the `Math.Pow()`method inside of a variable so that you do not have a bunch of parentheses all over the place
+* **Do this**:
+```C#
+/*
+creating a variable for the exponentiation
+which will be called in the Console.WriteLine
+*/
+
+double numPower = Math.Pow(num1, num2);
+Console.WriteLine(numPower);
+```
+* **Not this**:
+```C#
+/*
+using the variables in the Math.Pow() method and
+perfroming the exponentiation in the Console.WriteLine
+*/
+
+double num1 = 4;
+double num2 = 3;
+Console.WriteLine(Math.Pow(num1, num2)); // This is hard to read
+```
+
+#### Order of Operations
+* C# follows the same precedence rules for its arithmetic operators that mathematics does
+* Remember the acronym PEMDAS can be used to remember order of operations:
+  * P = parentheses - have the highest precedence and can be used to force an expression to evaluate in the order you want
+  * E = exponentiation - has the next highest precedence
+  * M = multiplication - has the same precedence as `division` and `modulus`
+  * D = division - has the same precedence as `multiplication` and `modulus`
+  * A = addition - Same precedence as `subtraction`
+  * S = subtraction - Same precedence as `addition`
+    * `Operators` with the same precedence are evaluated from left-to-right
+* **Gotchas**:
+  * Operators, such as + and *, are type-dependent.
+    * Meaning both of these work but within the context of what we are doing:
+      * `2 + 2 = 4`
+      * `string fullName = "Doc " + "Martin"`
+
+### Other Operators
+#### The String Operator +
+* The `+ operator` can be used with `string` operands to `concatenate`, or `join together two strings`
+
+```C#
+Console.WriteLine(1 + 1);
+// Outputs: 2
+
+Console.WriteLine("1" + "1");
+// Outputs: 11
+```
+
+#### Compound Assignment Operators
+* It is common to have to update the value of a variable in reference to itself
+```C#
+int x = 1;
+x = x + 1;
+
+Console.WriteLine(x);
+// Outputs: 2
+```
+* You can speed this up by performing the following
+```C#
+int x = 1;
+x += 1;
+
+Console.WriteLine(x);
+// Outputs: 2
+```
+* More [compound assignment operators](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/compound-assignment-operators.png?raw=true)
+
+### Input with ReadLine
+#### Requesting Data
+* Let's say we want to prompt the user to provide us their name
+* We can utilize the `Console.ReadLine` method
+* You are able to set this up with the following algorithm:
+```C#
+// Here we are providing a prompt
+Console.WriteLine("Enter your name");
+
+// Here we are telling the program to wait for the user input
+// And then telling it to store said input in the variable name
+string name = Console.ReadLine();
+
+// Here we are outputting a concated string with the user's input
+Console.WriteLine("Your name is " + name);
+```
+
+#### Critical Input Detail
+* Have student mess with this code for a few minutes and then bring them back to discuss
+```C#
+Console.WriteLine("Enter a number");
+string num1 = Console.ReadLine();
+
+
+Console.WriteLine("Enter a number");
+string num2 = Console.ReadLine();
+
+
+Console.WriteLine(num1 + num2);
+```
+* **Gotcha**:
+  * In C#, `ReadLine` entries must be `strings`!

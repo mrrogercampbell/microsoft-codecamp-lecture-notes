@@ -44,12 +44,50 @@ Console.WriteLine(42,000);
 ```
 
 #### Type Systems
+* Ask students the following:
+  * What is a type system?
+  * Do you know any examples of different type systems in other languages?
+    * JS only has the `number` type where as C# has `init` and `double` among others
 * Every programming language has a **type system**
 * Each language will define its own set of `types`, what values those types will consist of, and other aspect
   * More on this at a later time
 
+## More On Data Types
+### Static vs. Dynamic Typing
+1. Ask students:
+  * Can anyone explain what it mean for a language to be **Dynamic typed**?
+  * When writing code in programming languages such as JS or Python a variable can refer to a value of any type at any time.
+    * ie: When creating a variable you **do not** need to define the type
+      * The language is able to figure it out on its own
+2. `Dynamically Typed`: You **do not** have to define the data type when declaring a variable
+  * [Example](https://replit.com/@rc1336/Dynamic-Typing)
+```js
+let dynamicVariable = "Doc"
+console.log(typeof dynamicVariable)
+// Output: string
 
+dynamicVariable = 31
+console.log(typeof dynamicVariable)
+// Output: number
+```
+  * Key Takeaway:
+    * In JS you are able to define the variable `dynamicVariable` and initially set its value to a `string` data type
+      * Then you are able to reassign its value to a `number` data type
+1. `Statically typed`: You **must** define the variable's data type when you declare it
+   * [Example](https://replit.com/@rc1336/Static-Typing)
+```C#
+string staticVariable = "dog";
+staticVariable = 42;
+// Output: error CS0029: Cannot implicitly convert type `int' to `string'
+```
+  * Key Takeaways:
+    * In C#, once you set a variables data type it can not be changed
+      * Well at least with there current understanding of C#
+    * In a Statically typed language you must declare the type of every variable **before** its name
 
+### Built-In Types
+* In C#, all basic data types are objects
+  * More on this later
 
 
 ## Exercises: Data and Variables - Solution

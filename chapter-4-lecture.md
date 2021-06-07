@@ -42,7 +42,6 @@ Console.WriteLine(42000);
 Console.WriteLine(42,000);
 // Output: error CS1502: ...`System.Console.WriteLine(string, object)' has some invalid arguments
 ```
-
 #### Type Systems
 * Ask students the following:
   * What is a type system?
@@ -154,6 +153,84 @@ Console.WriteLine(Double.Parse("17"));
 Console.WriteLine((Double.Parse("17.8")).GetType());
 // Output: System.Double
 ```
+## Variables
+* A `variable` is a name that refers and or stores a value for later use
+
+### Declaring and Initializing Variables
+* When you create a variable it is called `Variable declaration` or `declaration`
+  * To `declare` (create) a variable you must:
+    1. Define the data type that will be store/referenced by the variable
+    2. Create a name for the variable
+```C#
+string coolestPersonAlive;
+```
+* Once you declare a variable you can then `assign` it a value
+  * When you utilize the `=` sign after the `variable declaration` you are using an `assignment statement`
+* The act of assigning a variable a value for the first time is called `initialization`
+```C#
+// Variable Declaration
+string coolestPersonAlive;
+
+// Variable Initialization with a assignment statement
+coolestPersonAlive = "Doc";
+```
+* How you really want to do this:
+```C#
+// This is D.R.Y.
+string coolestPersonAlive = "Doc";
+```
+
+* In C# you are able to declare a variable without specifying a type
+  * I wouldn't recommend this, it is frowned upon
+  * But just incase you are that person that wants to do it heres an example:
+```C#
+var animal = "My little brother"
+```
+  * When you do this `C#` will infer the data type
+    * If later in your code you attempt to reassign the value of the variable to a different data type your program will throw an error
+* Do not confuse the `assignment operator` `=` with the `equality operator` `===`
+  * More on the `equality operator` later
+
+### Evaluating Variables
+* Once you declare and assign a variable a value you can use it anywhere in your program
+
+```C#
+string inspiration = "The greatest teacher, failure is.";
+
+Console.WriteLine(inspiration);
+```
+* When we refer (ie: use a variable), we are `evaluating` it
+### Reassigning Variables
+* Variables allow us to make our program remembers important pieces of data that we would like to reuse
+  * The super cool part about variables is that we can change their values as need (most of the time, more on this later)
+```C#
+string inspiration = "The greatest teacher, failure is.";
+
+Console.WriteLine(inspiration);
+
+inspiration = "Do or do not. There is no try."
+Console.WriteLine(inspiration)
+```
+  * Take note that we only use the `data type` when declaring a variable
+
+## More On Variables
+### Creating Constant with const
+* Ok so remember how I said you can always change a variable's value...
+  * I lied...
+  * Let's say you want to keep a variables value static for some reason
+  * You are able to utilize the `const` keyword to define a `constant` variable
+```C#
+const string name = "Sir Roger Campbell of the land of the Sun";
+name = "Roger the loser";
+// Output: error CS0128: A local variable named `appName' is already defined in this scope
+```
+* "Ha ha ha! No one can make fun of me anymore. Why didn't I know this life hack back in high school?!"
+
+### Naming Variables
+#### Valid Variable Names
+* 
+
+
 ## Exercises: Data and Variables - Solution
 ```C#
 using System;

@@ -12,6 +12,6 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * [Chapter 5 Lecture](./unit-1/chapter-5-lecture.md)
 
 
-# Templates
+## Templates
 * [Lecture Notes Quick Start Guide](./templates/lecture-quick-start.md) - Provides you with a quick start guide on how to rapidly develop a lecture guide based on my architecture.
 * [Lecture Notes Template](./templates/lecture-template.md) - Provides you with a template to assist in rapidly developing a lecture notes guide based on my architecture.

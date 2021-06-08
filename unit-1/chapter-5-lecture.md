@@ -255,7 +255,7 @@ if (isPicardTheBest == false)
    Console.WriteLine("You Dam skippy! Sisko is the best!!");
 }
 
-// Outputs: "You Dam skippy! Sisko is the best!!"
+// Outputs: You Dam skippy! Sisko is the best!!
 ```
 * We can also perform multiple actions within a conditional's `code block`:
 ```C#
@@ -297,6 +297,126 @@ Console.WriteLine("¯\_(ツ)_/¯");}
       * But hey, you are a "Engineer"... Do what you want!
       * I'm just kidding.. Don't do it!
 ### else Clauses
-### else if Statements
+* `Else clause`: can be paired with an `if statement`
+  * It specifics code that should be be triggered if the `previous` condition evaluates as false.
+```C#
+if("This is True")
+{
+    // Do This
+}
+else
+{
+    // Do This
+}
+```
+* This structure is known as a `else-if statement`
+  * It provides a mechanism for `branching`
+  * `Branching` is when you program has the ability to flow down different paths based on the conditional evaluations
+    * ie:
+```C#
+bool isPicardTheBest = true;
 
+if (isPicardTheBest == false)
+{
+   Console.WriteLine("You Dam skippy! Sisko is the best!!");
+}
+else
+{
+   Console.WriteLine("Where as I think Picard is Amazing! I disagree, Sisko is the best!!");
+}
+
+// Outputs: Where as I think Picard is Amazing! I disagree, Sisko is the best!!
+```
+* Here's an image representation:
+![Conditional Flow](./assets/ch-5/conditional-flow.png)
+### else if Statements
+* Whereas `if-else statements` allow our program to `branch` via two alternative, what do we do when we need multiple branches?
+  * `else if clause`: allow us to add more complex conditional logic to our program
+```C#
+if("This is True")
+{
+    // Do This
+}
+else if ("This is False")
+{
+    // Do This
+}
+else
+{
+    // Do This
+}
+```
+* Let's see this in action:
+```C#
+bool isPicardTheBest = true;
+
+if (isPicardTheBest == false)
+{
+   Console.WriteLine("You Dam skippy! Sisko is the best!!");
+}
+else if (isPicardTheBest == true)
+{
+   Console.WriteLine("Where as I think Picard is Amazing! I disagree, Sisko is the best!!");
+}
+else
+{
+   Console.WriteLine("I mean I guess you are entitled to your own opinion");
+}
+```
+* **Gotchas**:
+  * With `if`, `else if`, and `else` our programs branching capabilities are endless
+  * The only things to keep in mind are:
+    1. We may not use `else` or `else if` without a _preceding_ `if statement`
+    2. `else` and `else if` clauses are _optional_.
+    3. Multiple `else if` statements may follow the `if statement`
+       * But they must _precede_ the `else clause`, if one is present.
+    4. _Only one_ `else clause` may be used.
 ## Nested Conditionals
+* `Nested conditions`: allow us to write more complex branching logic to our programs
+
+```C#
+int num = 6;
+
+if (num % 2 == 0)
+{
+    Console.WriteLine("EVEN");
+
+    if (num > 0)
+    {
+        Console.WriteLine("POSITIVE");
+    }
+}
+
+// Outputs: EVEN
+// Outputs: POSITIVE
+```
+* Above we are able to test number
+  * If (the number is even) -> Console.WriteLine("EVEN")
+    * If ( the number is positive) -> Console.WriteLine("POSITIVE")
+
+* **Gotchas**:
+  * When we put one conditional inside another, the body of the nested conditional is indented by two tabs rather than one.
+    * This convention helps in readability
+  * Nested `if statements` can also contain an `else statement`.
+    * With nested statements, the `else clause` belongs to the last unpaired `if`.
+      * Remember you can only use an else when you have an if.
+  * `else` and `else if` rules apply the same way within nested conditionals as in unnested ones.
+
+```C#
+int num = 7;
+
+if(num < 9)
+{
+   if (num % 2 == 0)
+   {
+      Console.WriteLine("EVEN");
+   }
+
+   else
+   {
+      Console.WriteLine("ODD");
+   }
+}
+
+// Outputs: ODD
+```

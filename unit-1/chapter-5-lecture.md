@@ -71,6 +71,7 @@ Console.WriteLine(5 == 6);
 ```
 #### Comparison Operators
 * The `==` is one of six common `comparison operators`
+* 
 ![List of Comparison Operators](../assets/ch-5/list-of-comparison-operators.png)
 ## Logical Operators
 

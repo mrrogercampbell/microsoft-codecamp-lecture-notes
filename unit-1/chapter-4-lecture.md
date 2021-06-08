@@ -87,7 +87,10 @@ staticVariable = 42;
 ### Built-In Types
 * In C#, all basic data types are objects
   * More on this later
-* A [list](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/primitive-types.png?raw=true) of a common types and their official .NET class name
+* A list of a common types and their official .NET class name
+
+![List of Common Built in Types](./assets/ch-4/c-sharp-built-in-types.png)
+
   * The built in data types have short names that differ from typical class name conventions
     * Generally we will use the short names for each
 
@@ -99,6 +102,8 @@ staticVariable = 42;
     * **Gotcha**: Strings are not primitive types in C#
   * They allow us to build more complex data structures
   * Great article: [C# Variables: Primitive and Non-primitive Types](https://www.jeremyshanks.com/c-variables-primitive-nonprimitive-types/)
+
+![primitive types](./assets/ch-4/primitive-types.png)
 
 ### Non-primitive Types
 * Non-primitive types are also called reference types due to the fact that the identifer references the location of the value stored in the variable
@@ -333,7 +338,8 @@ Console.WriteLine(hours);
 * `%` or modules is one you might not know
   * This is similar to the `remainder operator`
     * It returns the integer remainder of dividing the two operands.
-* Image of the [Arithmetic Operators](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/arithmetic-operators.png?raw=true)
+
+![Arithmetic Operators](./assets/ch-4/arithmetic-operators.png)
 
 #### More on the Modulus
 * The `modulus operator` (%) is common in programming
@@ -424,7 +430,8 @@ x += 1;
 Console.WriteLine(x);
 // Outputs: 2
 ```
-* More [compound assignment operators](https://github.com/mrrogercampbell/microsoft-codecamp-lesson-plans/blob/main/assets/compound-assignment-operators.png?raw=true)
+* More compound assignment operators
+![compound assignment operators](./assets/ch-4/compound-assignment-operators.png)
 
 ### Input with ReadLine
 #### Requesting Data

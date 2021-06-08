@@ -1,4 +1,14 @@
 # Chapter 2: How Programs Work
+- [Chapter 2: How Programs Work](#chapter-2-how-programs-work)
+  - [Algorithms](#algorithms)
+    - [Check for Understanding](#check-for-understanding)
+  - [Programming Languages](#programming-languages)
+    - [Languages](#languages)
+      - [How Computers Run Programs](#how-computers-run-programs)
+      - [How Many Programming Languages Are There?](#how-many-programming-languages-are-there)
+  - [The C# Language](#the-c-language)
+  - [Your First Program](#your-first-program)
+  - [Whats Next](#whats-next)
 ## Algorithms
 * Ask the students:
   * What is an Algorithm?

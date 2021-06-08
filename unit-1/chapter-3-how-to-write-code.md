@@ -1,4 +1,16 @@
 # Chapter 3: How To Write Code
+- [Chapter 3: How To Write Code](#chapter-3-how-to-write-code)
+  - [What is Code?](#what-is-code)
+    - [What Code Can Do](#what-code-can-do)
+  - [Syntax Rules](#syntax-rules)
+  - [Comments](#comments)
+  - [Output with Console.WriteLine](#output-with-consolewriteline)
+    - [Examples](#examples)
+    - [Two Special Characters](#two-special-characters)
+  - [Fixing Errors in Your Code](#fixing-errors-in-your-code)
+    - [Asking for Help](#asking-for-help)
+    - [Welcome, Novice Coder](#welcome-novice-coder)
+  - [Whats Next](#whats-next)
 ## What is Code?
 * Computer currently have no way to take into account context or intended meaning, due to this they will do explicitly whatever you tell them
   * Which is not always what you mean for them to do

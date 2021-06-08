@@ -7,11 +7,13 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 
 ## Table of Content
 * [Unit 1: Introduction to Programming in C#](https://education.launchcode.org/intro-to-programming-csharp/index.html)
-  * [Chapter 1, 2, 3 Review Lecture](./unit-1/chapter-1-2-3-review-lecture.md)
-  * [Chapter 4 Lecture](./unit-1/chapter-4-lecture.md)
-  * [Chapter 5 Lecture](./unit-1/chapter-5-lecture.md)
-
+  * [Chapter 1 Introduction Lecture](./unit-1/chapter-1-introduction.md)
+  * [Chapter 2 How Programs Work Lecture](./unit-1/chapter-2-how-programs-work.md)
+  * [Chapter 3 How To Write Code Lecture](./unit-1/chapter-3-how-to-write-code.md)
+  * [Chapter 4 Data and Variables Lecture](./unit-1/chapter-4-data-and-variables.md)
+  * [Chapter 5 Making Decisions With Conditionals Lecture](./unit-1/chapter-5-making-decisions-with-conditionals.md)
+  * [Chapter 6: Errors and Debugging Lecture](./unit-1/chapter-6-errors-and-debugging.md)
 
 ## Templates
-* [Lecture Notes Quick Start Guide](./templates/lecture-quick-start.md) - Provides you with a quick start guide on how to rapidly develop a lecture guide based on my architecture.
-* [Lecture Notes Template](./templates/lecture-template.md) - Provides you with a template to assist in rapidly developing a lecture notes guide based on my architecture.
+* [Lecture Notes Quick Start Guide](./templates/lecture-quick-start.md) - A quick start guide on how to rapidly develop a lecture guide based on my architecture.
+* [Lecture Notes Template](./templates/lecture-template.md) - A starter template to assist in rapidly developing lecture notes based on my architecture.

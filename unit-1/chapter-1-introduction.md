@@ -1,4 +1,14 @@
 # Chapter 1: Introduction
+- [Chapter 1: Introduction](#chapter-1-introduction)
+  - [Why Learn to Code?](#why-learn-to-code)
+  - [Why Learn C Sharp?](#why-learn-c-sharp)
+  - [About LaunchCode Programs](#about-launchcode-programs)
+    - [Goals:](#goals)
+    - [Course Activities:](#course-activities)
+  - [Class Platforms](#class-platforms)
+    - [Repl.it](#replit)
+      - [Create A Repl.it Account](#create-a-replit-account)
+  - [Whats Next](#whats-next)
 ## Why Learn to Code?
 * Ask students why they think its a good idea to learn to code?
 * Give a few quick explanation of why its important to code:

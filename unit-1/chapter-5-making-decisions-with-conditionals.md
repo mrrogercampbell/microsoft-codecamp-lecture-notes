@@ -1,4 +1,23 @@
 # Chapter 5: Making Decisions With Conditionals
+- [Chapter 5: Making Decisions With Conditionals](#chapter-5-making-decisions-with-conditionals)
+  - [Booleans](#booleans)
+    - [Booleans Values](#booleans-values)
+    - [Boolean Conversion](#boolean-conversion)
+    - [Booleans Expressions](#booleans-expressions)
+      - [Comparison Operators](#comparison-operators)
+  - [Logical Operators](#logical-operators)
+    - [Boolean Operators](#boolean-operators)
+      - [Logical AND](#logical-and)
+      - [Logical OR](#logical-or)
+      - [Logical NOT](#logical-not)
+    - [Operator Precedence](#operator-precedence)
+    - [Truth Tables](#truth-tables)
+  - [Conditionals](#conditionals)
+    - [if Statements](#if-statements)
+    - [else Clauses](#else-clauses)
+    - [else if Statements](#else-if-statements)
+  - [Nested Conditionals](#nested-conditionals)
+  - [Whats Next](#whats-next)
 ## Booleans
 * An important core feature of any programming language is the ability to handle conditional logic
   * Conditional logic allows you to empower your code with the capability to reason based on pre-defined logic
@@ -422,9 +441,8 @@ if(num < 9)
 ```
 
 ## Whats Next
-## Whats Next
 1. First, student will need to complete (In this order):
    1. [Exercises: Booleans and Conditionals](https://education.launchcode.org/intro-to-programming-csharp/chapters/booleans-and-conditionals/exercises.html)
-   2. [Studio: Data and Variables](https://education.launchcode.org/intro-to-programming-csharp/chapters/data-and-variables/studio.html)
+   2. [Studio: Goal Setting and Getting into the Right Mindset](https://education.launchcode.org/intro-to-programming-csharp/chapters/booleans-and-conditionals/studio.html) - `this is optional`
 2. Then students should read [6. Error and Debugging](https://education.launchcode.org/intro-to-programming-csharp/chapters/errors-and-debugging/index.html)
 3. Then students will sit for [Chapter 6 Lecture](./chapter-6-errors-and-debugging.md)

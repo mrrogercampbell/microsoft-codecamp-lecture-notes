@@ -328,7 +328,6 @@ else
 // Outputs: Where as I think Picard is Amazing! I disagree, Sisko is the best!!
 ```
 * Here's an image representation:
-![Conditional Flow](./assets/ch-5/conditional-flow.png)
 ### else if Statements
 * Whereas `if-else statements` allow our program to `branch` via two alternative, what do we do when we need multiple branches?
   * `else if clause`: allow us to add more complex conditional logic to our program

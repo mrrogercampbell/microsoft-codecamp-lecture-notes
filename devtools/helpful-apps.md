@@ -1,6 +1,6 @@
 # Helpful Apps
 
-# Desktop Apps
+## Desktop Apps
 These app are available for most OS:
 * [1Password](https://1password.com/) - The world’s most-loved password manager## Windows
 * [bitwarden](https://bitwarden.com/) - The Most Trusted Open Source Password Manager for Business

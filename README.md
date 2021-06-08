@@ -5,7 +5,7 @@ This Code Camp is a FREE course to train 30-40 transitioning military personnel 
 
 Graduates of the online course will receive full-time job offers at Microsoft.
 
-## Table of Content
+## Lecture Table of Content
 * [Unit 1: Introduction to Programming in C#](https://education.launchcode.org/intro-to-programming-csharp/index.html)
   * [Chapter 1 Introduction Lecture](./unit-1/chapter-1-introduction.md)
   * [Chapter 2 How Programs Work Lecture](./unit-1/chapter-2-how-programs-work.md)
@@ -14,6 +14,9 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * [Chapter 5 Making Decisions With Conditionals Lecture](./unit-1/chapter-5-making-decisions-with-conditionals.md)
   * [Chapter 6: Errors and Debugging Lecture](./unit-1/chapter-6-errors-and-debugging.md)
 
+## Resources
+* [Articles](./resources/articles.md) - Articles I find helpful
+* [Helpful App](resources/helpful-apps.md) - Looking to speed up your development workflow? Some of these apps could do just that!
 ## Templates
 * [Lecture Notes Quick Start Guide](./templates/lecture-quick-start.md) - A quick start guide on how to rapidly develop a lecture guide based on my architecture.
 * [Lecture Notes Template](./templates/lecture-template.md) - A starter template to assist in rapidly developing lecture notes based on my architecture.

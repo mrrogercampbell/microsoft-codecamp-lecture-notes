@@ -139,7 +139,7 @@ Console.WriteLine(dailyEarnings);
 * **Error Messages are your friend**
 ### Complier Messages 101
 * Let's step through some errors:
-```C# =
+```C#=
 using System;
 
 class MainClass {

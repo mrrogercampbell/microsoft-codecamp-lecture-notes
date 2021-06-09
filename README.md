@@ -17,6 +17,7 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful
 * [Helpful App](resources/helpful-apps.md) - Looking to speed up your development workflow? Some of these apps could do just that!
+
 ## Templates
 * [Lecture Notes Quick Start Guide](./templates/lecture-quick-start.md) - A quick start guide on how to rapidly develop a lecture guide based on my architecture.
 * [Lecture Notes Template](./templates/lecture-template.md) - A starter template to assist in rapidly developing lecture notes based on my architecture.

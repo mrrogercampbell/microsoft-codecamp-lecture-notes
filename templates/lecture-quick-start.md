@@ -11,6 +11,10 @@
 // main.cs - It is also a great idea to reference the this code snippet is coming from
 
 bool cool = true
+Console.WriteLine(cool);
+// Outputs: True
+  // It's always nice to provide students with the expected Outputs just for reference
+
 ```
 
 

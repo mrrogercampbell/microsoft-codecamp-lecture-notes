@@ -1,7 +1,4 @@
-This is a template document to assist in rapidly developing a lecture notes document.
-
-Please see [lecture-quick-start.md](./lecture-example.md) for a detailed explanation on how to use the formatting and architecture of this document
-# Chapter #: <Chapter Title Goes Here>
+# Chapter 8: Arrays Keep Things in Order
 ## <#.1 Subtitles>
 ### <#.1.1 Subtitle>
 

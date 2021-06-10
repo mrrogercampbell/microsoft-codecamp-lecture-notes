@@ -445,4 +445,4 @@ if(num < 9)
    1. [Exercises: Booleans and Conditionals](https://education.launchcode.org/intro-to-programming-csharp/chapters/booleans-and-conditionals/exercises.html)
    2. [Studio: Goal Setting and Getting into the Right Mindset](https://education.launchcode.org/intro-to-programming-csharp/chapters/booleans-and-conditionals/studio.html) - `this is optional`
 2. Then students should read [Chapter 6: Error and Debugging](https://education.launchcode.org/intro-to-programming-csharp/chapters/errors-and-debugging/index.html)
-3. Then students will sit for [Chapter 6 Lecture](./chapter-6-errors-and-debugging.md)
+3. Then students will sit for [Chapter 6's Lecture](./chapter-6-errors-and-debugging.md)

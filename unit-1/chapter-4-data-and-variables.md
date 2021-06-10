@@ -509,4 +509,4 @@ Console.WriteLine(num1 + num2);
    1. [Exercises: Data and Variables](https://education.launchcode.org/intro-to-programming-csharp/chapters/data-and-variables/exercises.html)
    2. [Studio: Data and Variables](https://education.launchcode.org/intro-to-programming-csharp/chapters/data-and-variables/studio.html)
 2. Then students should read [Chapter 5: Making Decisions With Conditionals](https://education.launchcode.org/intro-to-programming-csharp/chapters/booleans-and-conditionals/index.html)
-3. Then students will sit for [Chapter 5 Lecture](./chapter-5-making-decisions-with-conditionals.md)
+3. Then students will sit for [Chapter 5's Lecture](./chapter-5-making-decisions-with-conditionals.md)

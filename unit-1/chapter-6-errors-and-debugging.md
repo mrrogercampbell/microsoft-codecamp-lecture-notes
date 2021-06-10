@@ -380,4 +380,4 @@ else
    1. [Exercises: Debugging](https://education.launchcode.org/intro-to-programming-csharp/chapters/errors-and-debugging/exercises.html)
    2. There is no studio for this chapter
 2. Then students should read [7. Stringing Characters Together](https://education.launchcode.org/intro-to-programming-csharp/chapters/strings/index.html)
-3. Then students will sit for [Chapter 7 Lecture](./chapter-7-stringing-characters-together.md)
+3. Then students will sit for [Chapter 7's Lecture](./chapter-7-stringing-characters-together.md)

@@ -100,4 +100,4 @@ Console.WriteLine("C#\nPython\nJavaScript\nJava\nSwift");
 
 ## Whats Next
 1. After this students should read [4. Data and Variables](https://education.launchcode.org/intro-to-programming-csharp/chapters/data-and-variables/index.html)
-2. Then should sit for [Chapter 4 Lecture](./chapter-4-data-and-variables.md)
+2. Then should sit for [Chapter 4's Lecture](./chapter-4-data-and-variables.md)

@@ -258,4 +258,4 @@ Console.WriteLine(nonprofit);
 1. First, student will need to complete (In this order):
    1. [Exercises: Strings](https://education.launchcode.org/intro-to-programming-csharp/chapters/strings/exercises.html)
 2. Then students should read [Chapter 8: Arrays Keep Things in Order](provide-link-here)
-3. Then students will sit for [Chapter 8 Lecture](./chapter-8-arrays-keep-things-in-order.md)
+3. Then students will sit for [Chapter 8's Lecture](./chapter-8-arrays-keep-things-in-order.md)

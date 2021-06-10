@@ -212,6 +212,7 @@ string[] starships = {"Galactica", "USS Enterprise", "Millennium Falcon", "Range
 
     int val = twoDimArray[2,3];
     Console.WriteLine(val);
+    // Outputs: 11
 ```
 * Let's break it down:
   1. We create a new variable called `val` which will store an `int`
@@ -234,6 +235,7 @@ string[] starships = {"Galactica", "USS Enterprise", "Millennium Falcon", "Range
 
     int conciseVal = conciseTwoDim[2,3];
     Console.WriteLine(conciseVal);
+    // Outputs: 11
 ```
 * With this approach we remove some of the extra and unneeded code
   * But the logic is the exact same
@@ -254,11 +256,44 @@ string[] starships = {"Galactica", "USS Enterprise", "Millennium Falcon", "Range
   2. And we can forgo setting the `rank`  for our `2D array`
 
 * Multidimensional Arrays is a pretty heavy topic and you can find more information on it in [Microsoft's documentation](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/multidimensional-arrays)
+
+#### Rank and Length Properties
+* The `Length` property is still available to `multidimensional arrays`
+  * The length is based on all the values that are contained in the array
+    * ie: 3 rows of 4 is 3*4 = 12
+```C#
+    int[,] conciseTwoDim =
+    {
+      {0, 1, 2, 3} ,
+      {4, 5, 6, 7} ,
+      {8, 9, 10, 11}
+    };
+
+    Console.WriteLine(conciseTwoDim.Length);
+    // Outputs: 12
+```
+* The `Rank` property is helpful if you need to see the number of dimensions an `multidimensional array` contains
+  * It returns a `integer` that represents the dimensions
+```C#
+    int[,] conciseTwoDim =
+    {
+      {0, 1, 2, 3} ,
+      {4, 5, 6, 7} ,
+      {8, 9, 10, 11}
+    };
+
+    Console.WriteLine(conciseTwoDim.Rank);
+    // Outputs: 2
+```
+### Multidimensional and Array Methods
+* Most `array methods` will only work on `one dimensional arrays`
+* Good thing the `inner arrays` within a `multidimensional array` are one dimensional
+  * All you have to do is access the `inner array` you want to invoke a method on and you are good to go!
 ## Whats Next
 This section tell the lead instructor, teaching assistants, and students what to expect next.
 
 1. First, student will need to complete (In this order):
-   1. [Exercises: <Name Goes Here>](provide-link-here)
-   2. [Studio: <Name Goes Here>](provide-link-here)
-2. Then students should read [Chapter <# Goes Here>: <Name of Chapter Goes Here>](provide-link-here)
-3. Then students will sit for [Chapter <# Goes Here> Lecture](provided-link-here)
+   1. [Exercises: Arrays]([provide-link-here](https://education.launchcode.org/intro-to-programming-csharp/chapters/arrays/exercises.html))
+   2. [Studio: Strings and Arrays]([provide-link-here](https://education.launchcode.org/intro-to-programming-csharp/chapters/arrays/studio.html))
+2. Then students should read [Chapter 9: Repeating With Loops]([provide-link-here](https://education.launchcode.org/intro-to-programming-csharp/chapters/loops/index.html))
+3. Then students will sit for [Chapter 9's Lecture](provided-link-here)

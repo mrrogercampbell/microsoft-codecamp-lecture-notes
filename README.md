@@ -13,6 +13,8 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * [Chapter 4 Data and Variables Lecture](./unit-1/chapter-4-data-and-variables.md)
   * [Chapter 5 Making Decisions With Conditionals Lecture](./unit-1/chapter-5-making-decisions-with-conditionals.md)
   * [Chapter 6: Errors and Debugging Lecture](./unit-1/chapter-6-errors-and-debugging.md)
+  * [Chapter 7: Stringing Characters Together](unit-1/chapter-7-stringing-characters-together.md)
+  * [Chapter 8: Arrays Keep Things in Order](./unit-1/chapter-8-arrays-keep-things-in-order.md)
 
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful

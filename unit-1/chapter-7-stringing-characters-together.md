@@ -11,6 +11,21 @@
     * ie: 'f' or '/' or '0'
     * We encase `char`s on single quotes `' '`
 * `Strings` can be thought of collections of `chars`
+```C#
+using System;
+
+class MainClass {
+  public static void Main (string[] args) {
+    char letterOne = 'c'; // non-collection data-type
+    char letterTwo = 'a'; // non-collection data-type
+    char letterThree = 't'; // non-collection data-type
+
+    string word = "cat"; // collection data-type
+
+    // Under the hood a string is made up of multiple chars
+  }
+}
+```
 
 * **Gotchas**:
   * Data types like `number` and `boolean` are not `collection data types`
@@ -140,6 +155,21 @@ Console.WriteLine(nonprofit);
 ```
   * This image give a clearer picture as to what happens in the code above:
   ![changing variable reference location](./assets/ch-7/changing-variable-reference-location.png)
+  * Another way to think of this is:
+    * Let's say in your phone you have a contact for me `Roger`
+      * In my contact you can store my `address`
+        * For the sake of this example lets consider the term `address` to be our variable
+        * Currently I live at `123 Stargate Lane, Upper Marlboro, MD, 20772` so you would set:
+          * `string address = "123 Stargate Lane, Upper Marlboro, MD, 20772"`
+        * If I were to move to lets say `Salt Lake City, UT` you would need to update my address (the variable) in your phone:
+          * `address = "456 Enterprise Way, Salt Lake City, UT, 84044"`
+        * With in the context of this example:
+          * The `address string variable` has not changed but the reference to where I live has been updated
+          * This is what the image above is demonstrating
+          * When we change the value of an `string variable` we are:
+            1. Actually creating a `new string` in memory
+            2. Updated the location where the variable references is pointed to so that it can find the new `string value` within the programs memory
+            3. The previously created string is then thrown away
 
     * Per Microsoft's [Immutability of String Objects](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/#immutability-of-string-objects) documentations:
       * _If you create a reference to a string, and then "modify" the original string, the reference will continue to point to the original object instead of the new object that was created when the string was modified._

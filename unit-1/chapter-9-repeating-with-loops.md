@@ -220,5 +220,240 @@ for (int i = 0; i < 4; i++)
 
 ## The Accumulator Pattern
 * A `pattern` is a general repeatable solution to a commonly occurring problem in software design
+* In following section we will look at a few different patterns for solving various type of logic problems
 
 ### Adding 1..n
+* We are going write a program that adds up the integers 1…n, where n is an integer variable that we will create.
+* One common programming “pattern” is to traverse a sequence, accumulating a value as we go:
+* Let's take a look at how we would do this with a `for loop`
+```C#
+int n = 6;
+int total = 0;
+
+for (int i = 1; i <= n; i++)
+{
+   total += i;
+}
+
+Console.WriteLine(total);
+// Outputs: 21
+```
+* The major part of this code example is to start to display that you with `loops` you are able to start handling more sophisticated logic or patterns within your code
+
+### Reversing a String
+* Another common pattern you will be asked to solve is or might need to utilize within your own programs is reversing a string
+  * In some other languages there are methods that will allow you to reverse a string in C# there is no method for the string class that will explicitly do this
+    * Side note: you could potentially convert the string to a different data type say an array and then utilize its `Reverse` method but for the sake of this example we are going to look at how we could do this without converting the data type
+```C#
+string str = "blue";
+string reversed = "";
+```
+* First we `initialize` two variables:
+  * `str`: store the string we want to reverse
+  * `reversed`: will store the reversed value
+```C#
+string str = "blue";
+string reversed = "";
+
+for (int i = 0; i < str.Length; i++)
+{
+   reversed = str[i] + reversed;
+}
+
+Console.WriteLine(reversed);
+// Outputs: eulb
+```
+* Let's check out this visual aide to help us step through the code:
+| Loop iteration           | i           | str[i]      | reversed |
+| ------------------------ | ----------- | ----------- | -------- |
+| (before first iteration) | not defined | not defined | ""       |
+| 1                        | 0           | 'b'         | "b"      |
+| 2                        | 1           | 'l'         | "lb"     |
+| 3                        | 2           | 'u'         | "ulb"    |
+| 4                        | 3           | 'e'         | "eulb"   |
+
+* So lets break it down:
+  1. We create a `for loop` that will iterate over the `str` variable
+  2. For as long as `i < str.Length` we will:
+     * Take `str[i]`'s value and store it within `reversed`
+  3. Since we are iterating over `str` from left to right; this is due to our initializer starting value being 0:
+     * Each time we iterate over the string we are store the first letter `'b' + ""` in `reversed`
+       * The value of `reversed` = "b"
+     * The next iteration we store `'l' + "b"`
+       * * The value of `reversed` = "lb"
+     * The next iteration we store `'l' + "b"`
+       * * The value of `reversed` = "lb"
+     * The next iteration we store `'u' + "lb"`
+       * * The value of `reversed` = "ulb"
+     * On the final iteration we store `'e' + "ulb"`
+       * * The value of `reversed` = "eulb"
+* _Disclaimer_: in the book they show column `str[i]` values as if they are `strings` they are not
+  * When you access a strings index like they the values are converted into `char`s:
+```C#
+    string str = "blue";
+    string reversed = "";
+
+    for (int i = 0; i < str.Length; i++)
+    {
+      Console.WriteLine(str[i].GetType());
+    }
+```
+### Summing an Array
+* Another pattern you might have to work with is computing some value using all the elements within an array:
+```C#
+    int[] numbers = {2, -5, 13, 42};
+    int total = 0;
+
+    for (int i = 0; i < numbers.Length; i++)
+    {
+      total += numbers[i];
+    }
+
+    Console.WriteLine(total);
+    // Outputs: 52
+```
+
+## while Loops
+* A `while loops` repeatedly executes a block of code for as long as a  conditional expression returns true
+### while Loop Syntax
+* `While loops` start with the `while keyword`
+  * They must include a boolean conditional that returns either true or false
+  * It executes its code block until the conditional returns false
+* Here is a quick image showcasing how a `while loop` executes:
+
+![Execution of a while loop](./assets/ch-9/execution-of-a-while-loop.png)
+* Here is the flow of execution for a while loop:
+  1. Evaluate the condition, which yields a value of true or false.
+  2. If the condition is false, exit the while loop and continue execution at the next statement after the loop body.
+  3. If the condition is true, execute the loop body and then go back to step 1.
+
+### for Loops Rewritten as while Loops
+* Let's try converting this `for loop` into a `while loop`:
+```C#
+    for (int i = 0; i < 100; i++)
+    {
+      Console.WriteLine(i);
+    }
+```
+```C#
+    int i = 0;
+
+    while (i< 100)
+    {
+        Console.WriteLine(i);
+        i++;
+    }
+```
+* The main difference here is how we update our expression:
+  * Before we declare the `while loop` we create a variable and set its value to 0
+    * Then once the `while loop` executes the first time our condition evaluates as true
+    * This allows us to print the number to the console
+    * Our incrementor increases the value of `i`
+    * We rinse and repeat this until our condition evaluates as false
+
+### Beyond for Loops
+* Next up we look at how to handle `input validation`:
+```C#
+    string prompt = "Please enter a positive number: ";
+    Console.WriteLine(prompt);
+    string input = Console.ReadLine();
+    int num = Int32.Parse(input);
+
+    while (num <= 0)
+    {
+      Console.WriteLine(prompt);
+      input = Console.ReadLine();
+      num = Int32.Parse(input);
+    }
+
+    Console.WriteLine("Your number was: " + num);
+```
+* The main thing being showcased here is that we can utilize a `while loop` to give our program an extra layer of functionality
+* When the program initially runs:
+    1. We create a variable called `prompt` which stores a string
+    2. We print `prompt` to the console
+    3. We then as the user to provide the program a positive number
+    4. Once the user provides a number the `while loop` runs
+    5. The `while loop` checks to see if the positive or not:
+       * If it is positive the `while loop`'s condition evaluates true and it ends the program
+       * If the number is not positive the `while loop` will run the prompt again until the user provides a positive number
+* The main thing to understand here is that by utilizing a `while loop` you are able to create dynamic logic that could potentially run indefinitely until your condition is met
+
+### Infinite Loops, Revisited
+* Just as there is the potential to create an `infinite loop` with a `for loop` you could possibly make one with a `while loop`
+* So be sure you double check you logic when working with any type of loop
+
+```C#
+    int i = 0;
+
+    while (i < 51)
+    {
+      Console.WriteLine(i);
+    }
+```
+* With this example we never set an increment so the value of `i` never changes which mean the `while loop`'s condition will never evaluate to be false
+```C#
+int i = 0;
+
+while (i < 51)
+{
+   Console.WriteLine(i);
+   i--;
+}
+```
+* With this example there is a decrementer but that means we will keep subtracting 1 from `i` every time the loop executes which means `i` will never be higher than 51
+
+## Terminating a Loop With break
+* The `break` keyword will immediately kill a loop's execution
+  * You can use the `break` keyword in any kind of loop:
+
+```C#
+    //Outer Loop
+    for (int i = 0; i < 42; i++)
+    {
+
+      // rest of loop body
+      Console.WriteLine(i);
+
+      // Inner Loop
+      if (i > 10)
+      {
+          break;
+      }
+    }
+```
+* In this example the outer loop will run until the condition of the inner loop is met then at that point the inner loop will cease the functions of the entire program
+  * This is what we call a `nested for loop`
+* Next let's take a look at the `break` keyword in a `while` loop
+```C#
+  int[] numbers = { 2, 86, -19, 33, 450, 42 };
+  int searchVal = 42;
+  int i = 0;
+
+
+  while (i < numbers.Length)
+  {
+    Console.WriteLine(i);
+    if (numbers[i] == searchVal)
+    {
+        break;
+    }
+    i++;
+  }
+
+  if (i < numbers.Length)
+  {
+    Console.WriteLine("The value was located at index: " + i);
+  }
+  else
+  {
+    Console.WriteLine("The value is not in the array.");
+  }
+```
+* What do you think is going on here?
+
+## Choosing Which Loop to Use
+* `for` loops are typically used to iterate over fixed set of value which can be determined before the loop executes
+  * Due to this we can say `for` loops exhibit `definite iteration`
+* `while` loop are more free flowing and allow us to give us the ability to perform logic when there is no way to know exactly how many time we will need to execute the loop
+  * This is why we say `while` loops are `indefinite iteration`

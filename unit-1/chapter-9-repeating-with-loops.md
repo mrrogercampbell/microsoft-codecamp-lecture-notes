@@ -1,5 +1,4 @@
 # Repeating With Loops
-
 ## Iteration
 * `Iteration`: is a sequence of instructions that is continually repeated
 * There are `3` different types of iterations:

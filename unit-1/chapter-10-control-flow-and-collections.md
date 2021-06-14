@@ -321,7 +321,368 @@ do
    * If the clone is the jerk the condition will evaluate as true and the loop will terminate
    * If the condition does not evaluate as true the if statement ends and the `foreach` resumes it's code block and prints the current clone to the console and the loop continues to iterate
 ## Collections
+* In C# when it comes to creating and grouping related objects you have two options:
+1. Creating `array`s of `object`s
+2. Creating `collection`s of `object`s
+* `Array`s are most useful for working with data types that will have fixed numbers of object
+* Where as `collection`s provide us a more flexible `data structure` to group our `object`s
+* `Collection`s allow us to dynamically grow and shrink our group objects based on the needs of our application(s)
+## Data Structures
+* In very simple terms a `data structure` is a structure that allows us to hold multiple pieces of data in on place
+* There are many different data structures that exist and every language has its own types and or variations
 
+### C# Collections Namespace
+* `Namespaces` are a major concept within C#, one in which we will cover more in depth as we progress within this course
+* `Namespaces` are utilized with in C# in two ways:
+1. `.NET` uses `namespaces` to organize the slew of classes that it has available
+    * Currently we have worked with just the `System` `namespace`
+      * `Console` is a class that is defined within the `System` `namespace
+2. You are able to declare your own `namespaces` so that you can create custom classes
+   * We will learn more about this later
+* For the remainder of this lesson we will focus on focus on two collections called `List` and `Dictionary` which are housed within the `System.Collections.Generic` namespace
+### using
+* So up until now you have been briefly aware of the `using` statement
+  * Its the blue highlighted keyword up there on line 1
+* What you haven't realized (or maybe you have) is that this powerful statement enables you to access classes, method, and data stored in different namespaces (ie: files)
+  * When you write `Console.WriteLine()` the complier actually accesses the `System` namespace and locates the `Console` class and in turn then finds `WriteLine` method
+  * Oh you don't believe me?!
+  * Try this out, open `repl.it` and remove the `using System` from line 1 and then inside the `MainClass` write `System.Console.WriteLine("Wait What?! That's what it was doing??");`
+```C#
+class MainClass {
+  public static void Main (string[] args) {
 
-## <#.5 Subtitles>
-### <#.1.1 Subtitle>
+    System.Console.WriteLine("Wait What?! That's what it was doing??");
+
+  }
+}
+```
+* **Gotchas**:
+  * The `using` statement doesn't actually load the class into memory, that job is left up to the `assembly`
+  * The `assembly` is the unit of complied code created by the compiler
+  * The `using` statement communicates to the compiler that we have utilized a shorthand version of the class's name
+
+### using System.Collections.Generic
+* The `System` `namespace` enables our program to utilize `primitive data types`
+  * But now my ducklings its time to spread those wings some and splash around a different part of the pond
+* Now we will begin using the `System.Collections.Generic` namespace and in turn will add a new line of code to line 2:
+```C#
+using System;
+using System.Collections.Generic;  //add this line
+```
+## Lists
+* In C# we have a class called `List`
+* A `List` is similar to an `Array` in the sense that it is `mutable`
+* Yet unlike an `Array` you are able to declare a `List` without a specif size
+* `List` have methods available to them that allow you to modify their size
+
+### List Initialization
+* Same as with `arrays` there are multiple ways to initialize a `list`:
+1. We can initialize by providing some element when we initialize the list:
+```C#
+// This syntax you will see in documentation as a template for how to create specific collections
+// Do not add this to you code
+List<T> newList = new List<T> {element1, element2, element3};
+
+    List<string> troopers = new List<string>
+    {
+      "Johnny Rico",
+      "Carmen Ibanez",
+      "Dizzy Flores",
+      "Sugar Watkins",
+      "Sgt. Charles Zim"
+    };
+
+    foreach(string trooper in troopers)
+    {
+      Console.WriteLine(trooper);
+    }
+
+    // Outputs: Johnny Rico
+    // Outputs: Carmen Ibanez
+    // Outputs: Dizzy Flores
+    // Outputs: Sugar Watkins
+    // Outputs: Sgt. Charles Zim
+```
+* `List<T> newList = new List<T> {element1, element2, element3};` - is a template syntax you will see in documentation for how to create specific collections:
+  * `<T>` represent a placeholder for `data type`
+    * In our example we create a `list` of `string`s so we replace the `T` with `string`
+  * `{element1, element2, element3}` - is a template for the elements (items) you could add to the `list`
+    * In our example we replaced `element1` with `Johnny Rico`
+2. We can `declare` a `list` and `initialize` it with the `Add()` method:
+```C#
+// This syntax you will see in documentation as a template for how to create specific collections
+// Do not add this to you code
+List<T> newList = new List<T>();
+   newList.Add(element1);
+   newList.Add(element2);
+   newList.Add(element3);
+   newList.Add(element4);
+
+    List<string> troopers = new List<string>();
+      troopers.Add("Johnny Rico");
+      troopers.Add("Carmen Ibanez");
+      troopers.Add("Sugar Watkins");
+      troopers.Add("Dizzy Flores");
+      troopers.Add("Sgt. Charles Zim");
+
+    foreach(string trooper in troopers)
+    {
+      Console.WriteLine(trooper);
+    }
+
+    // Outputs: Johnny Rico
+    // Outputs: Carmen Ibanez
+    // Outputs: Dizzy Flores
+    // Outputs: Sugar Watkins
+    // Outputs: Sgt. Charles Zim
+```
+3. The final way is to pull elements from an `array` into a `list`
+```C#
+type[] demoArray = {element1, element2, element3};
+List<T> demoList = new List<T>(demoArray);
+
+    string[] troopersArray =
+    {
+      "Johnny Rico",
+      "Carmen Ibanez",
+      "Dizzy Flores",
+      "Sugar Watkins",
+      "Sgt. Charles Zim"
+    };
+
+    List<string> listOfTroopers = new List<string>(troopersArray);
+
+    foreach(string trooper in listOfTroopers)
+    {
+      Console.WriteLine(trooper);
+    }
+    // Outputs: Johnny Rico
+    // Outputs: Carmen Ibanez
+    // Outputs: Dizzy Flores
+    // Outputs: Sugar Watkins
+    // Outputs: Sgt. Charles Zim
+```
+
+* **Gotcha**:
+  * "There is no wrong way to code, except the way that doesn't work" - Roger Campbell II
+    * ie: Don't worry about which of the above is the "best" way to do this
+    * Pick one that works well for you and or your use case and keep on hacking!!
+
+### List Methods
+* So as you can probably imagine since `List` are a class they have... `Method`s!
+  * We have already messed around with one above which was the `Add()` method
+* Checkout the list below for more commonly used `List` `method`s
+  * Also feel free to checkout the [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.list-1?view=netframework-4.8#methods)
+
+| C# Syntax  | Description                                                                                                           |
+| ---------- | --------------------------------------------------------------------------------------------------------------------- |
+| Add()      | Adds an item to the List                                                                                              |
+| Contains() | Checks to see if the List contains a given item, returning a Boolean                                                  |
+| IndexOf()  | Looks for an item in a List, returns the index of the first occurrence of the item if it exists, returns -1 otherwise |
+| Reverse()  | Reverses the elements of a List                                                                                       |
+| Sort()     | Rearranges the elements of an List into ascending order.                                                              |
+| Remove()   | Removes first occurrence of a specified object                                                                        |
+| ToArray()  | Returns an Array containing the elements of the List                                                                  |
+
+## List Gradebook
+* Let's step through this code:
+```C#
+using System;
+using System.Collections.Generic;
+
+class MainClass
+{
+   static void Main(string[] args)
+   {
+      List<string> students = new List<string>();
+      List<double> grades = new List<double>();
+      string newStudent;
+      string input;
+
+      Console.WriteLine("Enter your students (or ENTER to finish):");
+
+      // Get student names
+      do
+      {
+         input = Console.ReadLine();
+         newStudent = input;
+
+         if (!Equals(newStudent, "")) {
+            students.Add(newStudent);
+         }
+
+      } while(!Equals(newStudent, ""));
+
+      // Get student grades
+      foreach (string student in students) {
+         Console.WriteLine("Grade for " + student + ": ");
+         input = Console.ReadLine();
+         double grade = double.Parse(input);
+         grades.Add(grade);
+      }
+
+      // Print class roster
+      Console.WriteLine("\nClass roster:");
+      double sum = 0.0;
+
+      for (int i = 0; i < students.Count; i++) {
+         Console.WriteLine(students[i] + " (" + grades[i] + ")");
+         sum += grades[i];
+      }
+
+      double avg = sum / students.Count;
+      Console.WriteLine("Average grade: " + avg);
+   }
+}
+```
+### List Iteration
+#### do-while Loop
+```C#
+// Get student names
+do
+{
+   newStudent = Console.ReadLine();
+
+   if (!Equals(newStudent, "")) {
+      students.Add(newStudent);
+   }
+
+} while(!Equals(newStudent, ""));
+```
+1. We initialize a `do-while` loop with the `do` statement
+2. The loop's code block will execute at least one due to the fact that it is a `do-while` loop and then the condition will be evaluation
+3. We take the users input and evaluate if `newStudent` is not equal to an empty string
+    * _Side note_: The `Equal()` function test to see if two provided `objects` are equal to each other
+      * ie:
+        * `Console.WriteLine(Equals("", ""));` would return `True`
+        * `Console.WriteLine(Equals("t", ""));` would return `False`
+#### foreach
+```C#
+// Get student grades
+foreach (string student in students) {
+   Console.WriteLine("Grade for " + student + ": ");
+   string input = Console.ReadLine();
+   double grade = double.Parse(input);
+   grades.add(grade);
+}
+```
+* This snippet is just demonstrating to you that you are able to iterate over a `list` with a `foreach` loop
+
+#### for
+```C#
+// Print class roster
+Console.WriteLine("\nClass roster:");
+double sum = 0.0;
+
+for (int i = 0; i < students.Count; i++) {
+   Console.WriteLine(students[i] + " (" + grades[i] + ")");
+   sum += grades[i];
+}
+```
+* Here we are able to see that each instance of a `list` has `properties` that will provide you more information about it:
+  * The `Count` property is very similar to a `String`'s `Length` property in the fact that it returns the total number of items stored within a `list`
+
+## Array
+* Let's talk through some comparisons between `List`s and `Array`s:
+1. `Array`s are one of C#'s most basic `data structures`
+2. In regards to performance `Array`s generally operate faster than `List`
+3. Yet `array`'s are limited by a fixed sized
+   * Meaning once you initialize an `array` it is difficult to add new indices to it
+4. Where as a `List` has the `Add()` method which easily allows you to add new items to it
+   * There are also `method` that can be used to remove items from `list`
+5. There are many other difference between the two as always I personally would not say one is better than the other I feel it just comes down to your particular use case
+
+## Dictionary
+* So where a `List` give us more control over data than an `Array`, `Dictionaries` add a new way of being able to group data
+* When utilizing a `Dictionary` we are able to pair our data
+  * This paradigm of paring data is referred to as a `key/value pair`
+    * The `key` is a reference that we provide to stored data
+      * ie: if we wanted to store a student's grades we could provide a student id or their name as the `key`
+    * The `value` is the data we would like to be stored with in that reference
+
+### Dictionary Initialization
+* So I bet you are seeing a pattern here...
+* There are a few ways to `initialize` a `dictionary`:
+
+1. Like this:
+```C#
+// This syntax you will see in documentation as a template for how to create specific collections
+
+// Dictionary<TKey, TValue> newDictionary = new Dictionary<TKey, TValue>
+// {
+//    {key1, value1},
+//    {key2, value2},
+//    {key3, value3}
+// };
+
+     Dictionary<string, string> creators = new Dictionary<string, string>
+     {
+       {"Star Trek", "Eugene Wesley Roddenberry"},
+       {"Star Wars", "George Walton Lucas Jr."},
+       {"Stargate", "Brad Wright"}
+     };
+```
+2. We can utilize `index initialization`:
+```C#
+// This syntax you will see in documentation as a template for how to create specific collections
+
+// Dictionary<TKey, TValue> demoDictionary = new Dictionary<KeyT, ValueT>
+// {
+//    [key1] = value1,
+//    [key2] = value2,
+//    [key3] = value3
+// };
+
+     Dictionary<string, string> creators = new Dictionary<string, string>
+     {
+       ["Star Trek"] = "Eugene Wesley Roddenberry",
+       ["Star Wars"] = "George Walton Lucas Jr.",
+       ["Stargate"] = "Brad Wright"
+     };
+```
+3. And the last is where we can declare a `dictionary` and use the `Add()` Method:
+```C#
+// This syntax you will see in documentation as a template for how to create specific collections
+//    Dictionary<TKey, TValue> methodDictionary = new Dictionary<TKeym TValue>();
+//    methodDictionary.Add(key1, value1);
+//    methodDictionary.Add(key2, value2);
+//    methodDictionary.Add(key3, value3);
+
+     Dictionary<string, string> creators = new Dictionary<string, string>();
+
+       creators.Add("Star Trek", "Eugene Wesley Roddenberry");
+       creators.Add("Star Wars", "George Walton Lucas Jr.");
+       creators.Add("Stargate", "Brad Wright");
+
+     Console.WriteLine(creators["Star Trek"]);
+```
+* As always the choice is yours!
+
+### Accessing Dictionary Elements
+* You are able to access a `dictionary` via the `bracket notation`:
+  * This is also consider the `indexer` when talking about `dictionaries`
+```C#
+     Dictionary<string, string> creators = new Dictionary<string, string>();
+
+       creators.Add("Star Trek", "Eugene Wesley Roddenberry");
+       creators.Add("Star Wars", "George Walton Lucas Jr.");
+       creators.Add("Stargate", "Brad Wright");
+
+     Console.WriteLine(creators["Star Trek"]);
+
+     // Outputs: Eugene Wesley Roddenberry
+```
+
+### Dictionary Methods
+* As always there are methods that you can use with the `Dictionary` class
+* See this list below for some commonly used ones
+
+| C# Syntax       | Description                                                                                                                                                                             |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Count           | Returns the number of items in the dictionary, as an int.                                                                                                                               |
+| Key             | Returns a collection containing all keys in the dictionary. This collection may be used in a foreach loop just as lists are, but the dictionary may not be modified within such a loop. |
+| Value           | Returns a collection containing all values in the dictionary. This collection may be used in a foreach loop just as lists are.                                                          |
+| Add()           | Add a key/value pair to a dictionary.                                                                                                                                                   |
+| Remove()        | Removes a key/value pair to a dictionary using key as a reference.                                                                                                                      |
+| ContainsKey()   | Returns a boolean indicating whether or not the dictionary contains a given key.                                                                                                        |
+| ContainsValue() | Returns a boolean indicating whether or not the dictionary contains a given value.                                                                                                      |

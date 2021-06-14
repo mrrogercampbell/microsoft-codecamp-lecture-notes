@@ -684,10 +684,15 @@ for (int i = 0; i < students.Count; i++) {
 ```
 * Now let's say you want to store an `array` as a value within a `dictionary`
 ```C#
+    // Create an array that we will store in our dictionary
     string[] originalTrilogy = {"A New Hope","The Empire Strikes Back", "Return of the Jedi"};
 
+    // Declare a dictionary that stores Strings a Keys and Arrays of Strings as values
     Dictionary<string, string[]> starWarsTrilogies;
 
+    // Initialize the dictionary and
+    // Set it value equal to a String Key = "originalTrilogy"
+    // Set it Value = the originalTrilogy array we created above
     starWarsTrilogies = new Dictionary<string, string[]>
     {
       {"originalTrilogy", originalTrilogy}

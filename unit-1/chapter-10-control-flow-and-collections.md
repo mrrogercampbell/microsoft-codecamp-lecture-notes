@@ -640,7 +640,7 @@ for (int i = 0; i < students.Count; i++) {
        ["Stargate"] = "Brad Wright"
      };
 ```
-3. And the last is where we can declare a `dictionary` and use the `Add()` Method:
+3. We can also declare a `dictionary` and use the `Add()` Method:
 ```C#
 // This syntax you will see in documentation as a template for how to create specific collections
 //    Dictionary<TKey, TValue> methodDictionary = new Dictionary<TKeym TValue>();
@@ -653,8 +653,18 @@ for (int i = 0; i < students.Count; i++) {
        creators.Add("Star Trek", "Eugene Wesley Roddenberry");
        creators.Add("Star Wars", "George Walton Lucas Jr.");
        creators.Add("Stargate", "Brad Wright");
+```
+4. You can also declare the `dictionary` and initialize its value later
 
-     Console.WriteLine(creators["Star Trek"]);
+```C#
+    Dictionary<string, string> creators;
+
+    creators = new Dictionary<string, string>
+    {
+      {"Star Trek", "Eugene Wesley Roddenberry"},
+      {"Star Wars", "Star War"},
+      {"Stargate", "Brad Wright"}
+    };
 ```
 * As always the choice is yours!
 
@@ -672,6 +682,29 @@ for (int i = 0; i < students.Count; i++) {
 
      // Outputs: Eugene Wesley Roddenberry
 ```
+* Now let's say you want to store an `array` as a value within a `dictionary`
+```C#
+    string[] originalTrilogy = {"A New Hope","The Empire Strikes Back", "Return of the Jedi"};
+
+    Dictionary<string, string[]> starWarsTrilogies;
+
+    starWarsTrilogies = new Dictionary<string, string[]>
+    {
+      {"originalTrilogy", originalTrilogy}
+    };
+
+    foreach(KeyValuePair<string, string[]> kvp  in starWarsTrilogies)
+    {
+      Console.WriteLine($"In the outer loop you can get the key: {kvp.Key}");
+      Console.WriteLine("<----------------------->");
+
+      foreach(var film in kvp.Value)
+      {
+      Console.WriteLine($"In the Inner Loop you can get the value: {film}");
+      }
+    }
+```
+* In order to make this work you must utilize the [KeyValuePair<TKey,TValue> Struct](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2?view=net-5.0)
 
 ### Dictionary Methods
 * As always there are methods that you can use with the `Dictionary` class

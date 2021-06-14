@@ -263,6 +263,7 @@ Console.WriteLine(reversed);
 // Outputs: eulb
 ```
 * Let's check out this visual aide to help us step through the code:
+
 | Loop iteration           | i           | str[i]      | reversed |
 | ------------------------ | ----------- | ----------- | -------- |
 | (before first iteration) | not defined | not defined | ""       |

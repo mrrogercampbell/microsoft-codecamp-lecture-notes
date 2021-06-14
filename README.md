@@ -16,8 +16,8 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * [Chapter 6: Errors and Debugging Lecture](./unit-1/chapter-6-errors-and-debugging.md)
   * [Chapter 7: Stringing Characters Together](unit-1/chapter-7-stringing-characters-together.md)
   * [Chapter 8: Arrays Keep Things in Order](./unit-1/chapter-8-arrays-keep-things-in-order.md)
-  * [Chapter 9: Repeating With Loops](unit-1/chapter-9-repeating-with-loops.md)
-  * [Chapter 10: Control Flow and Collections](unit-1/chapter-10-control-flow-and-collections.md)
+  * [Chapter 9: Repeating With Loops](./unit-1/chapter-9-repeating-with-loops.md)
+  * [Chapter 10: Control Flow and Collections](./unit-1/chapter-10-control-flow-and-collections.md)
 
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful

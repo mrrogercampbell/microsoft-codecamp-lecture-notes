@@ -1,6 +1,24 @@
 # Dictionary Code Example
 I pulled this info from [Most Common C# Dictionary Code Examples](https://www.c-sharpcorner.com/UploadFile/mahesh/dictionary-in-C-Sharp/), by [Mahesh Chand](https://www.c-sharpcorner.com/members/mahesh-chand). I just wanted to update some of the syntax being used.
 
+## Table of Content
+- [Dictionary Code Example](#dictionary-code-example)
+  - [Table of Content](#table-of-content)
+  - [Add elements to a C# Dictionary](#add-elements-to-a-c-dictionary)
+  - [Retrieve elements from a C# Dictionary](#retrieve-elements-from-a-c-dictionary)
+  - [C# Dictionary Properties](#c-dictionary-properties)
+    - [Get number of elements in a C# dictionary](#get-number-of-elements-in-a-c-dictionary)
+    - [Get a Dictionary item](#get-a-dictionary-item)
+    - [Get the collection of keys of C# Dictionary](#get-the-collection-of-keys-of-c-dictionary)
+    - [Get the collection of values of a C# Dictionary](#get-the-collection-of-values-of-a-c-dictionary)
+  - [C# Dictionary Methods](#c-dictionary-methods)
+    - [Add Items](#add-items)
+    - [Remove elements from a C# dictionary](#remove-elements-from-a-c-dictionary)
+    - [Find a Key in a Dictionary](#find-a-key-in-a-dictionary)
+    - [Find a Value in a Dictionary](#find-a-value-in-a-dictionary)
+    - [C# Dictionary Code Example](#c-dictionary-code-example)
+- [Drills](#drills)
+
 C# Dictionary class is a generic collection of keys and values pair of data. The Dictionary class defined in the System.Collections.Generic namespace is a generic class and can store any data types in a form of keys and values. Each key must be unique in the collection.
 
 Before you use the Dictionary class in your code, you must import the System.Collections.Generic namespace using the following line.

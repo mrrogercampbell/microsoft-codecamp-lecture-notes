@@ -18,6 +18,7 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * [Chapter 8: Arrays Keep Things in Order](./unit-1/chapter-8-arrays-keep-things-in-order.md)
   * [Chapter 9: Repeating With Loops](./unit-1/chapter-9-repeating-with-loops.md)
   * [Chapter 10: Control Flow and Collections](./unit-1/chapter-10-control-flow-and-collections.md)
+    * [Resource: Most Common C# Dictionary Code Examples](./unit-1/extras/dictionary-code-examples.md)
   * [Chapter 11: Methods](./unit-1/chapter-11-methods.md)
 
 ## Resources

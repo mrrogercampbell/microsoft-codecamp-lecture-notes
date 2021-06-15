@@ -1,4 +1,30 @@
 # Chapter 10: Control Flow and Collections
+- [Chapter 10: Control Flow and Collections](#chapter-10-control-flow-and-collections)
+  - [switch Statements vs. else if](#switch-statements-vs-else-if)
+    - [switch Statements](#switch-statements)
+  - [More Loops and Break Statements](#more-loops-and-break-statements)
+    - [foreach Loop](#foreach-loop)
+    - [do-while Loop](#do-while-loop)
+    - [Break Statements in Loops](#break-statements-in-loops)
+  - [Collections](#collections)
+  - [Data Structures](#data-structures)
+    - [C# Collections Namespace](#c-collections-namespace)
+    - [using](#using)
+    - [using System.Collections.Generic](#using-systemcollectionsgeneric)
+  - [Lists](#lists)
+    - [List Initialization](#list-initialization)
+    - [List Methods](#list-methods)
+  - [List Gradebook](#list-gradebook)
+    - [List Iteration](#list-iteration)
+      - [do-while Loop](#do-while-loop-1)
+      - [foreach](#foreach)
+      - [for](#for)
+  - [Array](#array)
+  - [Dictionary](#dictionary)
+    - [Dictionary Initialization](#dictionary-initialization)
+    - [Accessing Dictionary Elements](#accessing-dictionary-elements)
+    - [Dictionary Methods](#dictionary-methods)
+  - [Whats Next](#whats-next)
 ## switch Statements vs. else if
 ### switch Statements
 * The `switch` statement in C# is a selection statement
@@ -724,3 +750,11 @@ for (int i = 0; i < students.Count; i++) {
 | Remove()        | Removes a key/value pair to a dictionary using key as a reference.                                                                                                                      |
 | ContainsKey()   | Returns a boolean indicating whether or not the dictionary contains a given key.                                                                                                        |
 | ContainsValue() | Returns a boolean indicating whether or not the dictionary contains a given value.                                                                                                      |
+
+## Whats Next
+This section tell the lead instructor, teaching assistants, and students what to expect next.
+
+1. First, student will need to complete (In this order):
+   1. [Exercises: Control Flow and Collections](https://education.launchcode.org/intro-to-programming-csharp/chapters/collections-and-flow/exercises.html)
+2. Then students should read [Chapter 11: Methods](https://education.launchcode.org/intro-to-programming-csharp/chapters/methods/index.html)
+3. Then students will sit for [Chapter 11's Lecture](./chapter-11-methods.md)

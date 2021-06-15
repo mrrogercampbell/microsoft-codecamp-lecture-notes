@@ -1,4 +1,21 @@
 # Chapter 7: Stringing Characters Together
+- [Chapter 7: Stringing Characters Together](#chapter-7-stringing-characters-together)
+  - [Strings as Collections](#strings-as-collections)
+    - [Collection Data Types](#collection-data-types)
+    - [Ordered Collections](#ordered-collections)
+  - [Bracket Notation](#bracket-notation)
+  - [Strings as Objects](#strings-as-objects)
+    - [Object Terminology](#object-terminology)
+      - [Dot Notation](#dot-notation)
+    - [String Are Objects](#string-are-objects)
+  - [String Immutability](#string-immutability)
+  - [String Methods](#string-methods)
+    - [Common String Methods](#common-string-methods)
+  - [Encoding Characters](#encoding-characters)
+  - [Special Characters](#special-characters)
+  - [String Interpolation](#string-interpolation)
+    - [Composite Format Strings](#composite-format-strings)
+  - [Whats Next](#whats-next)
 ## Strings as Collections
 * Up to this point we have look at `strings` from a very limited perspective
 * `String` are like onions.. They have layers:

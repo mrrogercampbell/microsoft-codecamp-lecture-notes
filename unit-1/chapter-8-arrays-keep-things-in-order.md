@@ -1,4 +1,19 @@
 # Chapter 8: Arrays Keep Things in Order
+- [Chapter 8: Arrays Keep Things in Order](#chapter-8-arrays-keep-things-in-order)
+  - [Arrays Are Like Strings](#arrays-are-like-strings)
+    - [Declaring An Array](#declaring-an-array)
+      - [The new Operator](#the-new-operator)
+    - [Array Length](#array-length)
+  - [Working With Arrays](#working-with-arrays)
+    - [Bracket Notation and Index](#bracket-notation-and-index)
+    - [Arrays are Mutable](#arrays-are-mutable)
+  - [Array Methods](#array-methods)
+  - [Multidimensional Arrays](#multidimensional-arrays)
+    - [Two Dimensional Arrays](#two-dimensional-arrays)
+      - [A More Concise Way to Make a 2D Array](#a-more-concise-way-to-make-a-2d-array)
+      - [Rank and Length Properties](#rank-and-length-properties)
+    - [Multidimensional and Array Methods](#multidimensional-and-array-methods)
+  - [Whats Next](#whats-next)
 ## Arrays Are Like Strings
 * `Arrays` are a sequence of values of one data type which can be accessed by an `index`
 * Similar to `strings` ones an array is created with value you can not increase or decrease its size
@@ -293,7 +308,7 @@ string[] starships = {"Galactica", "USS Enterprise", "Millennium Falcon", "Range
 This section tell the lead instructor, teaching assistants, and students what to expect next.
 
 1. First, student will need to complete (In this order):
-   1. [Exercises: Arrays]([provide-link-here](https://education.launchcode.org/intro-to-programming-csharp/chapters/arrays/exercises.html))
-   2. [Studio: Strings and Arrays]([provide-link-here](https://education.launchcode.org/intro-to-programming-csharp/chapters/arrays/studio.html))
-2. Then students should read [Chapter 9: Repeating With Loops]([provide-link-here](https://education.launchcode.org/intro-to-programming-csharp/chapters/loops/index.html))
-3. Then students will sit for [Chapter 9's Lecture](provided-link-here)
+   1. [Exercises: Arrays](https://education.launchcode.org/intro-to-programming-csharp/chapters/arrays/exercises.html)
+   2. [Studio: Strings and Arrays](https://education.launchcode.org/intro-to-programming-csharp/chapters/arrays/studio.html)
+2. Then students should read [Chapter 9: Repeating With Loops](https://education.launchcode.org/intro-to-programming-csharp/chapters/loops/index.html)
+3. Then students will sit for [Chapter 9's Lecture](./chapter-9-repeating-with-loops.md)

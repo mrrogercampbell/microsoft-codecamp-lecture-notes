@@ -1,4 +1,27 @@
 # Repeating With Loops
+- [Repeating With Loops](#repeating-with-loops)
+  - [Iteration](#iteration)
+- [for Loops](#for-loops)
+  - [Iterating Over Collections](#iterating-over-collections)
+    - [Iterating Over Strings](#iterating-over-strings)
+    - [Iterating Over Arrays](#iterating-over-arrays)
+  - [Breaking Down the for Statement](#breaking-down-the-for-statement)
+    - [for Loop Anatomy](#for-loop-anatomy)
+      - [Initial Expression](#initial-expression)
+      - [Loop Condition](#loop-condition)
+      - [Update Expression](#update-expression)
+  - [The Accumulator Pattern](#the-accumulator-pattern)
+    - [Adding 1..n](#adding-1n)
+    - [Reversing a String](#reversing-a-string)
+    - [Summing an Array](#summing-an-array)
+  - [while Loops](#while-loops)
+    - [while Loop Syntax](#while-loop-syntax)
+    - [for Loops Rewritten as while Loops](#for-loops-rewritten-as-while-loops)
+    - [Beyond for Loops](#beyond-for-loops)
+    - [Infinite Loops, Revisited](#infinite-loops-revisited)
+  - [Terminating a Loop With break](#terminating-a-loop-with-break)
+  - [Choosing Which Loop to Use](#choosing-which-loop-to-use)
+  - [Whats Next](#whats-next)
 ## Iteration
 * `Iteration`: is a sequence of instructions that is continually repeated
 * There are `3` different types of iterations:
@@ -457,3 +480,11 @@ while (i < 51)
   * Due to this we can say `for` loops exhibit `definite iteration`
 * `while` loop are more free flowing and allow us to give us the ability to perform logic when there is no way to know exactly how many time we will need to execute the loop
   * This is why we say `while` loops are `indefinite iteration`
+
+## Whats Next
+This section tell the lead instructor, teaching assistants, and students what to expect next.
+
+1. First, student will need to complete (In this order):
+   1. [Assignment #1: Candidate Testing](https://education.launchcode.org/intro-to-programming-csharp/assignments/candidateQuiz.html)
+2. Then students should read [Chapter 10: Control Flow and Collections](https://education.launchcode.org/intro-to-programming-csharp/chapters/collections-and-flow/index.html)
+3. Then students will sit for [Chapter 10's Lecture](./chapter-10-control-flow-and-collections.md)

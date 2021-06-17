@@ -1,7 +1,7 @@
 # Methods Exercise
 Please complete the following prompts.
 
-## Part 1: Arithmetic
+## Arithmetic
 1. Create a method called Addition that expects two numbers as parameters and returns the sum of the first number added to the second number.
 ```C#
 Addition(2,5);
@@ -32,8 +32,8 @@ Modulation(50,10);
 Exponentiation(35,5);
 // Outputs: 52521875
 ```
-# Part 2: Printing Things to The Console
-1. Create a method called PrintArray that expects an array of any data type as an argument. It should iterate over the items within the array and print each one to the console.
+# Printing Things to The Console
+1. Create a method called PrintStringArray that expects an array of string data type as an argument. It should iterate over the items within the array and print each one to the console.
 ```C#
 string[] people = { "Johnny", "Sue", "Tyrone"};
 
@@ -42,11 +42,11 @@ PrintStringArray(people);
 // Outputs: Sue
 // Outputs: Tyrone
 ```
-2. Create a method called PrintList that expects a String List as an argument and prints each item within the List to the console.
+2. Create a method called PrintStringList that expects a String Array as an argument and prints each item within the List to the console.
 ```C#
-string[] arrOfCharacters = {"The Tic", "Birdman", "Batman"};
+List<string> ListOfCharacters = new List<string>{"The Tic", "Birdman", "Batman"};
 
-PrintStringList(charList);
+PrintStringList(arrayOfCharacters);
 
 // Outputs: The Tic
 // Outputs: Birdman
@@ -66,7 +66,7 @@ PrintDict(operatingSystems);
 // Outputs: key: 2 | value: Windows
 // Outputs: key: 3 | value: Linux
 ```
-## Part 3: Creating Collections
+## Creating Collections
 1. Create a method called FillStrArray that expect at least three strings as arguments. FillStrArray should create a new array and print each item within it to the console. It should also return a newly created array with each string passed to it, meaning if you store the method evocation in a variable and print it to the console it should out put System.String[].
 ```C#
 string str1 = "Dude What's Mine Say?!";
@@ -101,10 +101,10 @@ Console.WriteLine(newIntArr);
 
 3. Create a method called FillList that expect an array of strings as arguments. FillList should create a new List and print each item within it to the console. It should also return the newly created List with each string item that was contained within the array argument; meaning if you store the method evocation in a variable and print it to the console it should out put System.String[].
 ```C#
-string[] arrOfCharacters =
+string[] characterArray =
 { "Birdman", "Batman", "Ed"};
 
-List<string> charList = FillList(arrOfCharacters);
+List<string> charList = FillList(characterArray);
 // Outputs: Birdman
 // Outputs: Batman
 // Outputs: Ed
@@ -127,5 +127,5 @@ Dictionary<int, string> newDict =  FillDict(intArr,stringArr);
 Console.WriteLine(newDict);
 // Outputs: System.Collections.Generic.Dictionary`2[System.Int32,System.String]
 ```
-## Part 4: Bonus
+## Bonus
 If you would like to continue testing your skills try completing the Method [Studio](https://education.launchcode.org/intro-to-programming-csharp/chapters/methods/studio.html) in the book.

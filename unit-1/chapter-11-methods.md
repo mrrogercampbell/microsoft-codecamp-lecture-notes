@@ -1,6 +1,6 @@
 # Methods
 * **Gotchas:**
-A little caveat before we continue. Since we have not encountered C# classes at this point, we will be working within the MainClass in your replit IDE, which limits us to working with static methods at this point. Static methods belong to the class they are created in, which in this chapter will be the MainClass.
+* Since we have not encountered C# classes at this point, we will be working within the MainClass in your replit IDE, which limits us to working with static methods at this point. Static methods belong to the class they are created in, which in this chapter will be the MainClass.
 
 When we learn about classes, we will learn about instance methods and be able to compare and contrast them to static methods. We will also be able to see a more usages and behaviors of static methods in a non-static environment.
 
@@ -37,7 +37,10 @@ Console.WriteLine("Hello World");
   * Basically `WriteLine` is a prepackaged action (ie: method) that you have access to whenever you would like
 * This concept of prepackaging our code to make it reusable is called `encapsulation`
   * `Encapsulation` is one of the four pillars of Object Oriented Programming
-* 
+
+
+
+<!-- In C# there is much less of a distinction, though the terms can still be used similarly. Instantiate literally means "to create an instance of". In programming, this generally means to create an instance of an object (generally on "the heap"). -->
 
 ## Method Signatures and Calls
 ### Method Signatures
@@ -50,15 +53,70 @@ Console.WriteLine("Hello World");
 ### Named and Optional Arguments
 #### Named Arguments
 #### Optional Arguments
-## Recursive Methods
-### FactorialRecursive A Recursive Example
-### FactorialLoop A Loop Example
-### Recursion or Loops?
 ## Scope
 ### Class Level Scope
 ### Method Level Scope
 ### Block Level Scope
+## Recursive Methods
+### FactorialRecursive A Recursive Example
+```C#
+using System;
 
+   class MainClass {
+
+   static double FactorialRecursive(double number)
+   {
+      if(number == 0)  //base case
+      {
+         return 1;
+      }
+        Console.WriteLine(number);
+      return number * FactorialRecursive(number-1); 
+      //calling function again.  Notice updated parameters
+   }
+
+   public static void Main (string[] args) {
+      // Start With 2 to show them the math
+      double testNumber = 2;
+
+      double factorialTest = FactorialRecursive(testNumber);
+
+      Console.WriteLine(factorialTest + " is the factorial outcome of " + testNumber);
+   }
+}
+```
+### FactorialLoop A Loop Example
+* My example
+```C#
+using System;
+
+   class MainClass {
+
+   static double FactorialLoop(double number)
+   {
+      double factorial = 1;
+
+      for(double i = number; i >= 1; i--)
+      {
+         factorial = factorial * i;
+         Console.WriteLine($"factorial: {factorial} | {factorial} * {i} \ni: {i}");
+         Console.WriteLine("<--------------->");
+      }
+
+      return factorial;
+   }
+
+   public static void Main (string[] args) {
+
+      double testNumber = 7;
+
+      double factorialTest = FactorialLoop(testNumber);
+
+      Console.WriteLine(factorialTest + " is the factorial outcome of " + testNumber);
+   }
+}
+```
+### Recursion or Loops?
 ## Whats Next
 This section tell the lead instructor, teaching assistants, and students what to expect next.
 

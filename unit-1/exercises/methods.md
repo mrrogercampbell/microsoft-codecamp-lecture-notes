@@ -127,3 +127,5 @@ Dictionary<int, string> newDict =  FillDict(intArr,stringArr);
 Console.WriteLine(newDict);
 // Outputs: System.Collections.Generic.Dictionary`2[System.Int32,System.String]
 ```
+## Part 4: Bonus
+If you would like to continue testing your skills try completing the Method [Studio](https://education.launchcode.org/intro-to-programming-csharp/chapters/methods/studio.html) in the book.

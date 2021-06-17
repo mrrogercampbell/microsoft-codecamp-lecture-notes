@@ -35,25 +35,16 @@ Exponentiation(35,5);
 # Part 2: Printing Things to The Console
 1. Create a method called PrintArray that expects an array of any data type as an argument. It should iterate over the items within the array and print each one to the console.
 ```C#
-    string[] people = {
-      "Johnny",
-      "Sue",
-      "Tyrone",
-    };
+string[] people = { "Johnny", "Sue", "Tyrone"};
 
-    PrintStringArray(people);
-    // Outputs: Johnny
-    // Outputs: Sue
-    // Outputs: Tyrone
+PrintStringArray(people);
+// Outputs: Johnny
+// Outputs: Sue
+// Outputs: Tyrone
 ```
 2. Create a method called PrintList that expects a String List as an argument and prints each item within the List to the console.
 ```C#
-    string[] arrOfCharacters =
-    {
-      "The Tic",
-      "Birdman",
-      "Batman",
-    };
+string[] arrOfCharacters = {"The Tic", "Birdman", "Batman"};
 
 PrintStringList(charList);
 
@@ -65,9 +56,9 @@ PrintStringList(charList);
 ```C#
 Dictionary<int, string> operatingSystems = new Dictionary<int, string>
 {
- {1, "Mac"},
- {2, "Windows"},
- {3, "Linux"}
+    {1, "Mac"},
+    {2, "Windows"},
+    {3, "Linux"}
 };
 
 PrintDict(operatingSystems);
@@ -111,11 +102,7 @@ Console.WriteLine(newIntArr);
 3. Create a method called FillList that expect an array of strings as arguments. FillList should create a new List and print each item within it to the console. It should also return the newly created List with each string item that was contained within the array argument; meaning if you store the method evocation in a variable and print it to the console it should out put System.String[].
 ```C#
 string[] arrOfCharacters =
-{
-    "Birdman",
-    "Batman",
-    "Ed"
-};
+{ "Birdman", "Batman", "Ed"};
 
 List<string> charList = FillList(arrOfCharacters);
 // Outputs: Birdman
@@ -131,7 +118,7 @@ string[] stringArr = { "Birdman", "Batman", "Ed" };
 
 int[] intArr = { 1, 2, 3 };
 
-Dictionary<int, string> newDict =  FillDict(newIntarr,stringArr);
+Dictionary<int, string> newDict =  FillDict(intArr,stringArr);
 // Outputs: key: 1 | value: Dude What's Mine Say?!
 // Outputs: key: 2 | value: Sweet!!!
 // Outputs: key: 3 | value: What's Mine Say?!

@@ -83,7 +83,7 @@ string[] newStrArr = FillArray(str1, str2, str3, str4);
 Console.WriteLine(newStrArr);
 // Outputs: System.String[]
 ```
-2. Create a method called FillIntArray that expect at least three strings as arguments. FillIntArray should create a new array and print each item within it to the console. It should also return a newly created array with each string passed to it, meaning if you store the method evocation in a variable and print it to the console it should out put System.Int32[].
+2. Create a method called FillIntArray that expect at least three int as arguments. FillIntArray should create a new array and print each item within it to the console. It should also return a newly created array with each int passed to it, meaning if you store the method evocation in a variable and print it to the console it should out put System.Int32[].
 ```C#
 int num1 = 1;
 int num2 = 2;

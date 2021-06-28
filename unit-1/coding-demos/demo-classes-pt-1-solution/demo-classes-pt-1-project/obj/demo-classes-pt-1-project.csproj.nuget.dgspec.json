@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/roger/gemstack-local/clients/launchcode/cohorts/ms-codecamp-2021/lessons/unit-1/coding-demos/demo-classes-pt-1-solution/demo-classes-pt-1-project/demo-classes-pt-1-project.csproj": {}
+  },
+  "projects": {
+    "/Users/roger/gemstack-local/clients/launchcode/cohorts/ms-codecamp-2021/lessons/unit-1/coding-demos/demo-classes-pt-1-solution/demo-classes-pt-1-project/demo-classes-pt-1-project.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/roger/gemstack-local/clients/launchcode/cohorts/ms-codecamp-2021/lessons/unit-1/coding-demos/demo-classes-pt-1-solution/demo-classes-pt-1-project/demo-classes-pt-1-project.csproj",
+        "projectName": "demo-classes-pt-1-project",
+        "projectPath": "/Users/roger/gemstack-local/clients/launchcode/cohorts/ms-codecamp-2021/lessons/unit-1/coding-demos/demo-classes-pt-1-solution/demo-classes-pt-1-project/demo-classes-pt-1-project.csproj",
+        "packagesPath": "/Users/roger/.nuget/packages/",
+        "outputPath": "/Users/roger/gemstack-local/clients/launchcode/cohorts/ms-codecamp-2021/lessons/unit-1/coding-demos/demo-classes-pt-1-solution/demo-classes-pt-1-project/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/roger/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.301/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

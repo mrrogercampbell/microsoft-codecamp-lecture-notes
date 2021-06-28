@@ -38,12 +38,17 @@ Console.WriteLine("Hello World");
 * This concept of prepackaging our code to make it reusable is called `encapsulation`
   * `Encapsulation` is one of the four pillars of Object Oriented Programming
 
-
-
-<!-- In C# there is much less of a distinction, though the terms can still be used similarly. Instantiate literally means "to create an instance of". In programming, this generally means to create an instance of an object (generally on "the heap"). -->
-
-## Method Signatures and Calls
-### Method Signatures
+## Method Syntax
+* In C# there is a standard syntax that is required to declare (or create) a method.
+```c#
+Access Specifier [static modifier] Return Type MethodName(Parameter List)
+{
+   Method Body
+}
+```
+* `Access Specifier`: are keywords which specify the accessibility of a type and its members
+  * We will cover these more in depth at a later time
+* `Static Modifier`: If a method is static it means it can be utilized 
 ### Creating a Method
 #### Method Calls
 ### Invoking the Method

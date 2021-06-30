@@ -1,4 +1,4 @@
-# Generating SSH Keys
+# Generating SSH Keys for GitHub
 Please see the links below for more info on how to generate an SSH key to connect your computer to GitHub.
 
 

@@ -23,3 +23,4 @@ These Lecture notes are meant to work in tandem with [Unit 1: Introduction to Pr
 * Chapter 17: Tools in Visual Studio - Coming soon
 * Chapter 18: Classes in C#, Part 1- Coming soon
 * [Chapter 19: Classes and Objects, Part 2 ](./chapter-19-classes-and-objects-pt-2.md)
+* [Chapter 20: Unit Testing](./chapter-20-unit-testing.md)

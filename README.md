@@ -28,6 +28,7 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * Chapter 17: Tools in Visual Studio - Coming soon
   * Chapter 18: Classes in C#, Part 1- Coming soon
   * [Chapter 19: Classes and Objects, Part 2 ](./unit-1/chapter-19-classes-and-objects-pt-2.md)
+  * [Chapter 20: Unit Testing](./unit-1/chapter-20-unit-testing.md)
 
 ## Coding Demos
 ### Unit 1

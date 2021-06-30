@@ -1,4 +1,4 @@
-# C# Coding Conventions
+# Microsoft's C# Coding Conventions
 Learn about coding conventions in C#. Coding conventions create a consistent look to the code and facilitate copying, changing, and maintaining the code.
 
 This entire document was pulled from [Microsoft's Doc: C# Coding Conventions](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)

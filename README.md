@@ -28,9 +28,17 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * Chapter 17: Tools in Visual Studio - Coming soon
   * Chapter 18: Classes in C#, Part 1- Coming soon
   * [Chapter 19: Classes and Objects, Part 2 ](./unit-1/chapter-19-classes-and-objects-pt-2.md)
+
+## Coding Demos
+### Unit 1
+* [Classes Part 1 Demo](./unit-1/coding-demos/demo-classes-pt-1-solution)
+* [Classes Part 2 Demo](./unit-1/coding-demos/classes-pt-2-demo)
+
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful
+* [Google Search Cheat Sheet PDF](./resources/google-search-cheat-sheet.md) - A list of shortcuts to enhance search results in google
 * [Helpful App](resources/helpful-apps.md) - Looking to speed up your development workflow? Some of these apps could do just that!
+* [Microsoft's C# Coding Conventions](./resources/microsofts-csharp-coding-conventions.md)
 
 ## Templates
 * [Lecture Notes Quick Start Guide](./templates/lecture-quick-start.md) - A quick start guide on how to rapidly develop a lecture guide based on my architecture.

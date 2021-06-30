@@ -1,5 +1,13 @@
 # Chapter 19 Classes and Objects Part 2
-
+- [Chapter 19 Classes and Objects Part 2](#chapter-19-classes-and-objects-part-2)
+  - [Customizing Fields](#customizing-fields)
+    - [Readonly Fields](#readonly-fields)
+    - [Static Fields](#static-fields)
+  - [Constants](#constants)
+  - [Instance and Static Methods](#instance-and-static-methods)
+    - [Quick Method Review](#quick-method-review)
+  - [Instance Methods](#instance-methods)
+    - [ToString](#tostring)
 ## Customizing Fields
 ### Readonly Fields
 * A `readonly field` is one that cannot be changed once it is initialized.

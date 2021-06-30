@@ -5,6 +5,29 @@
 When we learn about classes, we will learn about instance methods and be able to compare and contrast them to static methods. We will also be able to see a more usages and behaviors of static methods in a non-static environment.
 
 A wonderful collection of static methods comes from the Math class. The documentation can be found here, and an appendix of methods can be found here.
+
+- [Methods](#methods)
+  - [Introduction](#introduction)
+    - [What is a Method?](#what-is-a-method)
+  - [Method Syntax](#method-syntax)
+    - [Creating a Method](#creating-a-method)
+      - [Method Calls](#method-calls)
+    - [Invoking the Method](#invoking-the-method)
+  - [Using Methods](#using-methods)
+    - [return vs. void Methods](#return-vs-void-methods)
+    - [Parameters and Arguments](#parameters-and-arguments)
+    - [Named and Optional Arguments](#named-and-optional-arguments)
+      - [Named Arguments](#named-arguments)
+      - [Optional Arguments](#optional-arguments)
+  - [Scope](#scope)
+    - [Class Level Scope](#class-level-scope)
+    - [Method Level Scope](#method-level-scope)
+    - [Block Level Scope](#block-level-scope)
+  - [Recursive Methods](#recursive-methods)
+    - [FactorialRecursive A Recursive Example](#factorialrecursive-a-recursive-example)
+    - [FactorialLoop A Loop Example](#factorialloop-a-loop-example)
+    - [Recursion or Loops?](#recursion-or-loops)
+  - [Whats Next](#whats-next)
 ## Introduction
 ### What is a Method?
 * `Method`: are reusable, callable, and customizable piece of code

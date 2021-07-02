@@ -24,7 +24,7 @@ This awesome Student One-on-One Prompt was written by:
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/blakexcosta"><img src="https://avatars.githubusercontent.com/u/20822395?v=4" width="100px;" alt=""/><br /><sub><b>Blake Costa</b></sub></a><br /><a href="https://github.com/blakexcosta" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/blakexcosta"><img src="https://avatars.githubusercontent.com/u/20822395?v=4" width="100px;" alt=""/><br /><sub><b>Blake Costa</b></sub></a><br /><a href="https://github.com/blakexcosta" title="Code">:turkey:</a></td>
   </tr>
 </table>
 

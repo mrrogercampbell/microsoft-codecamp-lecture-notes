@@ -315,7 +315,7 @@ namespace Classes
             pokemon1.GetPokemonInfo();
             pokemon1.LevelUp();
             pokemon1.GetPokemonInfo();
-            
+
             Console.WriteLine("<------->");
 
             string[] attacks = { "scratch", "ember" };
@@ -329,7 +329,6 @@ namespace Classes
         }
     }
 }
-
 ```
 ## Object Class
 

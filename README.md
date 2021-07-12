@@ -29,11 +29,23 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * Chapter 18: Classes in C#, Part 1- Coming soon
   * [Chapter 19: Classes and Objects, Part 2 ](./unit-1/chapter-19-classes-and-objects-pt-2.md)
   * [Chapter 20: Unit Testing](./unit-1/chapter-20-unit-testing.md)
+  * [Chapter 21: Inheritance](./unit-1/chapter-21-inheritance.md)
+  * Chapter 22: Interfaces and Polymorphism - Coming soon
+  * Chapter 23: We Built the Internet on HTML - Coming soon
+  * Chapter 24: Styling the Web with CSS - Coming soon
+  * Chapter 25: HTTP - The Postal Service of the Internet - Coming soon
+  * Chapter 26: User Input with Forms - Coming soon
+
+
 
 ## Coding Demos
 ### Unit 1
-* [Classes Part 1 Demo](./unit-1/coding-demos/demo-classes-pt-1-solution)
-* [Classes Part 2 Demo](./unit-1/coding-demos/classes-pt-2-demo)
+* Chapter 18 & 19: Classes Part 1 & 2
+  * [Classes Part 1 Demo](./unit-1/coding-demos/ch-18-and-19-classes/demo-classes-pt-1-solution)
+  * [Classes Part 2 Demo](./unit-1/coding-demos/ch-18-and-19-classes/classes-pt-2-demo)
+* [Chapter 20: Unit Testing](./unit-1/coding-demos/ch-20-unit-testing/)
+* [Chapter 22: Interfaces and Polymorphism](./unit-1/coding-demos/ch-22-interface-polymorphism)
+* [Chapter 24: CSS](./unit-1/coding-demos/ch-24-css)
 
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful

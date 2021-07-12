@@ -1,0 +1,31 @@
+h1{
+    color: blue;
+    font-size: 50px;
+}
+
+.h1-class{
+    color: hotpink;
+}
+
+
+
+#h1-id{
+    color:red;
+}
+
+h1{
+    color: orange;
+    font-size: 50px;
+}
+
+img{
+    height: 500px;
+    width: 200px;
+    border: indigo 50px solid;
+}
+
+body{
+    background: lightcoral;
+    background-image: url(../assets/happy-baby-grogu.jpeg);
+}
+

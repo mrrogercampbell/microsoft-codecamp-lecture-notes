@@ -1,0 +1,13 @@
+body{
+    background-color: lightgreen;
+}
+
+p{
+    font-size: larger;
+    color: hotpink;
+}
+
+img{
+    height: 500px;
+    width: 1000px;
+}

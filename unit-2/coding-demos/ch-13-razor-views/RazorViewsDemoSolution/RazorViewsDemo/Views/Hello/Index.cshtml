@@ -1,0 +1,35 @@
+﻿@{
+    string[] people = { "Han", "John", "Jane", "Jacky" };
+
+}
+
+<h1>Hello @ViewBag.storedName! Welcome to the Hello Controller's Index Page</h1>
+
+<ul>
+    @foreach (string person in people)
+    {
+        <li>Hello @person.</li>
+    }
+</ul>
+
+<ul>
+    @foreach (string person in ViewBag.storedPeople)
+    {
+
+        <li>Hello @person, You are in the Viewbag</li>
+    }
+</ul>
+
+<partial name="/Views/Shared/_Links.cshtml" />
+
+
+
+<form method="post">
+    <label for="fname">First name:</label><br>
+
+    <input type="text" name="fname"><br>
+
+    <input type="submit" value="Submit"><br>
+</form>
+
+

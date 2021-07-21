@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    string name = "Roger";
+}
+
+
+<h1>Hello @name From The Spa</h1>
+
+<h1>Hello @ViewBag.storedName From the Spa</h1>
+
+<form method="post" action="/spa/person">
+    <label for="fname">First Name</label>
+    <input type="text" name="fname"/>
+
+    <input type="submit" value="Submit Me"/>
+</form>

@@ -12,11 +12,12 @@ namespace coding_events_practice.Controllers
 {
     public class EventsController : Controller
     {
-    
 
-        // GET: /<controller>/
+
+        // GET: /<controller>/Index
         public IActionResult Index()
         {
+
             ViewBag.events = EventData.GetAll();
 
             return View();
@@ -29,17 +30,17 @@ namespace coding_events_practice.Controllers
             return View();
         }
 
-        // POST: /<controller>/
+
         [HttpPost("/Events/Add")]
         public IActionResult AddNewEvent(Event newEvent)
         {
-            //Event newEvent = new Event(eventName, eventDescription);
 
             EventData.Add(newEvent);
 
             return Redirect("/Events");
         }
 
+        // GET: /<controller>/Delete
         public IActionResult Delete()
         {
             ViewBag.events = EventData.GetAll();
@@ -48,31 +49,24 @@ namespace coding_events_practice.Controllers
         }
 
 
+        // POST: /<controller>/Delete
         [HttpPost]
         public IActionResult Delete(int[] eventIds)
         {
             foreach (int eventId in eventIds)
             {
                 EventData.Remove(eventId);
-            }
+        }
 
             return Redirect("/Events");
         }
 
-        
-        public IActionResult GetSingleEvent()
-        {
-            ViewBag.events = EventData.GetAll();
-
-            return View("~/Views/Events/GetSingleEventForm.cshtml");
-        }
-
-        [HttpPost]
+        // GET: /<controller>/GetSingleEvent
         public IActionResult GetSingleEvent(int eventId)
         {
-            ViewBag.events = EventData.GetById(eventId);
+            ViewBag.evt = EventData.GetById(eventId);
 
-            return View("~/Views/Events/Index.cshtml");
+            return View();
         }
     }
 }

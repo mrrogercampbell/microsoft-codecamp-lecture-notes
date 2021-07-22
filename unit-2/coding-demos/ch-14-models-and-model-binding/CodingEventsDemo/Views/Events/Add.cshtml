@@ -7,16 +7,18 @@
 <br />
 
 <form method="post">
-    <label for="eventName">Please Provide an Event Name</label>
-    <input name="name" type="text" />
+    <div class="mb-3">
+        <label for="eventName" class="form-label">Please Provide an Event Name</label>
+        <input name="name" type="text" class="form-control" />
+    </div>
 
-    <label for="eventName">Please Provide a Description of the Event</label>
-    <input name="description" type="text" />
+    <div class="mb-3">
+        <label for="eventName" class="form-label">Please Provide a Description of the Event</label>
+        <input name="description" type="text" class="form-control" />
+    </div>
 
-    <input type="submit" value="Add Event" />
+    <button type="submit" class="btn btn-primary">Add Event</button>
 </form>
 
 <br />
 <br />
-
-@*<partial name="/Views/Shared/_LinkListPartial.cshtml" />*@

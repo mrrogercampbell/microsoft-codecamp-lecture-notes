@@ -9,21 +9,6 @@
 </p>
 
 
-@*<ul>
-    @foreach (Event meeting in ViewBag.events)
-    {
-        <li>@meeting.Name</li>
-        <li>@meeting.Description</li>
-    }
-
-    @for (int i = 0; i < ViewBag.events.Count; i++)
-        {
-            Event meeting = @ViewBag.events[i];
-
-            <li>@ViewBag.events[i]</li>
-        }
-</ul>*@
-
 
 @if (ViewBag.events.Count == 0)
 {
@@ -42,11 +27,16 @@ else
         <tbody>
             @foreach(Event meeting in ViewBag.events)
             {
-                <tr>
-                    <td scope="row">@meeting.Id</td>
-                    <td scope="row">@meeting.Name</td>
-                    <td>@meeting.Description</td>
-                </tr>
+            <tr>
+                <td scope="row">@meeting.Id</td>
+
+                
+                <td scope="row">
+                    <a href="/events/getsingleevent/?eventId=@meeting.Id">@meeting.Name</a>
+                </td>
+
+                <td>@meeting.Description</td>
+            </tr>
             }
         </tbody>
     </table>

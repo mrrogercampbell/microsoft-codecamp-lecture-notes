@@ -1,0 +1,29 @@
+﻿@{
+    // Just made a variable that stores the event
+    // This allows me to not have to type ViewBag.evt.<PropertyName Here> all ovet the place
+    Event evt = ViewBag.evt;
+
+}
+
+<h1>Single Event</h1>
+
+
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Event ID</th>
+            <th scope="col">Event Name</th>
+            <th scope="col">Event Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="row">@evt.Id</td>
+            <td scope="row">@evt.Name</td>
+            <td>@evt.Description</td>
+        </tr>
+    </tbody>
+</table>

@@ -68,5 +68,12 @@ namespace coding_events_practice.Controllers
 
             return View();
         }
+
+
+        public JsonResult GetData()
+        {
+
+            return Json(EventData.GetAll());
+        }
     }
 }

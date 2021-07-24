@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.810.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RouteResourceTableCodingEventsDemo", "RouteResourceTableCodingEventsDemo\RouteResourceTableCodingEventsDemo.csproj", "{C593C0B2-81A8-460E-82E8-D71BE078D2AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C593C0B2-81A8-460E-82E8-D71BE078D2AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C593C0B2-81A8-460E-82E8-D71BE078D2AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C593C0B2-81A8-460E-82E8-D71BE078D2AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C593C0B2-81A8-460E-82E8-D71BE078D2AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF777F13-2966-4875-914B-2D03DD3681E1}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+﻿
+@if (ViewBag.events.Count == 0)
+{
+    <p>No Events Yet!</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Event ID</th>
+                <th scope="col">Event Name</th>
+                <th scope="col">Event Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Event meeting in ViewBag.events)
+            {
+                <tr>
+                    <td scope="row">@meeting.Id</td>
+
+
+                    <td scope="row">
+                        <a href="/events/getsingleevent/?eventId=@meeting.Id">@meeting.Name</a>
+                    </td>
+
+                    <td>@meeting.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

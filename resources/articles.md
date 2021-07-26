@@ -18,3 +18,7 @@ These are some articles I find helpful for learning a career development:
 * [JsonResult Type in MVC](https://www.c-sharpcorner.com/UploadFile/2ed7ae/jsonresult-type-in-mvc/)
 ## Visual Studio
 * [Git experience in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/version-control/git-with-visual-studio?view=vs-2019)
+
+
+# Python
+* [Real Python Tutorials](https://realpython.com/)

@@ -28,7 +28,7 @@ This awesome Student One-on-One Prompt was written by:
   </tr>
 </table>
 
-**I could also use your** [LinkedIn](https://www.linkedin.com/in/blake-costa-234022109/)
+[Blake Costa's LinkedIn](https://www.linkedin.com/in/blake-costa-234022109/)
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
 

@@ -43,6 +43,10 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 * [Unit 2: Lecture Recordings](https://docs.google.com/spreadsheets/d/1YbKObBPJIyiqfBeFJOc_No4d9jgXdOAjKijANr75oCg/edit?usp=sharing)
 * [Unit 2: C# Web Development - LaunchCode Textbook](https://education.launchcode.org/csharp-web-development/index.html)
 * Lecture Notes:
+  * Chapter 9: Introduction to ASP.NET - Coming soon
+  * Chapter 10: Controllers and Routing - Coming soon
+  * Chapter 13: Razor Views - Coming soon
+  * Chapter 14: Models and Model Binding - Coming soon
   * [Chapter 15:ViewModels And Model Validation](./unit-2/ch-15-viewmodels-and-model-validation.md)
 ## Coding Demos
 ### Unit 1

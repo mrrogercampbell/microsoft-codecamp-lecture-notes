@@ -1,0 +1,40 @@
+﻿@using CodingEvents.ViewModels
+@model AddEventViewModel
+
+<link rel="stylesheet" type="text/css" href="~/css/addPage.css">
+
+<h1>Add Event</h1>
+
+@*<img src="~/images/groot-action-figures.jpg" alt="Image of baby groot playing" />*@
+
+<br />
+<br />
+
+<form method="post"
+      asp-controller="Events"
+      asp-action="Add">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" type="text" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" />
+        <span asp-validation-for="Description"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ContactEmail">Email</label>
+        <input required asp-for="ContactEmail" />
+        <span asp-validation-for="ContactEmail"></span>
+    </div>
+
+    <input type="submit" value="Add Event" />
+</form>
+
+<br />
+<br />
+
+<partial name="/Views/Shared/_LinkListPartial.cshtml" />

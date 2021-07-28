@@ -227,6 +227,12 @@ public class Event
     <input type="submit" value="Add Event" />
 </form>
 ```
+* **Gotcha:
+  * ** In the Chapter Video the demonstrator adds the `asp-action` and `asp-controller` to the `div` tag and not the `form` tag as I have done above.
+  * The way it was don in the video is incorrect.
+  * The way the code is written above is correct
+    * ASP.NET even though the syntax was incorrect with how the demonstrator did it in the video ASP.NET was able to interpret the code and correct the error.
+  * Long and short be sure your code is structured how I have it above.
 
 
 ## Update the Event Controller’s Add Action (POST)

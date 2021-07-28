@@ -59,16 +59,18 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 
 ### Unit 2
 * Chapter 9 & 10: Controllers and Routing
-  * [Hello ASP DotNET ClassDemo](./unit-2/ch-9-and-10-controllers-and-routing/HelloASPDotNETClassDemo)
-  * [Routing Demo Solution](./unit-2/ch-9-and-10-controllers-and-routing/RoutingDemoSolution)
+  * [Hello ASP DotNET ClassDemo](./unit-2/coding-demos/ch-9-and-10-controllers-and-routing/HelloASPDotNETClassDemo)
+  * [Routing Demo Solution](./unit-2/coding-demos/ch-9-and-10-controllers-and-routing/RoutingDemoSolution)
 * Chapter 13: RazorViews
-  * [RazorViews Demo Solution](./unit-2/ch-13-razor-views/RazorViewsDemoSolution)
-  * [ViewBag Demo Solution](./unit-2/ch-13-razor-views/ViewBagDemoSolution)
+  * [RazorViews Demo Solution](./unit-2/coding-demos/ch-13-razor-views/RazorViewsDemoSolution)
+  * [ViewBag Demo Solution](./unit-2/coding-demos/ch-13-razor-views/ViewBagDemoSolution)
 * Chapter 14: Models And Model Binding
-  * [Coding Events Demo](./unit-2/ch-14-models-and-model-binding/CodingEventsDemo)
-  * [Route Resource Table Coding Events Demo](./unit-2/ch-14-models-and-model-binding/RouteResourceTableCodingEventsDemo)
+  * [Coding Events Demo](./unit-2/coding-demos/ch-14-models-and-model-binding/CodingEventsDemo)
+  * [Route Resource Table Coding Events Demo](./unit-2/coding-demos/ch-14-models-and-model-binding/RouteResourceTableCodingEventsDemo)
+* Assignment 3: TechJobsMVC
+  * [Q&A Demo](./unit-2/coding-demos/assignment-demo/TechJobsMVC)
 * Chapter 15: ViewModels And Model Validation
-  * [Coding Events Demo](./unit-2/ch-15-viewmodels-and-model-validation/)
+  * [Coding Events Demo](./unit-2/coding-demos/ch-15-viewmodels-and-model-validation/)
 
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful

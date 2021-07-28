@@ -1,0 +1,67 @@
+﻿<div class="container body-content">
+
+    <h1>@ViewBag.title</h1>
+
+    <form action="/search/results" method="post">
+        <h2>Search by:</h2>
+
+        <p>
+            @foreach (var column in ViewBag.columns)
+            {
+                <span>
+                    <input type="radio"
+                           name="searchType"
+                           id="@column.Key"
+                           value="@column.Key"
+                           checked="@column.Key == 'all'" />
+                    <label for="@column.Key">@column.Value</label>
+                </span>
+            }
+
+        </p>
+
+        <p>
+            <label for="searchTerm">Keyword:</label>
+            <input type="text" name="searchTerm" id="searchTerm" />
+        </p>
+
+        <input type="submit" value="Search" />
+    </form>
+
+    <hr />
+
+    @{
+        if (ViewBag.jobs != null)
+        {
+            <table class="job-listing">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Employer</th>
+                    <th>Location</th>
+                    <th>PositionType</th>
+                    <th>CoreCompetency</th>
+                </tr>
+                @{
+                    List<Job> jobs = ViewBag.jobs;
+
+                    foreach (var job in jobs)
+                    {
+
+                        <tr>
+                            <td>@job.Id</td>
+                            <td>@job.Name</td>
+                            <td>@job.Employer</td>
+                            <td>@job.Location</td>
+                            <td>@job.PositionType</td>
+                            <td>@job.CoreCompetency</td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        }
+
+    }
+
+</div>

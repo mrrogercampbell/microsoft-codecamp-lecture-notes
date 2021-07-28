@@ -5,9 +5,12 @@ This Code Camp is a FREE course to train 30-40 transitioning military personnel 
 
 Graduates of the online course will receive full-time job offers at Microsoft.
 
-## Lecture Table of Content
-* [Unit 1: Introduction to Programming in C# - LaunchCode Textbook](https://education.launchcode.org/intro-to-programming-csharp/index.html)
+## Lecture Notes Table of Content
+
+### Unit 1:
 * [Unit 1: Lecture Recordings](https://docs.google.com/spreadsheets/d/1YbKObBPJIyiqfBeFJOc_No4d9jgXdOAjKijANr75oCg/edit#gid=0)
+* [Unit 1: Introduction to Programming in C# - LaunchCode Textbook](https://education.launchcode.org/intro-to-programming-csharp/index.html)
+* Lecture Notes:
   * [Chapter 1 Introduction Lecture](./unit-1/chapter-1-introduction.md)
   * [Chapter 2 How Programs Work Lecture](./unit-1/chapter-2-how-programs-work.md)
   * [Chapter 3 How To Write Code Lecture](./unit-1/chapter-3-how-to-write-code.md)
@@ -36,8 +39,11 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * Chapter 25: HTTP - The Postal Service of the Internet - Coming soon
   * Chapter 26: User Input with Forms - Coming soon
 
-
-
+### Unit 2:
+* [Unit 2: Lecture Recordings](https://docs.google.com/spreadsheets/d/1YbKObBPJIyiqfBeFJOc_No4d9jgXdOAjKijANr75oCg/edit?usp=sharing)
+* [Unit 2: C# Web Development - LaunchCode Textbook](https://education.launchcode.org/csharp-web-development/index.html)
+* Lecture Notes:
+  * [Chapter 15:ViewModels And Model Validation](./unit-2/ch-15-viewmodels-and-model-validation.md)
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2
@@ -46,6 +52,19 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 * [Chapter 20: Unit Testing](./unit-1/coding-demos/ch-20-unit-testing/)
 * [Chapter 22: Interfaces and Polymorphism](./unit-1/coding-demos/ch-22-interface-polymorphism)
 * [Chapter 24: CSS](./unit-1/coding-demos/ch-24-css)
+
+### Unit 2
+* Chapter 9 & 10: Controllers and Routing
+  * [Hello ASP DotNET ClassDemo](./unit-2/ch-9-and-10-controllers-and-routing/HelloASPDotNETClassDemo)
+  * [Routing Demo Solution](./unit-2/ch-9-and-10-controllers-and-routing/RoutingDemoSolution)
+* Chapter 13: RazorViews
+  * [RazorViews Demo Solution](./unit-2/ch-13-razor-views/RazorViewsDemoSolution)
+  * [ViewBag Demo Solution](./unit-2/ch-13-razor-views/ViewBagDemoSolution)
+* Chapter 14: Models And Model Binding
+  * [Coding Events Demo](./unit-2/ch-14-models-and-model-binding/CodingEventsDemo)
+  * [Route Resource Table Coding Events Demo](./unit-2/ch-14-models-and-model-binding/RouteResourceTableCodingEventsDemo)
+* Chapter 15: ViewModels And Model Validation
+  * [Coding Events Demo](./unit-2/ch-15-viewmodels-and-model-validation/)
 
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful

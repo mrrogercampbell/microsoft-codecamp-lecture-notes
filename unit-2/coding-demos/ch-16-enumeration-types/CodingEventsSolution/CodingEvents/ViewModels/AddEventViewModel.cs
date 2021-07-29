@@ -24,9 +24,15 @@ namespace CodingEvents.ViewModels
 
         //public List<string> EventTypeString { get; set; } = new List<string>
 
+        static string conferenceString = EventType.Conference.ToString();
+        static string conferenceStringNumber = ((int)EventType.Conference).ToString();
+
         public List<SelectListItem> EventTypes { get; set; } = new List<SelectListItem>
         {
-            new SelectListItem(EventType.Conference.ToString(), ((int)EventType.Conference).ToString() ),
+            new SelectListItem(
+                conferenceString, conferenceStringNumber
+                ),
+            //<option value="0">Conference</option>
 
             new SelectListItem(EventType.Meetup.ToString(), ((int)EventType.Meetup).ToString() ),
 

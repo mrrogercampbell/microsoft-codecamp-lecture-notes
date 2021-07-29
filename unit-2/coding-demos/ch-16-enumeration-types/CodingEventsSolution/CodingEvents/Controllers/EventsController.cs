@@ -22,6 +22,7 @@ namespace CodingEvents.Controllers
 
             List<Event> events = new List<Event>(EventData.GetAll());
 
+
             return View(events); // List<Event>
         }
 

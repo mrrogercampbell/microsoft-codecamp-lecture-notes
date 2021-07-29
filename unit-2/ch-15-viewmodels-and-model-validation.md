@@ -1,4 +1,4 @@
-# Chapter 15 Walkthrough
+# Chapter 15: ViewModels and Model Validation
 ## Update Event Model
 1. Add the `events List` to the `Index()`  action
 ```csharp
@@ -42,17 +42,17 @@ public IActionResult Add(Event newEvent)
 ```csharp
 @if (Model.Count == 0)
 {
-	//....... all the code
+    //....... all the code
 }
 else
 {
-	//.... Some code
+    //.... Some code
 
-	<tbody>
-		@foreach (Event evt in Model)
-		{
-			//... Code
-		}
+   <tbody>
+    @foreach (Event evt in Model)
+    {
+        //... Code
+    }
 }
 
 ```
@@ -97,7 +97,7 @@ public IActionResult Add()
 ```
 
 3. Update the `form` to utilize the `asp-controller` and  `asp-action` attributes
-```csharp
+```html
 <form asp-controller="Events" asp-action="Add" method="post">
 ```
 5. Next Update the `form labels and inputs` to utilize the `asp-for` attributes
@@ -107,7 +107,7 @@ public IActionResult Add()
      * `ASP.NET` is smart enough to infer the data types for you based on the `ViewModel` 
    * You also can remove the text inside the `label` tags
      * `ASP.NET` will automatically add the `name` attribute’s value in it place
-```csharp
+```html
 <form asp-controller="Events" asp-action="Add" method="post">
     <div class="form-group">
         <label asp-for="Name"></label>
@@ -208,7 +208,7 @@ public class Event
    * Be sure to give it `asp-for` attributes
    * (Optional): You can also add a better naming convention for the `innerHTML` of the `ContactEmail`  `label tag`
      * If you do not do this then `ASP.NET` will default and place `ContactEmail` as the `label’s InnerHTML`
-```csharp
+```html
 <form asp-controller="Events" asp-action="Add" method="post">
     <div class="form-group">
         <label asp-for="Name"></label>
@@ -253,7 +253,7 @@ public IActionResult Add(AddEventViewModel addEventViewModel)
 1. Add `th tag` that displays the Header:  `Contact Email`
 2. Add `td tag` that displays the user `Contact Email`
 
-```csharp
+```csharp 
 else
 {
     <table class="table">

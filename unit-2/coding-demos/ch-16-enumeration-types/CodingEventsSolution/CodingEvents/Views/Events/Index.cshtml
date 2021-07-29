@@ -1,0 +1,57 @@
+﻿@using CodingEvents.Models
+
+@model List<Event>
+
+<h1>Coding Events</h1>
+
+<p>
+    <a asp-controller="Events" asp-action="Add">Add Event</a>
+</p>
+
+<p>
+    <a asp-controller="Events" asp-action="Delete">Delete Events</a>
+</p>
+
+@if (Model.Count == 0)
+{
+    <p>No Events Yet!</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Event Name</th>
+                <th scope="col">Event Description</th>
+                <th scope="col">Event Owner Email</th>
+                <th scope="col">Event Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Event evt in Model)
+            {
+                <tr>
+                    <td scope="row">@evt.Id</td>
+                    <td scope="row">@evt.Name</td>
+                    <td scope="row">@evt.Description</td>
+                    <td scope="row">@evt.ContactEmail</td>
+                    <td scope="row">@evt.Type</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
+
+@*<ul>
+        @foreach (KeyValuePair<string, string> meeting in ViewBag.events)
+        {
+            <li>@meeting.Key: @meeting.Value</li>
+        }
+    </ul>*@
+
+
+<partial name="/Views/Shared/_LinkListPartial.cshtml" />

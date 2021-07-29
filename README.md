@@ -48,6 +48,7 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * Chapter 13: Razor Views - Coming soon
   * Chapter 14: Models and Model Binding - Coming soon
   * [Chapter 15:ViewModels And Model Validation](./unit-2/ch-15-viewmodels-and-model-validation.md)
+  * [Chapter 16: Enumeration Types](./unit-2/ch-16-enumeration-types.md)
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2
@@ -71,7 +72,9 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * [Q&A Demo](./unit-2/coding-demos/assignment-demo/TechJobsMVC)
 * Chapter 15: ViewModels And Model Validation
   * [Coding Events Demo](./unit-2/coding-demos/ch-15-viewmodels-and-model-validation/)
-
+* Chapter 16: Enumeration Types
+  * [CodingEventsSolution](./unit-2/coding-demos/ch-16-enumeration-types/CodingEventsSolution/)
+  * [Routing Demo Solution](./unit-2/coding-demos/ch-16-enumeration-types/Enums/)
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful
 * [Google Search Cheat Sheet PDF](./resources/google-search-cheat-sheet.md) - A list of shortcuts to enhance search results in google

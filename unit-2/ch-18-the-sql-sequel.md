@@ -1,5 +1,4 @@
 # Chapter 18: The SQL Sequel
-
 ## Table Relations
 ### Relating Data
 * As we start to learn more about Databases and Database management we must begin to look at the importance how we relate our data
@@ -88,6 +87,9 @@ SELECT * FROM writing_supply ;
 SELECT * FROM pencil_drawer ;
 SELECT * FROM pen_drawer ;
 ```
+
+* You can find a visual representation of the tables [here](https://docs.google.com/spreadsheets/d/1hnvEOj3i8Pyx1hpjtr4lRnfPo4ZUDvks9qK9B1WWm_g/edit?usp=sharing)
+
 
 ## Complex Queries
 ### Inner Join

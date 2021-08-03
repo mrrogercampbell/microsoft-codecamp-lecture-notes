@@ -90,7 +90,6 @@ SELECT * FROM pen_drawer ;
 
 * You can find a visual representation of the tables [here](https://docs.google.com/spreadsheets/d/1hnvEOj3i8Pyx1hpjtr4lRnfPo4ZUDvks9qK9B1WWm_g/edit?usp=sharing)
 
-
 ## Complex Queries
 ### Inner Join
 * To return a result set that contains information that appears in both the writing_supply and pencil_drawer tables, we use an INNER JOIN.

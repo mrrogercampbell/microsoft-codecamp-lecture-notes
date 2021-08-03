@@ -16,3 +16,4 @@ These app are available for most OS:
 * [Instapaper](https://www.instapaper.com/) - Save Anything. Read Anywhere.
 * [Wappalyzer](https://www.wappalyzer.com/) - Identify technologies on websites
 * [Readwise](https://readwise.io/) - Readwise makes it easy to revisit and learn from your ebook & article highlights.
+* [Speechify](https://speechify.com/)

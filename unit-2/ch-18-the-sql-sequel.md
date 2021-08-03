@@ -203,3 +203,10 @@ WHERE  supply_id = (SELECT MAX(supply_id)
                      WHERE  utensil_type = "pen")
        AND quantity >= 60; 
 ```
+
+## Resources
+* [Crow’s Foot Notation](https://vertabelo.com/blog/crow-s-foot-notation/)
+* [One-to Many Relationships in ER Diagram](https://stackoverflow.com/questions/15896699/one-to-many-relationships-in-er-diagram)
+* [Instant SQL Formatter](https://www.dpriver.com/pp/sqlformat.htm)
+* [SQL Tutorial](https://www.w3schools.com/sql/default.asp)
+* [GenerateData.com](https://www.generatedata.com/)

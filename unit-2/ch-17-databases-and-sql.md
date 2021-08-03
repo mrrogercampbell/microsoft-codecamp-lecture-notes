@@ -190,5 +190,8 @@ WHERE mary_events.month = 08;
 
 
 
-#### Resources:
+## Resources:
 * A lot of the join content came from [W3Schools SQL Joins](https://www.w3schools.com/sql/sql_join.asp) docs
+
+## Common Issue Fixes
+* [Can't connect to MySQL server on '127.0.0.1' (10061) (2003)](https://stackoverflow.com/questions/24525736/cant-connect-to-mysql-server-on-127-0-0-1-10061-2003)

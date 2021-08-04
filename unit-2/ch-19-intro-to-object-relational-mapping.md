@@ -51,10 +51,8 @@
 * **GOTCHAS**:
   * Based on wether or not you use the provided `LaunchCode Starter Code` above there is a difference in how you configure the `connection between` your `MVC App` and `MySQL Database`
     * Due to this I have provided two different set of instructions for `Part 5: Configure the Connection Between Your MVC App and MySQL Database` which are:
-      1. If You Used Your Own Project Code: **Use all of the 4.1 sections**
-      2. If You Used The LaunchCode Starter Code: **Use all of the 4.2 sections**
-
-Configure the Connection Between Your MVC App and MySQL Database
+      1. If You Used Your Own Project Code: Start at [Part 4.1: Install NeGet Packages - If You Used Your Own Project Code](#part-41-configure-the-startupcs-file---if-you-used-your-own-project-code)
+      2. If You Used The LaunchCode Starter Code:  Start at [Part 4.2: Configure The appsettings.json File - If You Used The LaunchCode Starter Code](#part-42-configure-the-appsettingsjson-file---if-you-used-the-launchcode-starter-code)
 
 ### Part 4.1: Install NeGet Packages - If You Used Your Own Project Code
 1. Open your project in `Visual Studio`
@@ -79,7 +77,7 @@ public void ConfigureServices(IServiceCollection services)
 ```
 3. Update the `<Password Goes Here>` value within the `connectionString` variable with your `DB User Password`
    * This is the one you created in `Part 2: Create and Configure a MySQL Database Via MySQL Workbench - Step 7`
-4. Move on to `Part 5: Create and Configure DbContext`
+4. Move on to [Part 5: Create and Configure DbContext](#part-5-create-and-configure-dbcontext)
 
 #### Part 4.2: Configure The appsettings.json File - If You Used The LaunchCode Starter Code
 1. In the root level of your project open the `appsettings.json` file and update the file so that it looks as follows:

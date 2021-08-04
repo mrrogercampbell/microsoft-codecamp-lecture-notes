@@ -1,5 +1,19 @@
 # Chapter 19: Introduction to Object-Relational Mapping
-
+- [Chapter 19: Introduction to Object-Relational Mapping](#chapter-19-introduction-to-object-relational-mapping)
+  - [Object-Relational Mapping](#object-relational-mapping)
+  - [Setting Up a Persistent Database](#setting-up-a-persistent-database)
+    - [Part 1: Install EntityFrameworkCore CLI Tools](#part-1-install-entityframeworkcore-cli-tools)
+    - [Part 2: Create and Configure a MySQL Database Via MySQL Workbench](#part-2-create-and-configure-a-mysql-database-via-mysql-workbench)
+    - [Part 3: Notes On The Codebase](#part-3-notes-on-the-codebase)
+    - [Part 4.1: Install NeGet Packages - If You Used Your Own Project Code](#part-41-install-neget-packages---if-you-used-your-own-project-code)
+      - [Part 4.1: Configure The Startup.cs File - If You Used Your Own Project Code](#part-41-configure-the-startupcs-file---if-you-used-your-own-project-code)
+      - [Part 4.2: Configure The appsettings.json File - If You Used The LaunchCode Starter Code](#part-42-configure-the-appsettingsjson-file---if-you-used-the-launchcode-starter-code)
+      - [Part 4.2: Configure The Startup.cs File - If You Used The LaunchCode Starter Code](#part-42-configure-the-startupcs-file---if-you-used-the-launchcode-starter-code)
+    - [Part 5: Create and Configure DbContext](#part-5-create-and-configure-dbcontext)
+    - [Part 6: Update The `Event` Model](#part-6-update-the-event-model)
+    - [Part 7: Migrations](#part-7-migrations)
+    - [Part 8: Data Stores in the Controller](#part-8-data-stores-in-the-controller)
+    - [Conclusion](#conclusion)
 ## Object-Relational Mapping
 
 ## Setting Up a Persistent Database

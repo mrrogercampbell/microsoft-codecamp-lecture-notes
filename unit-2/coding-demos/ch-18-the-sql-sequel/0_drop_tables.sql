@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS writing_supply, pencil_drawer, pen_drawer;

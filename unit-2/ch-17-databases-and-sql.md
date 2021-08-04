@@ -1,5 +1,28 @@
 # Databases and SQL
-
+- [Databases and SQL](#databases-and-sql)
+  - [Getting Started](#getting-started)
+    - [Drop any pre-existing table data](#drop-any-pre-existing-table-data)
+    - [Create a Table from Scratch](#create-a-table-from-scratch)
+    - [Seeding a Database (li_wedding table)](#seeding-a-database-li_wedding-table)
+    - [Creating a Table from Another Table](#creating-a-table-from-another-table)
+    - [Adding a FULL Row of data](#adding-a-full-row-of-data)
+    - [Adding a Row with missing data](#adding-a-row-with-missing-data)
+    - [Adding a column](#adding-a-column)
+  - [Reading Data from a Table](#reading-data-from-a-table)
+    - [Read all data from a Table](#read-all-data-from-a-table)
+    - [Read data from Table based on a condition](#read-data-from-table-based-on-a-condition)
+  - [Update Data](#update-data)
+    - [Confirming the update was made](#confirming-the-update-was-made)
+    - [Updating multiple records at once](#updating-multiple-records-at-once)
+  - [Deleting Data](#deleting-data)
+    - [Delete a guest based on thier guest_id](#delete-a-guest-based-on-thier-guest_id)
+  - [Joins](#joins)
+    - [Inner Join](#inner-join)
+    - [Left Outer Join](#left-outer-join)
+    - [Right Outer Join](#right-outer-join)
+    - [Full Outer Join](#full-outer-join)
+  - [Resources:](#resources)
+  - [Common Issue Fixes](#common-issue-fixes)
 ## Getting Started
 ### Drop any pre-existing table data
 ```sql

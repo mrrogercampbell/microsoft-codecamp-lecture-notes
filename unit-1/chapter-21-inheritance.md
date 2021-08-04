@@ -1,5 +1,11 @@
 # Chapter 20: Inheritance
-
+- [Chapter 20: Inheritance](#chapter-20-inheritance)
+  - [Inheritance in OOP](#inheritance-in-oop)
+  - [Inheritance in C](#inheritance-in-c)
+  - [base Keyword](#base-keyword)
+  - [Inheriting Fields, Properties, and Methods](#inheriting-fields-properties-and-methods)
+  - [override](#override)
+  - [Object Class](#object-class)
 ## Inheritance in OOP
 * `Inheritance` is another pillar of object-oriented programming
   * In total there are four:

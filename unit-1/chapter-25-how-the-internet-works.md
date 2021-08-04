@@ -1,5 +1,11 @@
 # Chapter 25: How the Internet Works
-
+- [Chapter 25: How the Internet Works](#chapter-25-how-the-internet-works)
+  - [Client-Server Model](#client-server-model)
+  - [Protocols](#protocols)
+  - [HTTP: Hypertext Transfer Protocol](#http-hypertext-transfer-protocol)
+  - [TCP/IP: Transmission Control Protocol/ Internet Protocol](#tcpip-transmission-control-protocol-internet-protocol)
+  - [DNS: Domain Name Service](#dns-domain-name-service)
+  - [Web Addresses](#web-addresses)
 ## Client-Server Model 
 * The `client-server model` is a distributed application structure which allows `clients` and `server` (ie: computers) talk to each other
   * `Client` is an browser that runs computer, laptop, and or mobile device

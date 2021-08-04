@@ -1,5 +1,11 @@
 # Chapter 20: Unit Testing
-
+- [Chapter 20: Unit Testing](#chapter-20-unit-testing)
+  - [Why Test Your Code?](#why-test-your-code)
+    - [Finding Regressions](#finding-regressions)
+    - [Testing as Documentation](#testing-as-documentation)
+  - [Testing in C](#testing-in-c)
+    - [Why We Test](#why-we-test)
+      - [Refactoring](#refactoring)
 ## Why Test Your Code?
 * Testing your code is a very important step of the development process
 * It allows you to be sure your code is functioning properly based on the user requirements you have be provided

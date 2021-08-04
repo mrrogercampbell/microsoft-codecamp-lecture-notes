@@ -1,4 +1,25 @@
 # Chapter 18: The SQL Sequel
+- [Chapter 18: The SQL Sequel](#chapter-18-the-sql-sequel)
+  - [Table Relations](#table-relations)
+    - [Relating Data](#relating-data)
+    - [Adding a Primary Key](#adding-a-primary-key)
+    - [Adding a Foreign Key](#adding-a-foreign-key)
+  - [Database Management](#database-management)
+    - [Clean Up Pre-Existing DB](#clean-up-pre-existing-db)
+    - [Setup](#setup)
+    - [Create the writing_supply Table](#create-the-writing_supply-table)
+    - [Create the pen_drawer Table](#create-the-pen_drawer-table)
+    - [Import Data](#import-data)
+  - [Complex Queries](#complex-queries)
+    - [Inner Join](#inner-join)
+    - [Left/Right Join](#leftright-join)
+      - [LEFT JOIN writing_supply and pen_drawer](#left-join-writing_supply-and-pen_drawer)
+      - [LEFT JOIN writing_supply and pen_drawer refactored](#left-join-writing_supply-and-pen_drawer-refactored)
+      - [RIGHT JOIN writing_supply and pen_drawer](#right-join-writing_supply-and-pen_drawer)
+      - [RIGHT JOIN writing_supply and pen_drawer refactored](#right-join-writing_supply-and-pen_drawer-refactored)
+    - [Multiple Joins](#multiple-joins)
+    - [Subqueries](#subqueries)
+  - [Resources](#resources)
 ## Table Relations
 ### Relating Data
 * As we start to learn more about Databases and Database management we must begin to look at the importance how we relate our data

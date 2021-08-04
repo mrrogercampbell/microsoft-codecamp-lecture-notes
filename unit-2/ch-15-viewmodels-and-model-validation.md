@@ -1,4 +1,19 @@
 # Chapter 15: ViewModels and Model Validation
+- [Chapter 15: ViewModels and Model Validation](#chapter-15-viewmodels-and-model-validation)
+  - [Update Event Model](#update-event-model)
+  - [Update the Event Index View](#update-the-event-index-view)
+  - [Adding a ViewModel Class](#adding-a-viewmodel-class)
+    - [Update the Event Controller’s Add Action (GET)](#update-the-event-controllers-add-action-get)
+  - [Update the Views/Event/Add.cshtml](#update-the-viewseventaddcshtml)
+  - [Update the Event Controller’s Add Action (POST)](#update-the-event-controllers-add-action-post)
+  - [Add Validation Attributes to the AddEventViewModel](#add-validation-attributes-to-the-addeventviewmodel)
+  - [Update the Event Model with the New ContactEmail Property](#update-the-event-model-with-the-new-contactemail-property)
+  - [Update the Add.cshtml Form](#update-the-addcshtml-form)
+  - [Update the Event Controller’s Add Action (POST)](#update-the-event-controllers-add-action-post-1)
+  - [Update the Event Index.cshtml View](#update-the-event-indexcshtml-view)
+  - [Add Validation to the Event Add (POST) Action](#add-validation-to-the-event-add-post-action)
+  - [Update the Event/Index.cshtml View to Render the Error Message](#update-the-eventindexcshtml-view-to-render-the-error-message)
+  - [Add Custom CSS to Change the Color of Span Tags](#add-custom-css-to-change-the-color-of-span-tags)
 ## Update Event Model
 1. Add the `events List` to the `Index()`  action
 ```csharp

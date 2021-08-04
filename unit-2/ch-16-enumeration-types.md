@@ -1,5 +1,13 @@
 # Chapter 16: Enumeration Types
-
+- [Chapter 16: Enumeration Types](#chapter-16-enumeration-types)
+  - [What is an Enum?!](#what-is-an-enum)
+  - [Enums in Model Classes](#enums-in-model-classes)
+    - [Create an Enum Class](#create-an-enum-class)
+    - [Add an Enum Property to a Model Class](#add-an-enum-property-to-a-model-class)
+    - [Add an Enum Property to a ViewModel](#add-an-enum-property-to-a-viewmodel)
+    - [Add the Enum Values Through the Controller](#add-the-enum-values-through-the-controller)
+    - [Update the Add.cshtml View](#update-the-addcshtml-view)
+    - [Update the Index.cshtml View](#update-the-indexcshtml-view)
 ## What is an Enum?!
 * Enums are a new data type
 * They are similar to a class in structure but are utilized to help you declare fixed data

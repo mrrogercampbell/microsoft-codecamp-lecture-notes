@@ -49,6 +49,9 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * Chapter 14: Models and Model Binding - Coming soon
   * [Chapter 15:ViewModels And Model Validation](./unit-2/ch-15-viewmodels-and-model-validation.md)
   * [Chapter 16: Enumeration Types](./unit-2/ch-16-enumeration-types.md)
+  * [Chapter 17: Databases and SQL](./unit-2/ch-17-databases-and-sql.md)
+  * [Chapter 18: The SQL Sequel](./unit-2/ch-18-the-sql-sequel.md)
+  * [Chapter 19: Introduction to Object-Relational Mapping](./unit-2/ch-19-intro-to-object-relational-mapping.md)
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2
@@ -75,6 +78,10 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 * Chapter 16: Enumeration Types
   * [CodingEventsSolution](./unit-2/coding-demos/ch-16-enumeration-types/CodingEventsSolution/)
   * [Routing Demo Solution](./unit-2/coding-demos/ch-16-enumeration-types/Enums/)
+* Chapter 18: The SQL Sequel
+  * [SQL Commands From The Demo](./unit-2/coding-demos/ch-18-the-sql-sequel/)
+* Chapter 19: Introduction to Object-Relational Mapping
+  * [CodingEventsSolution](./unit-2/coding-demos/ch-19-intro-to-object-relational-mapping/CodingEventsSolution/)
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful
 * [Google Search Cheat Sheet PDF](./resources/google-search-cheat-sheet.md) - A list of shortcuts to enhance search results in google

@@ -62,8 +62,6 @@ Configure the Connection Between Your MVC App and MySQL Database
 2. Right click the project folder and click `Manage NuGet Packages..`
 3. Search for and install the `Pomelo.EntityFrameworkCore.MySql` and `Microsoft.EntityFrameworkCore.design` package
    * The lecture demos do not tell students to install `Microsoft.EntityFrameworkCore.design` until later but it should be done upfront
-4. Move on to `Part 6: Create and Configure DbContext`
-
 #### Part 4.1: Configure The Startup.cs File - If You Used Your Own Project Code
 1.  Open the `Startup.cs` file
 2.  Update the `ConfigureServices()` method by adding the following code after `services.AddControllersWithViews();`:
@@ -81,6 +79,8 @@ public void ConfigureServices(IServiceCollection services)
 ```
 3. Update the `<Password Goes Here>` value within the `connectionString` variable with your `DB User Password`
    * This is the one you created in `Part 2: Create and Configure a MySQL Database Via MySQL Workbench - Step 7`
+4. Move on to `Part 5: Create and Configure DbContext`
+
 #### Part 4.2: Configure The appsettings.json File - If You Used The LaunchCode Starter Code
 1. In the root level of your project open the `appsettings.json` file and update the file so that it looks as follows:
 ```json
@@ -109,7 +109,7 @@ public void ConfigureServices(IServiceCollection services)
    services.AddControllersWithViews();
 
    services.AddDbContext<EventDbContext>(options =>
-          options.UseMySql(connectionString, serverVersion));
+      options.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
 }
 ```
 

@@ -9,8 +9,8 @@
     - [Update the Event Model](#update-the-event-model)
     - [Update the EventCategory Model](#update-the-eventcategory-model)
     - [Update the AddEventViewModel](#update-the-addeventviewmodel)
-    - [Update the Events Add.cshtml](#update-the-events-addcshtml)
     - [Update the EventsController](#update-the-eventscontroller)
+    - [Update the Events Add.cshtml](#update-the-events-addcshtml)
     - [Delete the EventType Model](#delete-the-eventtype-model)
   - [Refactoring the Controller and View](#refactoring-the-controller-and-view)
     - [Update the EventsController](#update-the-eventscontroller-1)
@@ -65,15 +65,6 @@ public int CategoryId { get; set; }
 public AddEventViewModel() { }
 ```
 
-### Update the Events Add.cshtml
-1. Replace all reference to the `Type` & `EventType` properties with `CategoryId` and `Categories` respectively:
-```html
-<div class="form-group">
-  <label asp-for="CategoryId">Category</label>
-  <select asp-for="CategoryId" asp-items="Model.Categories"></select>
-</div>
-```
-
 ### Update the EventsController
 1. Update the `Get Add()` action so that you are passing the `List<EventCategory>` objects to the ViewModel.
 ```csharp
@@ -103,6 +94,14 @@ Event newEvent = new Event
     // ... The other properties,
     Category = theCategory
 };
+```
+### Update the Events Add.cshtml
+1. Replace all reference to the `Type` & `EventType` properties with `CategoryId` and `Categories` respectively:
+```html
+<div class="form-group">
+  <label asp-for="CategoryId">Category</label>
+  <select asp-for="CategoryId" asp-items="Model.Categories"></select>
+</div>
 ```
 ### Delete the EventType Model
 1. Just as the heading says... Delete the EventType Model

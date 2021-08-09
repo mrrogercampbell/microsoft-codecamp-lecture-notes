@@ -1,4 +1,8 @@
 # Chapter 20: Setting Up a One-to-Many Relationship
+**Gotchas**:
+* Be sure to have all solution code for from Chapter 19 Exercise and Studio in your codebase before starting this lecture
+* Also student will need to have completed the Exercise and Studios for chapter 19 to have enough context to walk through this lecture.
+* Might be worth doing a review on that codebase before starting this lecture...
 
 - [Chapter 20: Setting Up a One-to-Many Relationship](#chapter-20-setting-up-a-one-to-many-relationship)
   - [Setting Up the Relationship](#setting-up-the-relationship)
@@ -65,7 +69,7 @@ public AddEventViewModel() { }
 1. Replace all reference to the `Type` & `EventType` properties with `CategoryId` and `Categories` respectively:
 ```html
 <div class="form-group">
-  <label asp-for="CategoryId">Event Types</label>
+  <label asp-for="CategoryId">Category</label>
   <select asp-for="CategoryId" asp-items="Model.Categories"></select>
 </div>
 ```

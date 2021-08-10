@@ -1,5 +1,18 @@
 # Assignment 4
-
+- [Assignment 4](#assignment-4)
+  - [Part 1: Connect a Database to an ASP.NET App](#part-1-connect-a-database-to-an-aspnet-app)
+    - [Part 1: Test it with SQL](#part-1-test-it-with-sql)
+  - [Part 2: Adding Employers](#part-2-adding-employers)
+    - [Part 2: ViewModels](#part-2-viewmodels)
+    - [Part 2: Controllers](#part-2-controllers)
+    - [Part 2: Views](#part-2-views)
+    - [Part 2: Adding a Job](#part-2-adding-a-job)
+    - [Part 2: Test It with SQL](#part-2-test-it-with-sql)
+  - [Part 3: Working with a Many-To-Many Relationship](#part-3-working-with-a-many-to-many-relationship)
+    - [Part 3: Updating AddJobViewModel](#part-3-updating-addjobviewmodel)
+    - [Part 3: Updating HomeController](#part-3-updating-homecontroller)
+    - [Part 3: Updating Home/AddJob.cshtml](#part-3-updating-homeaddjobcshtml)
+    - [Part 3: Test It with SQL](#part-3-test-it-with-sql)
 ## Part 1: Connect a Database to an ASP.NET App
 1. Start MySQL Workbench and create a new schema named `techjobs`.
    * **Answer**: Just do as the instruction as and open `MySQL Workbench` and create a new `Schema`

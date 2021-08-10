@@ -52,6 +52,8 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * [Chapter 17: Databases and SQL](./unit-2/ch-17-databases-and-sql.md)
   * [Chapter 18: The SQL Sequel](./unit-2/ch-18-the-sql-sequel.md)
   * [Chapter 19: Introduction to Object-Relational Mapping](./unit-2/ch-19-intro-to-object-relational-mapping.md)
+  * [Chapter 20: Setting Up a One-to-Many Relationship](./unit-2/ch-20-setting-up-a-one-to-many-relationship.md)
+  * [Assignment 4: Tech Jobs (Persistent Edition)](./unit-2/assignment-demos/assignment-4/assignment-4-walkthrough.md)
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2
@@ -82,6 +84,11 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * [SQL Commands From The Demo](./unit-2/coding-demos/ch-18-the-sql-sequel/)
 * Chapter 19: Introduction to Object-Relational Mapping
   * [CodingEventsSolution](./unit-2/coding-demos/ch-19-intro-to-object-relational-mapping/CodingEventsSolution/)
+* Chapter 20: Setting Up a One-to-Many Relationship
+  * [CodingEventsSolution](./unit-2/coding-demos/ch-20-setting-up-a-one-to-many-relationship/CodingEventsSolution/)
+
+* Assignments:
+  * [Assignment 4: Tech Jobs (Persistent Edition)](./unit-2/assignment-demos/assignment-4/TechJobsPersistent/)
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful
 * [Google Search Cheat Sheet PDF](./resources/google-search-cheat-sheet.md) - A list of shortcuts to enhance search results in google

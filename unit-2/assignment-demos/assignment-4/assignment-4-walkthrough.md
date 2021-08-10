@@ -19,6 +19,8 @@
 6. Check that ConfigureServices in Startup.cs includes the configuration for the database.
    * **Answer**: Inside the `Startup.cs` file add the following code:
 ```csharp
+// ~/Startup.cs
+
 public void ConfigureServices(IServiceCollection services)
 {
    // the AddControllersWithViews()
@@ -51,6 +53,8 @@ You will need to have completed the [Part 1: Connect a Database to an ASP.NET Ap
 1. Create a new `ViewModel` called `AddEmployerViewModel` that has 2 properties: `Name` and `Location`.
 2. Add validation to both properties in the ViewModel so that both properties are required.
 ```Csharp
+// ~/ViewModels/AddEmployerViewModel
+
 public class AddEmployerViewModel
 {
     [Required(ErrorMessage ="A Name is required for every Employer")]
@@ -67,6 +71,7 @@ EmployerController contains four relatively empty action methods. Take the follo
 
 1. Set up a private DbContext variable so you can perform CRUD operations on the database. Pass it into a EmployerController constructor.
 ```csharp
+// ~/Controllers/EmployerController
 public class EmployerController : Controller
 {
     private DbContext _context { get; set; }
@@ -79,6 +84,7 @@ public class EmployerController : Controller
 ```
 2. Complete Index() so that it passes all of the Employer objects in the database to the view.
 ```csharp
+// ~/Controllers/EmployerController
 public IActionResult Index()
 {
    List<Employer> employers = _context.Employers.ToList();
@@ -88,6 +94,8 @@ public IActionResult Index()
 ```
 3. Create an instance of AddEmployerViewModel inside of the Add() method and pass the instance into the View() return method.
 ```csharp
+// ~/Controllers/EmployerController
+
 public IActionResult Add()
 {
    AddEmployerViewModel addEmployerViewModel = new AddEmployerViewModel();
@@ -97,6 +105,8 @@ public IActionResult Add()
 ```
 4. Add the appropriate code to ProcessAddEmployerForm() so that it will process form submissions and make sure that only valid Employer objects are being saved to the database.
 ```csharp
+// ~/Controllers/EmployerController
+
 public IActionResult ProcessAddEmployerForm(AddEmployerViewModel addEmployerViewModel)
 {
     if(ModelState.IsValid)
@@ -118,6 +128,8 @@ public IActionResult ProcessAddEmployerForm(AddEmployerViewModel addEmployerView
 ```
 5. About() currently returns a view with vital information about each employer such as their name and location. Make sure that the method is actually passing an Employer object to the view for display.
 ```csharp
+// ~/Controllers/EmployerController
+
 public IActionResult About(int id)
 {
     Employer employer = _context.Employers.Find(id);
@@ -194,7 +206,7 @@ public class AddJobViewModel
     public AddJobViewModel(List<Employer> employers)
     {
         this.Employers = new List<SelectListItem>();
-        
+
         foreach(Employer employer in employers)
         {
             this.Employers.Add(
@@ -211,6 +223,7 @@ public class AddJobViewModel
 2. In `AddJob()` pass an instance of `AddJobViewModel` to the view.
 ```csharp
 // ~/Controllers/HomeController.cs
+
 [HttpGet("/Add")]
 public IActionResult AddJob()
 {
@@ -230,6 +243,8 @@ public IActionResult AddJob()
         * `select`: will need to utilize the `asp-for` and `asp-items` helpers
      4. Below the closing `form` element create an `a` element that utilizes the `asp-controller` and `asp-action` helpers
 ```html
+<!-- ~/Views/Home/AddJob.cshtml -->
+
 @model TechJobsPersistent.ViewModels.AddJobViewModel
 
 <h1>Add a Job</h1>
@@ -248,7 +263,7 @@ public IActionResult AddJob()
     </div>
 
     <div class="form-group">
-        <label asp-for="EmployerId">Event Types</label>
+        <label asp-for="EmployerId">Employer</label>
 
         <select asp-for="EmployerId" asp-items="Model.Employers">
         </select>
@@ -262,6 +277,8 @@ public IActionResult AddJob()
 
 4. In `ProcessAddJobForm()`, you need to take in an instance of `AddJobViewModel` and make sure that any validation conditions you want to add are met before creating a new `Job` object and saving it to the database.
 ```csharp
+// ~/Controllers/HomeController.cs
+
 public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel)
 {
     Employer theEmployer = _context.Employers.Find(addJobViewModel.EmployerId);
@@ -294,20 +311,80 @@ Before you move on, test your application now to make sure it runs as expected. 
    * **Answers**: for questions 1-4 just test your code
 5. SQL TASK: In queries.sql under “Part 2”, write a query to list the names of the employers in St. Louis City.
    * **Answers**:
-     * `SELECT Name FROM Employers WHERE Location = "St. Louis City";`
+```sql
+-- ~/queries.sql
+SELECT Name FROM Employers WHERE Location = "St. Louis City";
+```
 
 ## Part 3: Working with a Many-To-Many Relationship
 ### Part 3: Updating AddJobViewModel
 In order to add additional functionality to the form for adding a job, we need to add properties to `AddJobViewModel`.
 
 1. Add a property for a list of each `Skill` object in the database.
-2. Previously, in an `AddJobViewModel` constructor, you probably set up a `SelectListItem` list of `Employer` information. Pass another parameter of a list of `Skill` objects. Set the `List<Skill>` property equal to the parameter you have just passed in.
+    * **Answer**:
+```csharp
+// ~/ViewModels/AddJobViewModel.cs
 
+public class AddJobViewModel
+{
+    // ... The other props
+
+    public List<Skill> Skills { get; set; }
+}
+```
+2. Previously, in an `AddJobViewModel` constructor, you probably set up a `SelectListItem` list of `Employer` information. Pass another parameter of a list of `Skill` objects. Set the `List<Skill>` property equal to the parameter you have just passed in.
+    * **Answer**:
+```csharp
+// ~/ViewModels/AddJobViewModel.cs
+
+public class AddJobViewModel
+{
+    public AddJobViewModel(List<Employer> employers, List<Skill> skills)
+    {
+        this.Skills = skills;
+
+        // The other bit of Constructor code
+    }
+}
+```
+* **Full Answer**:
+```csharp
+// ~/ViewModels/AddJobViewModel.cs
+
+public class AddJobViewModel
+{
+    [Required(ErrorMessage ="A Name is required")]
+    public string Name { get; set; }
+    public int EmployerId { get; set; }
+    public List<SelectListItem> Employers { get; set; }
+    public List<Skill> Skills { get; set; }
+
+    public AddJobViewModel(){}
+
+    public AddJobViewModel(List<Employer> employers, List<Skill> skills)
+    {
+        this.Skills = skills;
+        this.Employers = new List<SelectListItem>();
+
+        foreach (Employer employer in employers)
+        {
+            this.Employers.Add(
+                new SelectListItem
+                {
+                    Value = employer.Id.ToString(),
+                    Text = employer.Name
+                });
+        }
+    }
+}
+```
 ### Part 3: Updating HomeController
 You next need to update `HomeController` so that skills data is being shared with the form and that the user’s skill selections are properly handled.
 
 1. In the `AddJob()` method, update the `AddJobViewModel` object so that you pass all of the `Skill` objects in the database to the constructor.
 ```csharp
+// ~/Controllers/HomeController.cs
+
 [HttpGet("/Add")]
 public IActionResult AddJob()
 {
@@ -322,6 +399,8 @@ public IActionResult AddJob()
 2. In the `ProcessAddJobForm()` method, pass in a new parameter: an array of strings called `selectedSkills`. When we allow the user to select multiple checkboxes, the user’s selections are stored in a string array. The way we connect the checkboxes together is by giving the `name` attribute on the `<input>` tag the name of the array. In this case, each `<input>` tag on the form for the skills checkboxes should have `"selectedSkills"` as the name.
    * **Answer**:
 ```csharp
+// ~/Controllers/HomeController.cs
+
 public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel, string[] selectedSkills)
 ```
    1. After you add a new parameter, you want to set up a loop to go through each item in `selectedSkills`. This loop should go right after you create a new `Job` object and before you add that Job object to the database.
@@ -345,6 +424,8 @@ public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel, string[]
    2. Inside the loop, you will create a new `JobSkill` object with the newly-created `Job` object. You will also need to parse each item in `selectedSkills` as an integer to use for `SkillId`.
       * **Answer**:
 ```csharp
+// ~/Controllers/HomeController.cs
+
 public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel, string[] selectedSkills)
 {
     Employer theEmployer = _context.Employers.Find(addJobViewModel.EmployerId);
@@ -368,6 +449,8 @@ public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel, string[]
    3. Add each new `JobSkill` object to the `DbContext` object, but do not add an additional call to `SaveChanges()` inside the loop! One call at the end of the method is enough to get the updated info to the database.
       * **Full Answer**:
 ```csharp
+// ~/Controllers/HomeController.cs
+
 public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel, string[] selectedSkills)
 {
     Employer theEmployer = _context.Employers.Find(addJobViewModel.EmployerId);
@@ -394,18 +477,122 @@ public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel, string[]
 Now that we have the controller and ViewModel set up, we need to update the form to add a job.
 
 1. Add a new `<div class="form-group">` element to the form for collecting skills.
+   * **Answer**:
+```html
+<!-- ~/Views/Home/AddJob.cshtml -->
+
+<div class="form-group">
+
+</div>
+```
 2. Loop through each object in the list of `Skill` objects.
+   * **Answer**:
+```html
+<div class="form-group">
+  @foreach (Skill skill in Model.Skills)
+  {
+  }
+</div>
+```
 3. Give each checkbox a label and add the checkbox input itself. Here is an example of how that `<input>` tag might look:
 ```html
+<!-- ~/Views/Home/AddJob.cshtml -->
+
 <input type="checkbox" name="selectedSkills" value="@skill.Id" />
 ```
+   * **Answer**:
+```html
+<div class="form-group">
+  @foreach (Skill skill in Model.Skills)
+  {
+      <label for="@skill.Id">@skill.Name</label>
+      <input
+             type="checkbox"
+             name="selectedSkills"
+             value="@skill.Id"
+       />
+  }
+</div>
+```
 4. Add a link to the form to add skills to the database so if a user doesn’t see the skills they need, they can add skills themselves!
+   * Answer:
+```html
+<!-- ~/Views/Home/AddJob.cshtml -->
+
+<div>
+    <a asp-controller="Skill" asp-action="Add">Create a New Employer</a>
+</div>
+```
+
+* **Full Answer**:
+```html
+<!-- ~/Views/Home/AddJob.cshtml -->
+
+@model TechJobsPersistent.ViewModels.AddJobViewModel
+
+<h1>Add a Job</h1>
+
+<form asp-controller="Home"
+      asp-action="ProcessAddJobForm"
+      method="post">
+    <div class="form-group">
+
+        <label asp-for="Name">Name</label>
+
+        <input class="form-control" asp-for="Name" />
+
+        <span asp-validation-for="Name"></span>
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EmployerId">Employer</label>
+
+        <select asp-for="EmployerId" asp-items="Model.Employers">
+        </select>
+    </div>
+
+    <div class="form-group">
+        @foreach (Skill skill in Model.Skills)
+        {
+            <label for="@skill.Id">@skill.Name</label>
+            <input
+                   type="checkbox"
+                   name="selectedSkills"
+                   value="@skill.Id"
+             />
+        }
+    </div>
+
+    <input type="submit" value="Add Job" />
+</form>
+
+<br/>
+
+<div>
+    <a asp-controller="Employer" asp-action="Add">Create a New Employer</a>
+</div>
+
+<br/>
+
+<div>
+    <a asp-controller="Skill" asp-action="Add">Create a New Skill</a>
+</div>
+```
 
 
 ### Part 3: Test It with SQL
 Run your application and make sure you can create a new job with an employer and several skills. You should now also have restored full list and search capabilities.
 
 1. SQL TASK: In queries.sql under “Part 3”, write a query to return a list of the names and descriptions of all skills that are attached to jobs in alphabetical order. If a skill does not have a job listed, it should not be included in the results of this query.
+```sql
+-- ~/queries.sql
+
+SELECT * FROM Skills
+      LEFT JOIN JobSkills ON Skills.Id = JobSkills.SkillId
+      WHERE JobSkills.JobId IS NOT NULL
+      ORDER BY name ASC;
+```
 
 When you are able to add new employers and skills and use those objects to create a new job, you’re done! Congrats!
 

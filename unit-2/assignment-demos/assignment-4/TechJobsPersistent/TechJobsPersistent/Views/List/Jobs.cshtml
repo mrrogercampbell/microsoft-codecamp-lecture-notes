@@ -1,0 +1,23 @@
+﻿<div class="container body-content">
+
+    <h1>@ViewBag.title</h1>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Employer</th>
+            <th>Skills</th>
+        </tr>
+        @foreach (var job in ViewBag.jobs)
+        {
+            <tr>
+                <td>@job.JobId</td>
+                <td>@job.Name</td>
+                <td>@job.EmployerName</td>
+                <td>@job.SkillText</td>
+            </tr>
+        }
+    </table>
+
+</div>

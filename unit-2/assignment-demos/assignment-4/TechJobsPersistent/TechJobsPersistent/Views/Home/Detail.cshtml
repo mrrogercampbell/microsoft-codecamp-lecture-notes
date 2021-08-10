@@ -1,0 +1,17 @@
+﻿@model TechJobsPersistent.ViewModels.JobDetailViewModel
+
+<h1>@Model.Name</h1>
+
+<table class="table">
+    <tr>
+        <th>Employer</th>
+        <td>@Model.EmployerName</td>
+    </tr>
+    <tr>
+        <th>Skills</th>
+        <td>@Model.SkillText</td>
+    </tr>
+
+</table>
+
+<a asp-controller="Skill" asp-action="AddJob" asp-route-id="@Model.JobId">Add additional skills</a>

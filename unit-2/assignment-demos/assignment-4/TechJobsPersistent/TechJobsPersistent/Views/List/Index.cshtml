@@ -1,0 +1,44 @@
+﻿<div class="container body-content">
+    <h1>@ViewBag.title</h1>
+    <h2 class="centered">View Jobs By Category</h2>
+</div>
+
+<table class="centeredTable">
+    <tr>
+        @foreach (var column in ViewBag.columns)
+        {
+            @if (column.Key != "all")
+            {
+                <th>@column.Value</th>
+            }
+        }
+    </tr>
+    <tr>
+        @foreach (var category in ViewBag.tableChoices)
+        {
+            <td>
+                <ul>
+                    @if (category == "employer")
+                    {
+                        @foreach (var item in ViewBag.employers)
+                        {
+                            <li>
+                                <a asp-controller="List" asp-action="Jobs" asp-route-column="@category" asp-route-value="@item.Name">@item.Name</a>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        @foreach (var item in ViewBag.skills)
+                        {
+                            <li>
+                                <a asp-controller="List" asp-action="Jobs" asp-route-column="@category" asp-route-value="@item.Name">@item.Name</a>
+                            </li>
+                        }
+                    }
+
+                </ul>
+            </td>
+        }
+    </tr>
+</table>

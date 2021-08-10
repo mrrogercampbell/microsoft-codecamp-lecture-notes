@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<TechJobsPersistent.Models.Job>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to TechJobs!</h1>
+    <p><a asp-controller="Home" asp-action="AddJob">Add Jobs</a></p>
+    <p><a asp-controller="List" asp-action="Index">List Jobs</a></p>
+    <p><a asp-controller="Search" asp-action="Index">Search Jobs</a></p>
+</div>
+
+@if (Model.Count == 0)
+{
+    <p>No jobs yet!</p>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>Position Name</th>
+            <th>Employer</th>
+        </tr>
+        @foreach (Job job in Model)
+        {
+            <tr>
+                <td><a asp-controller="Home" asp-action="Detail" asp-route-id="@job.Id">@job.Name</a></td>
+                <td>@job.Employer.Name</td>
+            </tr>
+        }
+    </table>
+}

@@ -22,6 +22,10 @@
     - [Initial Setup: Creating the Tag Resource](#initial-setup-creating-the-tag-resource)
     - [The EventTag Model](#the-eventtag-model)
   - [Adding a Tag to an Event](#adding-a-tag-to-an-event)
+  - [Displaying Tags in the Detail View](#displaying-tags-in-the-detail-view)
+    - [Update the EventController](#update-the-eventcontroller)
+    - [Update the EventDetailViewModel](#update-the-eventdetailviewmodel)
+    - [Update the Event Detail View](#update-the-event-detail-view)
 ## Setting Up the Relationship
 ### Update the Event Model
 1. Delete the `EventType` property
@@ -468,4 +472,105 @@ public IActionResult AddEvent(AddEventTagViewModel viewModel)
 
    return View(viewModel);
 }
+```
+## Displaying Tags in the Detail View
+### Update the EventController
+In order to display our event's tags on its detailed view we need to update some of the logic:
+1. Update the `Detail()` action
+   1. Add the following query:
+```csharp
+[HttpGet]
+public IActionResult Detail(int id)
+{
+   // ... The theEvent query
+
+   List<EventTag> eventTags = _context.EventTags
+       .Where(et => et.EventId == id)
+       .Include(et => et.Tag)
+       .ToList();
+
+   EventDetailViewModel viewModel = new EventDetailViewModel(theEvent, eventTags);
+
+   return View(viewModel);
+}
+```
+   2. Update the Arguments being passed into the `EventDetailViewModel`:
+```csharp
+[HttpGet]
+public IActionResult Detail(int id)
+{
+   // ... The theEvent query
+
+   // ... The eventTags query
+
+   EventDetailViewModel viewModel = new EventDetailViewModel(theEvent, eventTags);
+
+   return View(viewModel);
+}
+```
+### Update the EventDetailViewModel
+1. Add a new property called `EventId`
+   * We need this for a later step once we add a link inside the `Detail` view so that a user can add a new `Tag` to an `Event`
+```csharp
+public int EventId { get; set; }
+```
+2. Update the `constructor` so that it sets the `EventId` property:
+```csharp
+public EventDetailViewModel(Event theEvent, List<EventTag> eventTags)
+{
+   this.EventId = theEvent.Id;
+   // ... All the other Props
+}
+```
+3. Add a new property called `TagText`
+```csharp
+public string TagText { get; set; }
+```
+4. Update the `constructor` so that it accepts the `eventTags` argument:
+```csharp
+public EventDetailViewModel(Event theEvent, List<EventTag> eventTags)
+{
+   // .. All the Properties being set
+
+   this.TagText = "";
+
+}
+```
+5. Add the following `for loop` to set the value of the `TagText`
+```csharp
+public EventDetailViewModel(Event theEvent, List<EventTag> eventTags)
+{
+    // .. All the Properties being set
+    this.TagText = "";
+    for(int i = 0; i < eventTags.Count; i++)
+    {
+        TagText += "#" + eventTags[i].Tag.Name;
+
+        if(i < eventTags.Count -1)
+        {
+            TagText += ", ";
+        }
+    }
+}
+```
+### Update the Event Detail View
+1. Just as the title says lets update the view so that it renders the `TagText` string we just created:
+```html
+@model CodingEvents.ViewModels.EventDetailViewModel
+
+<h1>@Model.Name</h1>
+
+<table class="table">
+    <!-- ... All the other table row tags -->
+    <tr>
+        <th>Tags</th>
+        <td>@Model.TagText</td>
+    </tr>
+</table>
+```
+2. Then add a `Link` so that a user can add a `Tag` to an event:
+```html
+<a asp-controller="Tag" asp-action="AddEvent" asp-route-id="@Model.EventId">
+    Add Tag
+ </a>
 ```

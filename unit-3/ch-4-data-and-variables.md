@@ -180,8 +180,9 @@ print(print)
 animals, owner, amount = "Chickens", "Blake", 25
 
 print(animals, owner, amount)
+
 # Outputs:
-Chickens Blake 25
+# Chickens Blake 25
 ```
 2. You can assign the same value to multiple variables all at once
 ```python
@@ -225,17 +226,16 @@ sum = 2 + 2
 
 ### Math Operators
 * There are many different `Math Operators` in Python:
-| Operator        | Description                                                                                                                                  | Example                             |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| +               | Adds two values (operands)                                                                                                                   | 2 + 3 returns 5                     |
-| -               | Subtracts the first operand by the second                                                                                                    | 2 - 3 returns -1                    |
-| *               | Multiplies two operands                                                                                                                      | 2 * 3 returns 6                     |
-| /               | Divides the first operand by the second                                                                                                      | 3 / 2 returns 1.5                   |
-| **              | Takes the first operand and raises it to the power of the second. (first value)second value                                                  | 3 ** 2 returns 9 5 ** 3 returns 125 |
-| //              | Divides the first operand by the second and rounds down to a whole number. This is called floor division and is discussed immediately below. | 3 // 2 returns 1                    |
-| %               | This is called the modulus operator. It returns the remainder after dividing the first operand by the second. It is discussed below.         | 5 % 2 returns 1 10 % 2 returns 0    |
-| ContainsValue() | Returns a boolean indicating whether or not the dictionary contains a given value.                                                           |                                     |
-
+| Operator        | Description                                                                                                                                  | Example                             | Examples Returning False                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
+| +               | Adds two values (operands)                                                                                                                   | 2 + 3 returns 5                     | 7 == 5 'dog' == 'cat' 'cat' == 'Cat'                        |
+| -               | Subtracts the first operand by the second                                                                                                    | 2 - 3 returns -1                    | 7 != 7 "dog" != "dog"                                       |
+| *               | Multiplies two operands                                                                                                                      | 2 * 3 returns 6                     | 7 > 7 'a' > 'b'                                             |
+| /               | Divides the first operand by the second                                                                                                      | 3 / 2 returns 1.5                   | 15 < 15 'b' < 'a'                                           |
+| **              | Takes the first operand and raises it to the power of the second. (first value)second value                                                  | 3 ** 2 returns 9 5 ** 3 returns 125 | 5 >= 7 'a' >= 'b'                                           |
+| //              | Divides the first operand by the second and rounds down to a whole number. This is called floor division and is discussed immediately below. | 3 // 2 returns 1                    | 7 <= 5 'b' <= 'a'                                           |
+| %               | This is called the modulus operator. It returns the remainder after dividing the first operand by the second. It is discussed below.         | 5 % 2 returns 1 10 % 2 returns 0    | 'A' in 'apple' (case matters) 'oy' in 'you' (order matters) |
+| ContainsValue() | Returns a boolean indicating whether or not the dictionary contains a given value.                                                           |                                     |                                                             |
 ### The // Operator
 * `Python` is able to perform division with the `/` operator
   * `/` returns a `float`

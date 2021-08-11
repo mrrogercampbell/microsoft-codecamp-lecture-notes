@@ -226,6 +226,7 @@ sum = 2 + 2
 
 ### Math Operators
 * There are many different `Math Operators` in Python:
+
 | Operator        | Description                                                                                                                                  | Example                             | Examples Returning False                                    |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
 | +               | Adds two values (operands)                                                                                                                   | 2 + 3 returns 5                     | 7 == 5 'dog' == 'cat' 'cat' == 'Cat'                        |

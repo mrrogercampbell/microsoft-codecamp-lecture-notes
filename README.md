@@ -7,7 +7,7 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 
 ## Lecture Notes Table of Content
 
-### Unit 1:
+### Unit 1: C# Fundamentals
 * [Unit 1: Lecture Recordings](https://docs.google.com/spreadsheets/d/1YbKObBPJIyiqfBeFJOc_No4d9jgXdOAjKijANr75oCg/edit#gid=0)
 * [Unit 1: Introduction to Programming in C# - LaunchCode Textbook](https://education.launchcode.org/intro-to-programming-csharp/index.html)
 * Lecture Notes:
@@ -39,7 +39,7 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * Chapter 25: HTTP - The Postal Service of the Internet - Coming soon
   * Chapter 26: User Input with Forms - Coming soon
 
-### Unit 2:
+### Unit 2: C# Web Development
 * [Unit 2: Lecture Recordings](https://docs.google.com/spreadsheets/d/1YbKObBPJIyiqfBeFJOc_No4d9jgXdOAjKijANr75oCg/edit?usp=sharing)
 * [Unit 2: C# Web Development - LaunchCode Textbook](https://education.launchcode.org/csharp-web-development/index.html)
 * Lecture Notes:
@@ -54,6 +54,9 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * [Chapter 19: Introduction to Object-Relational Mapping](./unit-2/ch-19-intro-to-object-relational-mapping.md)
   * [Chapter 20: Setting Up a One-to-Many Relationship](./unit-2/ch-20-setting-up-a-one-to-many-relationship.md)
   * [Assignment 4: Tech Jobs (Persistent Edition)](./unit-2/assignment-demos/assignment-4/assignment-4-walkthrough.md)
+
+### Unit 3: Python
+* [Chapter 4: Data and Variables](./unit-3/ch-4-data-and-variables.md)
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2

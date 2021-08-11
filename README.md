@@ -57,6 +57,7 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 
 ### Unit 3: Python
 * [Chapter 4: Data and Variables](./unit-3/ch-4-data-and-variables.md)
+* [Chapter 5: Making Decisions With Conditionals](./unit-3/ch-5-making-decisions-with-conditionals.md)
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2

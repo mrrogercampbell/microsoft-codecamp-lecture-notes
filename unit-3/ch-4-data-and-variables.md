@@ -1,5 +1,26 @@
 # Chapter 4: Data and Variables
-
+- [Chapter 4: Data and Variables](#chapter-4-data-and-variables)
+  - [Values and Data Types](#values-and-data-types)
+    - [More on Strings](#more-on-strings)
+    - [More on Numbers](#more-on-numbers)
+  - [Type Conversion](#type-conversion)
+  - [Variables](#variables)
+    - [Reassigning Variables](#reassigning-variables)
+    - [Naming Python Variables](#naming-python-variables)
+    - [Keywords](#keywords)
+    - [Cool Tricks (No There Not Just For Kids!)](#cool-tricks-no-there-not-just-for-kids)
+  - [Statements and Expressions](#statements-and-expressions)
+  - [Operators](#operators)
+    - [Math Operators](#math-operators)
+    - [The // Operator](#the--operator)
+    - [The % Operator](#the--operator-1)
+  - [Order of Operations](#order-of-operations)
+  - [Other Operators](#other-operators)
+    - [Compound Assignment Operators](#compound-assignment-operators)
+    - [String Operators](#string-operators)
+  - [User Input](#user-input)
+    - [Requesting Data](#requesting-data)
+    - [Critical input Detail](#critical-input-detail)
 ## Values and Data Types
 * There are many different [data types](https://www.w3schools.com/python/python_datatypes.asp) in `Python`
 * For right now we will talk about 3 kinds:

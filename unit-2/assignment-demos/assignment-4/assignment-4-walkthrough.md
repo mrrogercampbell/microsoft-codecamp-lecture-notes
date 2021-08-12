@@ -13,6 +13,11 @@
     - [Part 3: Updating HomeController](#part-3-updating-homecontroller)
     - [Part 3: Updating Home/AddJob.cshtml](#part-3-updating-homeaddjobcshtml)
     - [Part 3: Test It with SQL](#part-3-test-it-with-sql)
+  - [Part 4: Code Fix](#part-4-code-fix)
+    - [Part 4: Before I Explain The Issue Let Me Set Some Context](#part-4-before-i-explain-the-issue-let-me-set-some-context)
+    - [Part 4: How to Diagnose The Issue](#part-4-how-to-diagnose-the-issue)
+    - [Part 4: Why is This happening](#part-4-why-is-this-happening)
+    - [Part 4: The Fix!](#part-4-the-fix)
 ## Part 1: Connect a Database to an ASP.NET App
 1. Start MySQL Workbench and create a new schema named `techjobs`.
    * **Answer**: Just do as the instruction as and open `MySQL Workbench` and create a new `Schema`
@@ -486,6 +491,7 @@ public IActionResult ProcessAddJobForm(AddJobViewModel addJobViewModel, string[]
     }
 }
 ```
+
 ### Part 3: Updating Home/AddJob.cshtml
 Now that we have the controller and ViewModel set up, we need to update the form to add a job.
 
@@ -609,3 +615,233 @@ SELECT * FROM Skills
 
 When you are able to add new employers and skills and use those objects to create a new job, you’re done! Congrats!
 
+## Part 4: Code Fix
+* After reviewing this code with a student (Shout out to Tom!), I was notified of an error in my code that was due to the way we are expecting data in the `ProcessAddJobForm`.
+
+### Part 4: Before I Explain The Issue Let Me Set Some Context
+1. Inside the `HomeController.cs` we have an `AddJob()` action
+   * This action's job is to create an instance of the `addJobViewModel` and pass it to the `AddJob.cshtml`file
+```csharp
+// ~/HomeController.cs
+public IActionResult AddJob()
+{
+   List<Employer> employers = _context.Employers.ToList();
+   List<Skill> skills = _context.Skills.ToList();
+
+   AddJobViewModel addJobViewModel = new AddJobViewModel(employers, skills);
+
+   return View(addJobViewModel);
+}
+```
+2. The `AddJob.cshtml`file then accepts the `addJobViewModel` and utilizes it to render a form, so that the user can create a new job record:
+```html
+<!-- ~/Views/Home/AddJob.cshtml -->
+
+@model TechJobsPersistent.ViewModels.AddJobViewModel
+
+<h1>Add a Job</h1>
+
+<form asp-controller="Home"
+      asp-action="ProcessAddJobForm"
+      method="post">
+    <div class="form-group">
+
+        <label asp-for="Name">Name</label>
+
+        <input class="form-control" asp-for="Name" />
+
+        <span asp-validation-for="Name"></span>
+
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EmployerId">Employer</label>
+
+        <select asp-for="EmployerId" asp-items="Model.Employers">
+        </select>
+    </div>
+
+    <div class="form-group">
+        @foreach (Skill skill in Model.Skills)
+        {
+            <label for="@skill.Id">@skill.Name</label>
+            <input
+                   type="checkbox"
+                   name="selectedSkills"
+                   value="@skill.Id"
+             />
+        }
+    </div>
+
+    <input type="submit" value="Add Job" />
+</form>
+
+<br/>
+
+<div>
+    <a asp-controller="Employer" asp-action="Add">Create a New Employer</a>
+</div>
+
+<br/>
+
+<div>
+    <a asp-controller="Skill" asp-action="Add">Create a New Skill</a>
+</div>
+```
+3. When a user fills out and submits this form one of two things can happen:
+   1. They have submitted data that meets the form's requirements and a new record is created and the user is sent to the index view
+   2. The data the user submits does not meet the form's requirements and in turn they are redirect back to the form with an error message informing them what information is missing
+4. Each option mentioned in the point above all happen within the `ProcessAddJobForm()` action:
+```csharp
+public IActionResult ProcessAddJobForm(AddJobViewModel newAddJobViewModel, string[] selectedSkills)
+{
+    Employer theEmployer = _context.Employers.Find(newAddJobViewModel.EmployerId);
+    
+    if (ModelState.IsValid)
+    {
+        Job newJob = new Job
+        {
+            Name = newAddJobViewModel.Name,
+            EmployerId = newAddJobViewModel.EmployerId,
+            Employer = theEmployer
+        };
+
+       foreach(string skill in selectedSkills)
+       {
+           JobSkill newJobSkill = new JobSkill
+           {
+               Job = newJob,
+               JobId = newJob.Id,
+               SkillId = Int32.Parse(skill)
+           };
+
+           _context.JobSkills.Add(newJobSkill);
+       }
+
+       _context.Jobs.Add(newJob);
+       _context.SaveChanges();
+
+       return Redirect("Index");
+   }
+
+   return View("~/Views/Home/AddJob.cshtml",newAddJobViewModel);
+}
+```
+5. As shown above the `ProcessAddJobForm()` action accepts two arguments `AddJobViewModel newAddJobViewModel` and `string[] selectedSkills`
+6. The action then uses a `Find()` to find the employer that the user selected
+7. Then the action performs a conditional check to see if the `ModelState.IsValid`
+   * From there if the model state is valid the action is able to create a new job record and finish its work without an issue
+8. Unfortunately if the `ModelState` is not valid we receive the following error: `NullReferenceException: Object reference not set to an instance of an object.`
+   * I will explain this issue in our next section
+
+### Part 4: How to Diagnose The Issue
+1. When a user submits a form via the `AddJob.cshtml` view that does not contain all the required information the application throws the following error:
+
+```csharp
+NullReferenceException: Object reference not set to an instance of an object.
+AspNetCore.Views_Home_AddJob.<ExecuteAsync>b__20_0() in AddJob.cshtml
+26.   @foreach (Skill skill in Model.Skills)
+```
+2. Before we look at how to fix this issue lets first diagnose what the error message is telling us:
+   1. `NullReferenceException: Object reference not set to an instance of an object.`: is a `exception` that is thrown when you attempt to utilize an object that has a `null` reference value
+      *  Or more plainly put, the `object` you are trying to use has no value
+   2. `AspNetCore.Views_Home_AddJob.<ExecuteAsync>b__20_0() in AddJob.cshtml`: is attempting to tell you the location of where the error is being thrown
+      * The meaningful thing you can take away from the point above is from the `AspNetCore.Views_Home_AddJob.` and `in AddJob.cshtml`
+      * What this is telling you is that the error is coming from your `~/Views/Home/AddJob.cshtml` file
+   3. `26.   @foreach (Skill skill in Model.Skills)`: is tell you the exact line inside of the `~/Views/Home/AddJob.cshtml` file where this error is being thrown
+      * Which is ~line 26; this might vary depending on your line spacing
+      * The real problem is not so much the line in which the code is on; but `foreach` statement and the object it is attempting to iterate over
+3. So from all that what we are able to tell is that the object stored in `@Model.Skills` has a reference to a `null` location/value
+   * And this is what's causing our issue
+4. Although your next question is probably _"why is this happening?"_
+
+### Part 4: Why is This happening
+1. Well to answer this we need to talk through a few points:
+   1. When the form inside the `AddJob.cshtml` file is submitted it is done via a request from the users `browser` (ie: chrome, firefox, etc.)
+   2. Due to our `html` being created by `ASP.NET RazorViews` once our code is sent to the client it no longer has access to our `C#` objects
+      * Meaning when the `View` is actually rendered it is rendered as `HTML` not `C#` code
+      * All of our `C#` logic is converted into readable/usable `html` code
+   3. So with that all in mind when the form is submitted and the `ProcessAddJobForm()` action receives the arguments: `AddJobViewModel newAddJobViewModel` and `string[] selectedSkills`:
+      1. `selectedSkills`: is the list of `string ids` for each skill that was selected
+      2. `newAddJobViewModel`: is a new instance of the `AddJobViewModel` which only contains information about wether the form submission was valid or not
+         * Sense this is a new instance of the `AddJobViewModel` if you were to try and access its `Employers` and or `Skills` properties they would both be `null`
+2. With both `Employers` and `Skills` properties being null this is what cause our error when we pass the new instance of the `AddJobViewModel` to the `AddJob.cshtml`view:
+   * `return View("~/Views/Home/AddJob.cshtml",newAddJobViewModel);`
+
+### Part 4: The Fix!
+* In order to fix this issue we need update our code inside the `~/Controllers.HomeController.cs` and `~/ViewModels/AddJoViewModel.cs` files so that we are able to properly populate the newly created instance of a `AddJobViewModel` with data for the `Employers` and `Skills` properties
+* In the `AddJoViewModel.cs` we need to update the constructor and add a new method:
+```csharp
+public class AddJobViewModel
+{
+    [Required(ErrorMessage ="A Name is required")]
+    public string Name { get; set; }
+
+    public int EmployerId { get; set; }
+
+    public List<SelectListItem> Employers { get; set; }
+
+    public List<Skill> Skills { get; set; }
+
+    public AddJobViewModel(){}
+
+    public AddJobViewModel( List<Employer> employers, List<Skill> skills)
+    {
+        this.Skills = skills;
+
+        //this.createSelectListItems(employers);
+
+        this.Employers = new List<SelectListItem>();
+
+        foreach (Employer employer in employers)
+        {
+            this.Employers.Add(
+                new SelectListItem
+                {
+                    Value = employer.Id.ToString(),
+                    Text = employer.Name
+                });
+        }
+
+    }
+
+    public void createSelectListItems(List<Employer> employers)
+    {
+        this.Employers = new List<SelectListItem>();
+
+        foreach (Employer employer in employers)
+        {
+            this.Employers.Add(
+                new SelectListItem
+                {
+                    Value = employer.Id.ToString(),
+                    Text = employer.Name
+                });
+        }
+    }
+}
+```
+* In the `HomeController.cs` we need to add the following code:
+```csharp
+public IActionResult ProcessAddJobForm(AddJobViewModel newAddJobViewModel, string[] selectedSkills)
+{
+    Employer theEmployer = _context.Employers.Find(newAddJobViewModel.EmployerId);
+
+    // ...The if statement would be here...
+
+    // We create a new List<Skill>
+   List<Skill> skills = _context.Skills.ToList();
+
+    // We then add that list of skills to the new instance of the ViewModel
+   newAddJobViewModel.Skills = skills;
+
+    // We then create a new List<Employer>
+   List<Employer> employers = _context.Employers.ToList();
+
+    // And we utilize the newly created method within the ViewModel to add the employers to the class
+   newAddJobViewModel.createSelectListItems(employers);
+
+    // Passing the ViewModel back to the AddJobView
+   return View("~/Views/Home/AddJob.cshtml",newAddJobViewModel);
+}
+```

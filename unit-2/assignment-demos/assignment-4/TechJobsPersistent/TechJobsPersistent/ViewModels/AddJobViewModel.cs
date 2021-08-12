@@ -13,17 +13,37 @@ namespace TechJobsPersistent.ViewModels
 
         public int EmployerId { get; set; }
 
-        public List<SelectListItem> Employers { get; set; }
+        public List<SelectListItem> Employers { get; set; } // null
 
-        public List<Skill> Skills { get; set; }
+        public List<Skill> Skills { get; set; } // null
 
 
         public AddJobViewModel(){}
 
-        public AddJobViewModel(List<Employer> employers, List<Skill> skills)
+        public AddJobViewModel( List<Employer> employers, List<Skill> skills)
         {
             this.Skills = skills;
 
+            // This is the fix:
+            this.createSelectListItems(employers);
+
+            // This is the pre-existing answer
+            // this.Employers = new List<SelectListItem>();
+
+            // foreach (Employer employer in employers)
+            // {
+            //     this.Employers.Add(
+            //         new SelectListItem
+            //         {
+            //             Value = employer.Id.ToString(),
+            //             Text = employer.Name
+            //         });
+            // }
+
+        }
+
+        public void createSelectListItems(List<Employer> employers)
+        {
             this.Employers = new List<SelectListItem>();
 
             foreach (Employer employer in employers)

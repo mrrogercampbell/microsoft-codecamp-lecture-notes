@@ -59,6 +59,7 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 * [Chapter 4: Data and Variables](./unit-3/ch-4-data-and-variables.md)
 * [Chapter 5: Making Decisions With Conditionals](./unit-3/ch-5-making-decisions-with-conditionals.md)
 * [Chapter 6: Repeating Things With Loops](./unit-3/ch-6-repeating-things-with-loops.md)
+* [Chapter 7: Stringing Characters Together](./unit-3/ch-7-stringing-characters-together.md)
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2

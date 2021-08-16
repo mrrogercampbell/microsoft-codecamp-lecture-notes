@@ -472,3 +472,22 @@ print(list_a, list_b)
 
 
 ## split and join
+
+```python
+tools = "hammer, screwdriver, pliers, drill, clamp"
+sorted_string = ''
+
+tools_list = tools.split(',')
+
+print(tools_list)
+
+tools_list.sort()
+
+print(tools_list)
+
+sorted_string = ''.join(tools_list)
+
+print(sorted_string)
+
+# Outputs:
+```

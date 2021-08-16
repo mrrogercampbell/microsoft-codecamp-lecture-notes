@@ -60,6 +60,8 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 * [Chapter 5: Making Decisions With Conditionals](./unit-3/ch-5-making-decisions-with-conditionals.md)
 * [Chapter 6: Repeating Things With Loops](./unit-3/ch-6-repeating-things-with-loops.md)
 * [Chapter 7: Stringing Characters Together](./unit-3/ch-7-stringing-characters-together.md)
+* [Chapter 8: Lists Keep Things in Order](./unit-3/ch-8-lists-keep-things-in-order.md)
+* [Chapter 10: What's Your Function](./unit-3/ch-10-whats-your-function.md)
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2

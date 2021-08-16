@@ -62,6 +62,7 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 * [Chapter 7: Stringing Characters Together](./unit-3/ch-7-stringing-characters-together.md)
 * [Chapter 8: Lists Keep Things in Order](./unit-3/ch-8-lists-keep-things-in-order.md)
 * [Chapter 10: What's Your Function](./unit-3/ch-10-whats-your-function.md)
+* [Chapter 11: Python Modules](./unit-3/ch-11-python-modules.md)
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2

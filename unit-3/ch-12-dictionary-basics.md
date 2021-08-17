@@ -1,5 +1,6 @@
-# Chapter 12: Dictionary Basics
+# Chapter 12: Python Dictionaries
 
+### Dictionary Basics
 ## Dictionary Facts
 1. `Dictionaries` are `unordered collections`
    * They _do NOT_ use index values (0, 1, 2, …) to organize the data

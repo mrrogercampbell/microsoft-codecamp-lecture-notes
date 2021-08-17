@@ -284,3 +284,67 @@ for (key, value) in num_animals.items():
 # wolves 8
 # loth_cats 3000
 ```
+
+### Sorting by Keys
+* As mentioned above, `dictionaries` are `unordered collections`
+  * Due to this `dictionary` do not have any _sorting methods_
+* So technically there is no way to _sort_ a `dictionary`
+  * But what we are able to _sort_ a `dictionary`'s `keys`
+    * Be mindful that this will not mutate the actually `dictionary`
+
+```python
+top_skills = {
+    'python': "\U0001F949	",
+    'csharp': '\U0001F948',
+    'javascript': '\U0001F947',
+}
+
+list_of_keys = list(top_skills.keys())
+
+list_of_keys.sort()
+
+for key in list_of_keys:
+    print(f'{key}: {top_skills[key]}')
+```
+* Let's breakdown the code:
+  1. We create a `dictionary` of our `top_skills`
+  2. Then we create a `list` of all the `keys` inside the `top_skills` `dictionary` called `list_of_keys`
+  3. We then sort `list_of_keys` based on alphabetic order
+  4. Finally we print each item inside the `dictionary` by `iterating` over `list_of_keys`
+
+## Search a Dictionary
+* We are able to search a `dictionary` by utilizing the `keys()` or `values()` methods in conjunction with the `in` or `not in` keywords:
+```python
+# Can you guess what the number mean?
+important_numbers_for_characters = {
+   'Shuri' : 616,
+   'Groot' : 24,
+   'Omega' : 99,
+   'Geordi' : 2364
+}
+
+print(616 in important_numbers_for_characters.keys())
+print(616 in important_numbers_for_characters.values())
+
+print(616 not in important_numbers_for_characters.keys())
+print(616 not in important_numbers_for_characters.values())
+
+print('Omega' in important_numbers_for_characters.keys())
+print('Omega' in important_numbers_for_characters.values())
+
+print('Omega' not in important_numbers_for_characters.keys())
+print('Omega' not in important_numbers_for_characters.values())
+
+# Outputs:
+# False
+# True
+
+# True
+# False
+
+# True
+# False
+
+# False
+# True
+```

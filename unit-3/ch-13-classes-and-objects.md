@@ -75,7 +75,47 @@ print(first_person)
        2. The _value_ for the `name` property
        3. The _value_ for the `age` property
   3. Lastly we `print(first_person)` which then _outputs_ the _location in memory_ where the `object` can be found
+     * Meaning the _specific_ `instance` that we are working with
 
+
+* A fun example from class:
+```python
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+
+    def print_details(self):
+        # We are grabbing the location of the Object in memory and storing it in a variable
+        location = hex(id(self))
+
+        # We are then creating a variable called output that stores a string
+            # this string then prints all the values for each prop and the location in memory of the Object
+        output = f'{self.make} {self.model} {self.year} is located at {location} within memory'
+        return output
+
+
+# This is grabbing the location of the Car class
+car_location = hex(id(Car))
+
+first_car = Car("Honda", "Accord", 1997)
+
+# Here we are printing the location of the car class
+print(car_location)
+
+# Here we are explicitly invoking the __str__() by printing the variable that stores the object ie: (an instance of the Car class))
+print(first_car)
+
+# This is a custom method we created which show that the __str__() by default grabs the object's location in memory and prints it
+    # we did this as a fact-check, see lecture recording for more details
+print(first_car.print_details())
+
+# Outputs:
+# 0x7fd4ad790be0
+# <__main__.Car object at 0x102cc9f10>
+# Honda Accord 1997 is located at 0x102cc9f10 within memory
+```
 ### Accessing an Objects Properties
 * Now that we know how to _declare_ a `class` and _instantiate an instance_ of an `object`
   * Let's take a look at how we can _access the properties_ of a `object`

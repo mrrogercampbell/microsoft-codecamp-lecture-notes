@@ -1,4 +1,26 @@
 # Chapter 5: Making Decisions With Conditionals
+- [Chapter 5: Making Decisions With Conditionals](#chapter-5-making-decisions-with-conditionals)
+  - [Decision Making](#decision-making)
+  - [Data Types for True/False](#data-types-for-truefalse)
+  - [Boolean Expressions](#boolean-expressions)
+    - [Testing for Equality](#testing-for-equality)
+    - [Comparison Operators](#comparison-operators)
+  - [Can We Do Math with Boolean Values?](#can-we-do-math-with-boolean-values)
+  - [Conditionals](#conditionals)
+  - [Logical Operators](#logical-operators)
+    - [Logical and](#logical-and)
+    - [Logical or](#logical-or)
+    - [Logical not](#logical-not)
+    - [Longer Combinations](#longer-combinations)
+  - [Truth Table](#truth-table)
+    - [and Truth Table](#and-truth-table)
+    - [or Truth Table](#or-truth-table)
+    - [Table of Operation Order](#table-of-operation-order)
+  - [Nested Conditionals](#nested-conditionals)
+    - [Nested Within An else](#nested-within-an-else)
+  - [Chained Conditionals](#chained-conditionals)
+    - [Multiple elif Statements](#multiple-elif-statements)
+    - [Nested vs. Chained Conditionals](#nested-vs-chained-conditionals)
 ## Decision Making
 * Ok, so lets get 2 things straight...
   1. In `Python` you do not use `{}` do denote the scope of an object; scope is denoted based on indentations

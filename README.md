@@ -65,6 +65,7 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 * [Chapter 11: Python Modules](./unit-3/ch-11-python-modules.md)
 * [Chapter 12: Dictionary Basics](./unit-3/ch-12-dictionary-basics.md)
 * [Chapter 13: Classes and Objects](./unit-3/ch-13-classes-and-objects.md)
+* [Assignment 4: Scrabble Scorer Walkthrough](./unit-3/assignments/assignment-1-scrabble-scorer-walkthrough.md)
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2
@@ -97,9 +98,11 @@ Graduates of the online course will receive full-time job offers at Microsoft.
   * [CodingEventsSolution](./unit-2/coding-demos/ch-19-intro-to-object-relational-mapping/CodingEventsSolution/)
 * Chapter 20: Setting Up a One-to-Many Relationship
   * [CodingEventsSolution](./unit-2/coding-demos/ch-20-setting-up-a-one-to-many-relationship/CodingEventsSolution/)
-
 * Assignments:
   * [Assignment 4: Tech Jobs (Persistent Edition)](./unit-2/assignment-demos/assignment-4/TechJobsPersistent/)
+
+### Unit 3
+* [Assignment 4: Scrabble Scorer Solution Code](./unit-3/assignments/scrabble_scorer_solution)
 ## Resources
 * [Articles](./resources/articles.md) - Articles I find helpful
 * [Google Search Cheat Sheet PDF](./resources/google-search-cheat-sheet.md) - A list of shortcuts to enhance search results in google

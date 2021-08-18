@@ -1,5 +1,23 @@
 # Chapter 12: Python Dictionaries
-
+- [Chapter 12: Python Dictionaries](#chapter-12-python-dictionaries)
+    - [Dictionary Basics](#dictionary-basics)
+  - [Dictionary Facts](#dictionary-facts)
+    - [Why Use Keys?](#why-use-keys)
+    - [Creating a New Dictionary](#creating-a-new-dictionary)
+    - [Accessing Values](#accessing-values)
+  - [Working with Dictionaries](#working-with-dictionaries)
+    - [Change One Value](#change-one-value)
+    - [Add a New Key-Value Pair](#add-a-new-key-value-pair)
+    - [Remove a Key-Value Pair](#remove-a-key-value-pair)
+  - [Dictionary Methods](#dictionary-methods)
+  - [Dictionary Methods](#dictionary-methods-1)
+    - [Common Dictionary Methods](#common-dictionary-methods)
+    - [max, min, and len](#max-min-and-len)
+  - [Iterating Through Dictionaries](#iterating-through-dictionaries)
+    - [Loop by Keys or Values](#loop-by-keys-or-values)
+    - [Loop by Key-Value Pairs](#loop-by-key-value-pairs)
+    - [Sorting by Keys](#sorting-by-keys)
+  - [Search a Dictionary](#search-a-dictionary)
 ### Dictionary Basics
 ## Dictionary Facts
 1. `Dictionaries` are `unordered collections`

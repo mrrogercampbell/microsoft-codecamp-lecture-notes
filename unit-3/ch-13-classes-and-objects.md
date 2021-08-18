@@ -1,4 +1,16 @@
 # Chapter 13: Classes and Objects
+- [Chapter 13: Classes and Objects](#chapter-13-classes-and-objects)
+  - [What are Objects](#what-are-objects)
+    - [Difference Between an Object and a Class](#difference-between-an-object-and-a-class)
+    - [Creating a Class](#creating-a-class)
+    - [Creating an Object](#creating-an-object)
+    - [Accessing an Objects Properties](#accessing-an-objects-properties)
+    - [Defining Class Methods](#defining-class-methods)
+    - [The self Parameter](#the-self-parameter)
+  - [Another Dunder Method](#another-dunder-method)
+    - [The __str__ Method](#the-str-method)
+  - [Using Objects in Functions](#using-objects-in-functions)
+  - [Python Inheritance](#python-inheritance)
 ## What are Objects
 * Two quick points of reference:
   1. A `value`: is a specific piece of data

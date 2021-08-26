@@ -66,6 +66,13 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 * [Chapter 12: Dictionary Basics](./unit-3/ch-12-dictionary-basics.md)
 * [Chapter 13: Classes and Objects](./unit-3/ch-13-classes-and-objects.md)
 * [Assignment 4: Scrabble Scorer Walkthrough](./unit-3/assignments/assignment-1-scrabble-scorer-walkthrough.md)
+
+
+### Unit 4: Azure
+* [Chapter 1: Introduction to CLI Shells](./unit-4/ch-1-intro-to-cli-shells.md)
+* [Chapter 2: Introduction to Bash](./unit-4/ch-2-intro-to-bash.md)
+* [Chapter 3: Introduction to Web APIs & REST](./unit-4/ch-3-intro-to-web-apis-and-rest.md)
+
 ## Coding Demos
 ### Unit 1
 * Chapter 18 & 19: Classes Part 1 & 2

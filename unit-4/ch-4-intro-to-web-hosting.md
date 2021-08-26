@@ -12,7 +12,6 @@
   * Have a surface level understand of what `networking` is
     * Be able to talk about some of its core principles
   * Be able to explain what a `server process` is
-  * Be able to ex
 ## Hosting
 ## Local Hosting
 * Up until now we have been utilizing a `local environment` (ie: `localhost`) to interact with our applications
@@ -204,7 +203,18 @@ vim Startup.cs
 * Provide definitions to keywords that were provided throughout the lesson
 
 ### Objectives: Sum It Up
-* Provide a short summarization/explanation for each lecture objective
+Provide a short summarization/explanation for each lecture objective
+* `Hosting` is
+* We need hosting to ...
+* Discuss the difference between `local` and `cloud` hosting
+  * `Local` hosting is ...
+  * `Cloud` hosting is ...
+  * The difference between the two is ...
+* `Networking` is
+  * It allows us to ..
+  * A practical example of networking is ...
+  * Be able to talk about some of its core principles
+* Be able to explain what a `server process` is
 ### Resources
 * [What is localhost? - by: What Is My IP Address](https://whatismyipaddress.com/localhost)
 * [Understanding the Loopback Interface - by: Juniper](https://www.juniper.net/documentation/en_US/junos/topics/concept/interface-security-loopback-understanding.html)

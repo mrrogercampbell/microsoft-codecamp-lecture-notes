@@ -72,6 +72,8 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 * [Chapter 1: Introduction to CLI Shells](./unit-4/ch-1-intro-to-cli-shells.md)
 * [Chapter 2: Introduction to Bash](./unit-4/ch-2-intro-to-bash.md)
 * [Chapter 3: Introduction to Web APIs & REST](./unit-4/ch-3-intro-to-web-apis-and-rest.md)
+* [Chapter 4: Introduction To Web Hosting](./unit-4/ch-4-intro-to-web-hosting.md)
+* [Chapter 5: Introduction to Azure and Virtual Machines](./unit-4/ch-5-intro-to-azure-and-virtual-machines.md)
 
 ## Coding Demos
 ### Unit 1

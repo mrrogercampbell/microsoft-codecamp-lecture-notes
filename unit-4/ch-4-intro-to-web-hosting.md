@@ -1,4 +1,4 @@
-# Chapter 4: Intro To Web Hosting
+# Chapter 4: Introduction To Web Hosting
 ## Objectives
 * In this chapter we will be cover a few topics:
 1. `Hosting`
@@ -11,7 +11,7 @@
   * Understand the difference between `local` and `cloud` hosting
   * Have a surface level understand of what `networking` is
     * Be able to talk about some of its core principles
-  * Be able to explain what a `server process` is 
+  * Be able to explain what a `server process` is
   * Be able to ex
 ## Hosting
 ## Local Hosting
@@ -199,12 +199,15 @@ vim Startup.cs
    * Next we need to save our changes to do this just type: `:wq`
    * This will close save your changes and close `Vim`
 ![vim save and exit](./assets/ch-4/vim-save-and-exit.gif)
-## Summary
-Provide definitions to keywords that were provided throughout the lesson
-Also provide short explanations to the lecture objectives
+## Closing Summary
+### Index
+* Provide definitions to keywords that were provided throughout the lesson
 
+### Objectives: Sum It Up
+* Provide a short summarization/explanation for each lecture objective
 ### Resources
 * [What is localhost? - by: What Is My IP Address](https://whatismyipaddress.com/localhost)
 * [Understanding the Loopback Interface - by: Juniper](https://www.juniper.net/documentation/en_US/junos/topics/concept/interface-security-loopback-understanding.html)
 * [What is a LAN? - by: CISCO](https://www.cisco.com/c/en/us/products/switches/what-is-a-lan-local-area-network.html)
 * [The Difference Between LAN & WAN in Wireless Router - by: HypertecDirect](https://hypertecdirect.com/knowledge-base/the-difference-between-lan-wan-in-wireless-routers/)
+* [Vim Editor Modes Explained - by: freeCodeCamp](https://www.freecodecamp.org/news/vim-editor-modes-explained/)

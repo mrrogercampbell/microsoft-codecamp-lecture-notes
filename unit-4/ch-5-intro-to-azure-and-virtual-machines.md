@@ -66,11 +66,15 @@ For provisioning the VM we're going to create i.e: `spin up` a new Virtual Machi
 
 ### Configure the VM
 Now we're going to configure our VM that is live. To do this:
-1. Go back to the Virtual Machines, either by searching for `Virtual Machines` in the search bar OR Clicking on `Microsoft Azure` next to the search bar and then clicking on `Virtual machines`
-2. click on the name of your VM, this should open up a new tab that looks like this: (insert screenshot here)
-3. On the left side, navigate to down to Operations, and click on `Run command`
-4. Click on RunShellScript
-5. paste the following commands into the linux shell script area:
+1. Navigate back to the `Virtual Machines` tab
+![Configure the VM Image 1](./assets/ch-5/4-configure-vm/configure-vm-1.png)
+2. Click on the name of your VM
+![Configure the VM Image 2](./assets/ch-5/4-configure-vm/configure-vm-2.png)
+3. On the left side, navigate to the `Run command`
+![Configure the VM Image 3](./assets/ch-5/4-configure-vm/configure-vm-3.png)
+4. Click `RunShellScript`
+![Configure the VM Image 4](./assets/ch-5/4-configure-vm/configure-vm-4.png)
+5. Copy and paste the following commands into the `Linux Shell Script` area:
 ``` sh
 wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
@@ -79,48 +83,58 @@ sudo apt-get update; \
   sudo apt-get update && \
   sudo apt-get install -y dotnet-sdk-3.1
 ```
+![Configure the VM Image 5](./assets/ch-5/4-configure-vm/configure-vm-5.png)
 6. Click on `Run`
   * you should see some output in the bottom on the screen in the black box after a minute or two (it takes a little bit of time to run).
+![Configure the VM Image 6](./assets/ch-5/4-configure-vm/configure-vm-6.png)
+7. Scroll up a bit in the terminal output so that you see _Please visit_
+![Configure the VM Image 7](./assets/ch-5/4-configure-vm/configure-vm-7.png)
+
 
 ### Create the Project
 Since we have our server all setup and ready to go, our next step is to just create a new dotnet project in our Azure VM.
-1. Make sure you are still in the Run Command Script area, get rid of anything in the `Linux Shell Script` area. Paste the following code and then click `Run`:
+1. Copy and paste the following commands into the `Linux Shell Script` area:
+  * Again, this might also take a minute to run and return output to you in the black area below the `Run` button
 ``` sh
 export DOTNET_CLI_HOME=/home/student
 export HOME=/home/student
 cd /home/student
 dotnet new mvc -n hello-world
 ```
-  * Again, this might also take a minute to run and return output to you in the black area below the `Run` button
-2. Next, erase any prior code in the Linux Shell Script area. Paste this code this code, and click the `Run` button:
-``` sh 
+![Create the Project Image 1](./assets/ch-5/5-create-project/create-project-1.png)
+2. Remove all prior existing code
+3. Copy and paste the following commands into the `Linux Shell Script` area:
+``` sh
 cd /home/student/hello-world
 pwd
 ls
 ```
-  * you should see some output that looks like this (insert image here):
+![Create the Project Image 2](./assets/ch-5/5-create-project/create-project-2.png)
 
 ### Publish the Project
 Now, we're going to publish the project on the server, to do this:
-1. copy and paste the following code into the `Linux Shell Script` are
+1. Remove all prior existing code
+2. Copy and paste the following code into the `Linux Shell Script` are
 ``` sh
 export DOTNET_CLI_HOME=/home/student
 export HOME=/home/student
 cd /home/student/hello-world
 dotnet publish -c Release -r linux-x64 -p:PublishSingleFile=true
 ```
-2. To verify that the command ran and build our files for publishing properly, we're going to run another command:
+![Publish the Project Image 1](./assets/ch-5/6-publish-project/publish-project-1.png)
+1. Next, we will verify that the project was built by running the following command:
 ``` sh
 ls /home/student/hello-world/bin/Release/netcoreapp3.1/linux-x64/publish/
 ```
-  * You should see some output here. This is listing the files in the `/home/student/hello-world/bin/Release/netcoreapp3.1/linux-x64/publish/` directory
-  
+![Publish the Project Image 2](./assets/ch-5/6-publish-project/publish-project-2.png)
+
 ### Open Network Security Groups
 Holy crap, you did it. azure is up and running, you've built your project. But now we need to setup some security group rules. We're doing this because we need to allow traffic to the VM. We're going to do this by opening port 80 on our VM. To do this:
-1. Exit out of the `Run Shell Script` area.
-2. Scroll up in the virtual machine area under `Settings` and click on `Networking` 
-3. Click on `Add inbound port rule`
-4. a new tab called `Add inbound security rule` should pop up. Fill out the form with the following information:
+1. Search for the `Networking` tab
+![Open Network Security Groups Image 1](./assets/ch-5/7-network-security-groups/network-security-groups-1.png)
+2. Click on `Add inbound port rule`
+![Open Network Security Groups Image 2](./assets/ch-5/7-network-security-groups/network-security-groups-2.png)
+1. Fill out the form with the following information:
   * `Source`: Any
   * `Source port ranges`: *
   * `Destination`: Any
@@ -132,8 +146,13 @@ Holy crap, you did it. azure is up and running, you've built your project. But n
   * `Name`: web-app-inbound
   * `Description`: (you can leave this blank)
 5. Click `Add`
-6. Next, we need to do the same and create an outbound rule. To do this Click `Outbound port rules` and then click on `Add outbound port rule`
-7. Fill out the form with the following information:
+![Open Network Security Groups Image 3](./assets/ch-5/7-network-security-groups/network-security-groups-3.png)
+6. Next, we need to create an `outbound rule`
+7. Click on the `Outbound port rule`
+![Open Network Security Groups Image 4](./assets/ch-5/7-network-security-groups/network-security-groups-4.png)
+8. Then click the `Add outbound port rule`
+![Open Network Security Groups Image 5](./assets/ch-5/7-network-security-groups/network-security-groups-5.png)
+9.  Fill out the form with the following information:
   * `Source`: Any
   * `Source port ranges`: *
   * `Destination`: Any
@@ -144,10 +163,12 @@ Holy crap, you did it. azure is up and running, you've built your project. But n
   * `Priority`: 100
   * `Name`: web-app-outbound
   * `Description`: (you can leave this blank)
-### Deploy the Project
+![Open Network Security Groups Image 6](./assets/ch-5/7-network-security-groups/network-security-groups-6.png)
+10. Click `Add`
+### Deploy The Project
 1. Navigate back to `Operations` and click on `Run command`
-2. Click on `RunShellScript`
-3. Run these commands:
+![Deploy The Site Image 1](./assets/ch-5/8-deploy-project-pt-1/deploy-project-1.png)
+2. Click on `RunShellScript` and Run these commands:
 ``` sh
 export DOTNET_CLI_HOME=/home/student
 export HOME=/home/student
@@ -155,12 +176,31 @@ cd /home/student/hello-world
 ASPNETCORE_URLS="http://*:80" ./bin/Release/netcoreapp3.1/linux-x64/publish/hello-world
 ```
   * You should _not_ see any output here.
-  
-### Connect to App
-Now is the final step, seeing what we just deployed and are running.
-1. 
-### Troubleshooting
+![Deploy The Site Image 2](./assets/ch-5/8-deploy-project-pt-2/deploy-project-1.png)
+### Connect To App
+Now is the final step, seeing what we just deployed :)
+1. Click on `Overview`
+![Connect To App Image 1](./assets/ch-5/9-connect-to-app/connect-to-app-1.png)
+1. You should see your `Public IP address`
+![Connect To App Image 2](./assets/ch-5/9-connect-to-app/connect-to-app-2.png)
+3. Open a new tab and type in:`{public IP address}:80`
+![Connect To App Image 3](./assets/ch-5/9-connect-to-app/connect-to-app-3.png)
+4. View your beautiful creation, you should see a welcome page pop up
+![Connect To App Image 4](./assets/ch-5/9-connect-to-app/connect-to-app-4.png)
+
 ### Cleaning Up
+Once you see your welcome page for the app pop up, you will need to get rid of your resource group. to do this:
+1. Navigate back to the `Microsoft Azure Portal`
+![Cleaning Up Image 1](./assets/ch-5/1-login-azure/login-azure-1.png)
+1. Search for and navigate to `Resource groups`
+![Cleaning Up Image 2](./assets/ch-5/1-login-azure/login-azure-2.png)
+1. Click on the name of your `resource group`
+![Cleaning Up Image 3](./assets/ch-5/1-login-azure/login-azure-3.png)
+1. Click on `Delete resource group` 
+![Cleaning Up Image 4](./assets/ch-5/1-login-azure/login-azure-4.png)
+4. Then type the entire name of your `resource group` in the form and click `Delete`
+  * This will take several minutes to delete, do not refresh the page, you can see the status of the deletion in your `notifications` button. This is at the top right and looks like a bell button
+![Cleaning Up Image 5](./assets/ch-5/1-login-azure/login-azure-5.png)
 ## Closing Summary
 ### Index
 * Provide definitions to keywords that were provided throughout the lesson

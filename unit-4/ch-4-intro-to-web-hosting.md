@@ -8,7 +8,7 @@
 * These three topics will give us a surface level understanding of these concepts so that you as engineer can:
   * Understand what hosting is
   * Understand why we need hosting
-  * Understand the difference between `local` and `cloud` hosting
+  * Discuss the difference between `local` and `cloud` hosting
   * Have a surface level understand of what `networking` is
     * Be able to talk about some of its core principles
   * Be able to explain what a `server process` is

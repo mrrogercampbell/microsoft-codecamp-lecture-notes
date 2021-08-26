@@ -166,8 +166,42 @@ cd CodingEventsAPI/
 ## Studio: Deploying & Connecting to a Machine on the Same LAN
 * Students will need to use either Nano or Vim to change the code in `CodingEventsAPI/Startup.cs`
 
-## Summary
+### The Development Machine
+* For _Window users_ who are utilizing the `Ubuntu Subsystem` you will be unable to open the project you cloned down via a IDE (ie: Visual Studio, VS Code) you are familiar with due to the fact that you have not installed one on the subsystem and you are running a `headless` subsystem
+* But luckily most systems (Windows, Mac OS, Linux) have come with two terminal text editors:
+  1. [Vim](https://www.vim.org/) - an advanced text editor that seeks to provide the power of the de-facto Unix editor 'Vi', with a more complete feature set.
+  2. [Nano](https://www.nano-editor.org/) - a simple editor, inspired by Pico
+* The first step the book ask you to do is edit the `CodingEventsAPI/CodingEventsAPI.csproj` file sense you are unable to open it via a IDE we will be using a terminal text editor for this example we will be using `Vim`
 
+#### Vim Ground Rules
+* Vim does not operate like the IDEs you are used to working with
+* I am going to provide you with exact instructions to accomplish the task of editing the `Startup.cs` file
+* With that said `Vim` is a SUPER powerful tool and when used properly can increase your productivity significantly
+* If you would like to learn more on how to use `Vim` please see this great article by [freeCodeCamp: Vim Editor Modes Explained](https://www.freecodecamp.org/news/vim-editor-modes-explained/)
+#### Editing the Startup.cs File: Vim
+1. Open a terminal and navigate to the `coding-events-api/CodingEventsAPI` directory
+2. Once there open the `Startup.cs` file inside `Vim`
+```sh
+vim Startup.cs
+```
+3. At this point you will see the entire `Startup.cs` file inside of your terminal!
+![vim screenshot 1](./assets/ch-4/vim-screenshot-1.png)
+4. Use the `down arrow` key to move your cursor down to the line that contains the following code: `Title = "Coding Events API"` then use the `right arrow` to move to the end of the line
+![vim navigation gif](./assets/ch-4/vim-navigation.gif)
+5. Next we need to enter the `Insert Mode` which allows us to insert text
+   * Press the `i` key and you will see that `-- INSERT -- ` appears at the _bottom left corner of the terminal_
+   * At this point you are able to edit the code in your file
+   * Delete the `Coding Events API` text and replace it with your name
+![vim editing gif](./assets/ch-4/vim-editing.gif)
+9. Next is to save your changes
+   * Hit the `esc` button twice
+   * You will see that the `-- INSERT -- ` is removed from the _bottom left corner_
+   * Next we need to save our changes to do this just type: `:wq`
+   * This will close save your changes and close `Vim`
+![vim save and exit](./assets/ch-4/vim-save-and-exit.gif)
+## Summary
+Provide definitions to keywords that were provided throughout the lesson
+Also provide short explanations to the lecture objectives
 
 ### Resources
 * [What is localhost? - by: What Is My IP Address](https://whatismyipaddress.com/localhost)

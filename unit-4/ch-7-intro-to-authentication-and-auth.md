@@ -1,4 +1,4 @@
-# Chapter 7:
+# Chapter 7: Introduction to Authentication & Authorization with Azure AD B2C
 
 
 ## Walkthrough: Set Up Azure ADB2C Tenant & Identity Tokens

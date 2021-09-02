@@ -69,11 +69,13 @@ Graduates of the online course will receive full-time job offers at Microsoft.
 
 
 ### Unit 4: Azure
-* [Chapter 1: Introduction to CLI Shells](./unit-4/ch-1-intro-to-cli-shells.md)
-* [Chapter 2: Introduction to Bash](./unit-4/ch-2-intro-to-bash.md)
-* [Chapter 3: Introduction to Web APIs & REST](./unit-4/ch-3-intro-to-web-apis-and-rest.md)
-* [Chapter 4: Introduction To Web Hosting](./unit-4/ch-4-intro-to-web-hosting.md)
+* [Chapter 1: Introduction to CLI Shells](./unit-4/ch-1-intro-to-cli-shells.md) - Under Construction
+* [Chapter 2: Introduction to Bash](./unit-4/ch-2-intro-to-bash.md) - Under Construction
+* [Chapter 3: Introduction to Web APIs & REST](./unit-4/ch-3-intro-to-web-apis-and-rest.md) - Under Construction
+* [Chapter 4: Introduction To Web Hosting](./unit-4/ch-4-intro-to-web-hosting.md) - Under Construction
 * [Chapter 5: Introduction to Azure and Virtual Machines](./unit-4/ch-5-intro-to-azure-and-virtual-machines.md)
+* [Chapter 6: Secrets Management & Backing Services](./unit-4/ch-6-secrets-management-and-backing-services.md) - Under Construction
+* [Chapter 7: Introduction to Authentication & Authorization with Azure AD B2C](./unit-4/ch-7-intro-to-authentication-and-auth.md) - Under Construction
 
 ## Coding Demos
 ### Unit 1

@@ -15,14 +15,19 @@
   * Be able to explain ...
 
 
-## Section Title
-### Subsections Title
+## Section Title | Expected Time To Spend
+### Subsections Title | Expected Time To Spend
 ### Sub-Subsections Title
+### I Do | Expected Time To Spend
+### We Do | Expected Time To Spend
+### You Do | Expected Time To Spend
 
 ## Closing Summary
 ### Index
-* Provide definitions to keywords that were provided throughout the lesson
-
+Provide definitions to keywords that were provided throughout the lesson
+* `Term 1`: Write a definition
+* `Term 2`: Write a definition
+* `Term 3`: Write a definition
 ### Objectives: Sum It Up
 * Provide a short summarization/explanation for each lecture objective
 * `Topic` is
@@ -39,3 +44,4 @@
 * Provide any helpful links that you used to write the lesson
 * Or any link you think would be helpful for students to read through
   * Even if you place the link in the text somewhere you should still provide it here
+* [title](http//site.com)

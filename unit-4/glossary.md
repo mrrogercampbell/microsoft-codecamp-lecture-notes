@@ -5,3 +5,14 @@
 * `Entity`: a single resource that is uniquely identifiable in a collection.
 * `Collection`: entities of the same resource type treated as a whole.
 * `Shape` is a the blueprint that describes the representation of an input or output of an API.
+
+Be sure to use definition list:
+
+Term 1
+: This is the first definition
+: This is the second definition
+
+Term 2
+: * This is the first definition
+: * This is the second definition
+

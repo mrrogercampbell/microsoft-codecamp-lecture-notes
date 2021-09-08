@@ -191,16 +191,16 @@ Now is the final step, seeing what we just deployed :)
 ### Cleaning Up
 Once you see your welcome page for the app pop up, you will need to get rid of your resource group. to do this:
 1. Navigate back to the `Microsoft Azure Portal`
-![Cleaning Up Image 1](./assets/ch-5/1-login-azure/login-azure-1.png)
+![Cleaning Up Image 1](./assets/ch-5/10-cleaning-up/cleaning-up-1.png)
 1. Search for and navigate to `Resource groups`
-![Cleaning Up Image 2](./assets/ch-5/1-login-azure/login-azure-2.png)
+![Cleaning Up Image 2](./assets/ch-5/10-cleaning-up/cleaning-up-2.png)
 1. Click on the name of your `resource group`
-![Cleaning Up Image 3](./assets/ch-5/1-login-azure/login-azure-3.png)
+![Cleaning Up Image 3](./assets/ch-5/10-cleaning-up/cleaning-up-3.png)
 1. Click on `Delete resource group` 
-![Cleaning Up Image 4](./assets/ch-5/1-login-azure/login-azure-4.png)
-4. Then type the entire name of your `resource group` in the form and click `Delete`
+![Cleaning Up Image 4](./assets/ch-5/10-cleaning-up/cleaning-up-4.png)
+1. Then type the entire name of your `resource group` in the form and click `Delete`
   * This will take several minutes to delete, do not refresh the page, you can see the status of the deletion in your `notifications` button. This is at the top right and looks like a bell button
-![Cleaning Up Image 5](./assets/ch-5/1-login-azure/login-azure-5.png)
+![Cleaning Up Image 5](./assets/ch-5/10-cleaning-up/cleaning-up-5.png)
 ## Closing Summary
 ### Index
 * Provide definitions to keywords that were provided throughout the lesson

@@ -18,8 +18,9 @@ $ git clone https://github.com/LaunchCodeEducation/visual-oauth
    2. `Homepage URL`: `http://localhost:3000/`
    3. `Authorization callback URL`: `http://localhost:3000/`
 6. Click `Register application`
-
-> Leave this tab open to copy over the Client ID and Secret you will be prompted to provide these via the CLI in the next section
+7. Click on `Generate a new client secret`
+> NOTE: **DO NOT** lose this client secret, this is the ONLY time you will be able to copy the information. 
+8. Leave this tab open to copy over the Client ID and Secret. You will be prompted to provide these via the CLI in the next section
 
 ### Setup Visual OAuth
 * Go back to your `terminal` and navigate into the `visual-oauth` application your cloned down in the [Clone Down The Visual OAuth App](#clone-down-the-visual-oauth-app) section
@@ -40,14 +41,14 @@ $ npm run setup
 # Run this from the root directory of the repo
 > npm run setup:windows
 
-# You will be prompted for [GitHub Client ID] and [GitHub Client Secret] from when you registered your GitHub oauth app
+# You will be prompted for [GitHub Client ID] and [GitHub Client Secret] from when you registered your GitHub oauth app. Make sure you enter both EXACTLY as they appeared when we registered the application.
 ```
 ### Run Visual OAuth
-* The client startup script will automatically open your default browser to `http://localhost:3000` after it is done loading.
+* It will take several minutes for the application to build. Once done, you now need to start up the application.
 
 > NOTE: it may take up to 30 seconds for the client application to start up
 
-If your browser doesn't open automatically click this link http://localhost:3000/
+If your browser doesn't open automatically with the commands below, click this link http://localhost:3000/
 
 > you can stop the app using `ctrl+C` in the terminal
 #### Linux and MacOs
@@ -72,3 +73,14 @@ $ npm run start
 ### WARNING: Windows Browsers
 * This _example will not work in_**Microsoft Edge**, or **Microsoft Internet Explorer**.
 * If **Edge**, or **IE** are your default browser you will need to open a browser like Firefox and manually navigate to http://localhost:3000
+
+
+## Step through OAuth Application
+1. After the application has loaded at http://localhost:3000, input your GitHub User Name and click `Request Public User Data`. 
+2. You should see your public user data as follows: {insert screenshot}
+3. Go through Step 1 and click `View Instructions`. Read through the instructions. Click `Authenticate and Authorize with Provider`
+4. You should see an authorization page pop up. Click `Authorize`.
+5. Read through Step 2 by clicking on `View Instructions` and click `Check for Authorization Code`. You should receive an authorization code that you can hover over to see.
+6. Read through step 2.5 by clicking on `View Instructions` and click on `Send Authorization Code to Back-end`. 
+7. Read through step 3 by clicking on `View Instructions` and click on `Exchange Authorization Codefor Access Token`. 
+8. Complete the last step, `After OAuth Flow: Client Uses the Access Token`

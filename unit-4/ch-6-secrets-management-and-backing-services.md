@@ -176,8 +176,7 @@ bash script.sh
 export DOTNET_CLI_HOME=/home/student
 export HOME=/home/student
 cd /home/student/coding-events-api/CodingEventsAPI
-ASPNETCORE_URLS="http://*:80"
-sudo ./bin/Release/netcoreapp3.1/linux-x64/publish/CodingEventsAPI
+ASPNETCORE_URLS="http://*:80" ./bin/Release/netcoreapp3.1/linux-x64/publish/CodingEventsAPI
 ```
    * At this time we have not learned enough to actually be able to deploy the site via a SSH connected terminal
    * If you were to enter the above command in your SSH terminal it would deploy the site to listen on the VM's local

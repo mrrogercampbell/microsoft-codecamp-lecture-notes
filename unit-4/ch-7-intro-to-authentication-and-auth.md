@@ -85,66 +85,72 @@ $ npm run start
 7. Read through step 3 by clicking on `View Instructions` and click on `Exchange Authorization Codefor Access Token`. 
 8. Complete the last step, `After OAuth Flow: Client Uses the Access Token`
 
-## OAuth Grant Types
-## Walkthrough: Set Up Azure ADB2C Tenant & Identity Tokens
+
+## 7.4. Walkthrough: Explore OAuth & OIDC
 ### Checklist
-### Set Up AADB2C Tenant Directory
-### Create Tenant Directory
-### Link tenant directory to your Subscription
-* this section is not needed
-* When you create the tenant the subscription is linked
-### Register & Configure an AADB2C Application
-### Register the Coding Events API application
-* Search for your tenant: example: `roger0821`
-![alt](https://link)
-**Note**
-Be sure to take new screenshots some of the UI has changed
-### Configure the Coding Events API application registration
-### Set Up the SUSI Flow
-### Create a SUSI flow
-* Be sure to tell students that they must click `show more` to see the claims
-  * Provide a screenshot of how the completed form looks
-![alt](https://link)
-### Test the User Flow
-### Run the SUSI flow
-### Register a user account
-### Inspect the identity token
+Setting up our AADB2C service will involve the following steps:
+1. create an AADB2C tenant directory
+2. link the tenant directory to an active Azure Subscription
+3. register our Coding Events API application
+4. configure a Sign Up and Sign In (SUSI) flow using an Email provider.
+After we have completed these steps we will register an identity using the SUSI flow and inspect the resulting JWT (identity token). We will be using the Microsoft JWT decoder tool to inspect the claims within the identity token.
 
-## Walkthrough: Set Up Access Token Authorization with Azure ADB2C
-### Checklist
-### The Final Coding Events API Version
-### Set Up Postman
-### Import the Coding Events API Collection
-### Configure the Access Token Request Form
-### Protect the Coding Events API
-### Expose a user_impersonation Scope for the API
-### Register & Configure the Postman Client Application
-### Register the Postman Client Application
-### Configure Authentication
-### Grant Admin Permissions for Using the Scope
-### Test the User Flow for Access Tokens
-### Get the Authorization URL
-### Explore the Access Token
-### Get the Postman Access Token
-### Replacing an Expired Access Token
+## Setup tenant directory and link to an active azure subscription
+1. Navigate to the [azure portal](https://portal.azure.com/#home), and click on `create a resource`
+2. search for `Azure Active Directory B2C`A. click create.
+3. Click `Create a new Azure AD B2C Tenant`.
+4. Enter following information:
+  + `Organization name`: `<yourname> ADB2C`
+  + `Initial domain name`: `<yourname>0921tenant`
+    + 0921 is just the month and year in the format of <MMYY>
+5. In Resource group, click `Create new` to create a new resource group
+6. Enter it in the format of `yourname-aadb2c-walkthrough`
+7. Click `Review + create`
+8. Click `Create`
+  + it will take a few minutes to create the tenant and spin everything up.
 
+## Register Coding Events API Application
+1. in the search bar, search for `<yourname>0921` and select the B2C tenant that pops up.
+2. Click `Azure AD B2C Settings` at the bottom
+3. On left side, click `App registrations`.
+4. Click on `New registration`
+5. fill out form information as follows:
+  + `Name`: `Coding Events API`
+  + `Redirect URI`: `https://jwt.ms`
+    + Keep the dropdown as `Web`
+6. Click `Register`
+7. On the Coding Events API dashboard that just popped up, click on `Authentication` on the left
+8. Scroll down, under the `Implicit grant and hybrid flows` section, enable/check both `Access tokens` and `ID tokens` checkboxes
+9. Click `Save`
+10. click on `Azure AD B2C` breadcrumb link at the top.
 
+## Setup SUSI Flow
+You should be back at the Azure AD B2C dashboard, like as follows. {insert setup-susi-flow-1 screenshot}
+1. On the left side, under `Policies`, click `User flows`.
+2. Click on `New user flow`
+3. Click on the `Sign up and sign in` flow type.
+  + leave version as `Recommended`
+4. click `Create` at the bottom.
+5. Enter following information for the form:
+  + `Name`: `susi-flow`
+  + `Identity Providers`: select `Email signup`
+  + `Multifactor authentication`: leave `MFA enforcement` as `Off` and `Type of method` as `email`
+6. Under `User attributes and token claims`, click `Show more...`
+7. select the following and hit `Ok` when done:
+  {insert screenshot susi-flow-7}
+8. click `Create`
 
-* Here we are creating a connection string for the api to connect to the local instance of our database
-```csharp
-// Startup.cs
-var connectionString = "SERVER=" + Configuration["server"] + ";" + "DATABASE=" + Configuration["database"] + ";"
-+ "UID=" + Configuration["uid"] + ";" + "PASSWORD=" + Configuration["password"];
-```
-* To create env variable
-```sh
-dotnet user-secrets set server localhost
-dotnet user-secrets set database <Name_of_DB>
-dotnet user-secrets set uid <User_of_the_db> # The username that they create when they made the db
-dotnet user-secrets set password <User_Password> # Password for the user referenced above
+## Test user flow
+Now we just need to test the flow. 
+1. click on `B2C_1_susi-flow`
+2. click `Run user flow`
+3. click on `Run user flow` with the panel that just popped up on the right side. 
+4. a new window should open. Click on `Sign up now`
+  + NOTE: if you get an internal services error, it might take upwards of 30 minutes for azure to load everything. go get some lunch and come back and try again.
+5. submit a new email address and click `Send verification code`
+6. check your email and input the verifcation code in the app
+7. fill out a new password as `Launchcode-@zure1` and your `Display Name` as `<yourname>`
+8. Click `Create`
+9. A new page should load via jwt.ms and you should be able to see the identity token, you should be able to look through  `Decoded Token` and `Claims` tabs
 
-
-
-dotnet set name server localhost
-server = localhost
-```
+  

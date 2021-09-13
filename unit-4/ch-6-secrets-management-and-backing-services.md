@@ -73,6 +73,18 @@ git checkout 2-mysql-solution
    * Double check on GitHub and make sure your changes were pushed up correctly
 
 ## Configure And Deploy Project
+## Final Configuration Sets
+1. Go back to the VM in Azure
+   1. Click the `Networking`
+      * Under `Settings` on the let-hand side
+   2. Under the `Inbound port rules` click `Add inbound port rule`
+      1. Change the `Destination port ranges *`: `80`
+      2. Change the `Name`: `Port_80_IN`
+      3. Then press `Add`
+   3. Under the `Outbound port rules` click `Add outbound port rule`
+      1. Change the `Destination port ranges *`: `80`
+      2. Change the `Name`: `Port_80_OUT
+      3. Then press `Add`
 ### SSH Into Your Azure VM Via Local Terminal
 1. In Azure open your VM
 2. Click the Connect button
@@ -87,50 +99,7 @@ git checkout 2-mysql-solution
 6. When prompted type `yes`
 7. Provide the password: `LaunchCode-@zure1`
    * You will now be connected to your VM via your local machine's terminal
-
-### Mac Users
-* **Mac Users**: Before moving on to the next step please complete the following steps:
-#### Generate an SSH Key
-  * Perform the following inside your VM window
-  ```sh
-  ssh-keygen -t ed25519 -C "your_email_that_is_used_on_github@example.com"
-  ```
-    * You will be prompted for the following questions:
-      * Enter file in which to save the key (/home/student/.ssh/id_ed25519):
-      * Enter passphrase (empty for no passphrase):
-      * Enter same passphrase again:
-        * **For all three just press enter**
-  * Add Your SSH Key
-  * Run the following command
-```sh
-eval "$(ssh-agent -s)"
-
-# Output: Agent pid 2012 (Your pin will be different)
-```
-  * Add your SSH Key to ssh-agent:
-```sh
-ssh-add ~/.ssh/id_ed25519
-
-# Output: Identity added: /home/student/.ssh/id_ed25519 (your_email_that_is_used_on_github@example.com)
-```
-* Open the SSH file in nano:
-```sh
-nano ~/.ssh/id_ed25519.pub
-```
-  * Copy the entire line of code inside Nano:
-  ```pub
-  ssh-ed25519 <THE ENTIRE SSH KEY> your_email_that_is_used_on_github@example.com
-  ```
-  * Go to [GitHub](www.github.com)
-    * Click your icon in the top right corner
-    * Select settings
-    * Select `SSH and GPG keys`
-    * Click `New SSH key`
-      * Give it a title: `Azure Ubuntu VM`
-      * Paste in the SSH Key you copied into the `Key` section
-      * Click `Add SSH key`
-  * Exit Nano
-### Install Dependencies to VM
+### Install Dependencies to VM & Deploy Application
 1. Create a `script.sh` file
 ```sh
 touch script.sh
@@ -142,12 +111,13 @@ nano script.sh
 3. Copy all the code from this [script.sh](./assets/ch-6/script.sh) file
 4. Paste all the code into `Nano`
 5. Locate within the script the `git clone <Your GitHub Repo Clone Link Goes Here>` statement and update it so that it will clone down your `GitHub` repo
+   * Be sure to use the `https` clone link
 6. Exit by typing `Ctr + X`
 7. Save by pressing `y`
 8. Then press `enter`
-9. Verify that the changes were made by typing: `cat script.sh`
+9.  Verify that the changes were made by typing: `cat script.sh`
    * This will print the entire file to the terminal
-10. Run the script
+11. Run the script
 ```sh
 bash script.sh
 ```
@@ -157,26 +127,5 @@ bash script.sh
       2. On the second window it will ask you `Which server version do you wish to receive?` by clicking the enter key
          * Select `mysql-8.0`
       3. On the third screen hit the down arrow key until you are selecting `Ok` and then press the enter key
-1.  Then the script will run for awhile more, wait for it to complete before moving on
-
-## Final Configuration Sets
-1. Go back to the VM in Azure
-   1. Click the `Networking`
-      * Under `Settings` on the let-hand side
-   2. Under the `Inbound port rules` click `Add inbound port rule`
-      1. Change the `Destination port ranges *`: `80`
-      2. Change the `Name`: `Port_80_IN`
-      3. Then press `Add`
-   3. Under the `Outbound port rules` click `Add outbound port rule`
-      1. Change the `Destination port ranges *`: `80`
-      2. Change the `Name`: `Port_80_OUT
-      3. Then press `Add`
-2. Then go into `Run Command` and run the following:
-```sh
-export DOTNET_CLI_HOME=/home/student
-export HOME=/home/student
-cd /home/student/coding-events-api/CodingEventsAPI
-ASPNETCORE_URLS="http://*:80" ./bin/Release/netcoreapp3.1/linux-x64/publish/CodingEventsAPI
-```
-   * At this time we have not learned enough to actually be able to deploy the site via a SSH connected terminal
-   * If you were to enter the above command in your SSH terminal it would deploy the site to listen on the VM's local
+12.  Then the script will run for awhile more, wait for it to complete
+13. On Completion your application will be deployed to your VMs `public IP` address

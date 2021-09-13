@@ -100,26 +100,26 @@ git checkout 2-mysql-solution
 7. Provide the password: `LaunchCode-@zure1`
    * You will now be connected to your VM via your local machine's terminal
 ### Install Dependencies to VM & Deploy Application
-1. Create a `script.sh` file
+1. Create a `project_build_script.sh` file
 ```sh
-touch script.sh
+touch project_build_script.sh
 ```
 2. Open the file in `nano`
 ```sh
-nano script.sh
+nano project_build_script.sh
 ```
-3. Copy all the code from this [script.sh](./assets/ch-6/script.sh) file
+3. Copy all the code from this [project_build_script.sh](./assets/ch-6/project_build_script.sh) file
 4. Paste all the code into `Nano`
 5. Locate within the script the `git clone <Your GitHub Repo Clone Link Goes Here>` statement and update it so that it will clone down your `GitHub` repo
    * Be sure to use the `https` clone link
 6. Exit by typing `Ctr + X`
 7. Save by pressing `y`
 8. Then press `enter`
-9.  Verify that the changes were made by typing: `cat script.sh`
+9.  Verify that the changes were made by typing: `cat project_build_script.sh`
    * This will print the entire file to the terminal
 11. Run the script
 ```sh
-bash script.sh
+bash project_build_script.sh
 ```
    1. After the script runs for a bit you will be presented with a screen titled: `Configuring mysql-apt-config`
       1. On the first window it will ask you `Which MySQL product do you wish to configure`
@@ -128,4 +128,12 @@ bash script.sh
          * Select `mysql-8.0`
       3. On the third screen hit the down arrow key until you are selecting `Ok` and then press the enter key
 12.  Then the script will run for awhile more, wait for it to complete
-13. On Completion your application will be deployed to your VMs `public IP` address
+
+### Create Deployment Script
+The final step is to create a deployment script file
+1. Create a deployment script file: `touch deploy_project_script.sh`
+2. Open that file in `Nano`: `nano deploy_project_script.sh`
+3. Copy and paste in the following [code](./assets/ch-6/deploy_project_script.sh)
+4. Save and exit `Nano`
+5. Run the new script: `bash deploy_project_script.sh` and wait for it to finish
+6. On Completion your application will be deployed to your VMs `public IP` address

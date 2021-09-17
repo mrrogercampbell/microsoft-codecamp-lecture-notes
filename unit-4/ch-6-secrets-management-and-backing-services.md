@@ -54,7 +54,7 @@
 2. Click `Generate/Import`
    1. Provide the following:
    2. Name = `ConnectionStrings--Default`
-   3. Value = `server=localhost;port=3306;database=coding_events;user=coding_events;password=launchcode`
+   3. Value = `server=localhost;port=3306;database=coding_events;user=coding_events;password=launchcode;`
 ### Configure local project
 1. Locate your `coding-events-api` project on your local machine
    * If you are unable to find it feel free to [fork and clone it](https://github.com/LaunchCodeEducation/coding-events-api)

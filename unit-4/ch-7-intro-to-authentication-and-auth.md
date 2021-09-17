@@ -19,7 +19,6 @@
   - [Test user flow](#test-user-flow)
   - [7.5. Walkthrough: Set Up Access Token Authorization with Azure ADB2C](#75-walkthrough-set-up-access-token-authorization-with-azure-adb2c)
     - [Checklist](#checklist-1)
-    - [The Final Coding Events API Version](#the-final-coding-events-api-version)
     - [Set Up Postman](#set-up-postman)
       - [Import the Coding Events API Collection](#import-the-coding-events-api-collection)
       - [Configure the Access Token Request Form](#configure-the-access-token-request-form)
@@ -39,6 +38,42 @@
         - [Start Up Your VM And Deploy Application](#start-up-your-vm-and-deploy-application)
         - [Request API Data Via Postman](#request-api-data-via-postman)
       - [Replacing an Expired Access Token](#replacing-an-expired-access-token)
+  - [7.6 Studio Part 1: Deploy Coding Events API with AADB2C](#76-studio-part-1-deploy-coding-events-api-with-aadb2c)
+    - [Setup](#setup)
+      - [Set Up Local MySQL](#set-up-local-mysql)
+      - [Set Up Local Secrets Manager](#set-up-local-secrets-manager)
+      - [Update the Coding Events API](#update-the-coding-events-api)
+    - [Run Locally](#run-locally)
+      - [Checklist](#checklist-2)
+      - [Viewing Documentation](#viewing-documentation)
+      - [Make Requests to Protected Endpoints](#make-requests-to-protected-endpoints)
+    - [Limited Guidance: API Deployment](#limited-guidance-api-deployment)
+      - [Provision Resources](#provision-resources)
+      - [Configuration Scripts](#configuration-scripts)
+    - [Gotchas](#gotchas)
+      - [Expired or Missing Access Token](#expired-or-missing-access-token)
+      - [Incorrect Configuration in appsettings.json](#incorrect-configuration-in-appsettingsjson)
+      - [Opening the Correct Port](#opening-the-correct-port)
+    - [Deliverable](#deliverable)
+  - [7.7 Studio Part 2: Explore Authorization With the Deployed API](#77-studio-part-2-explore-authorization-with-the-deployed-api)
+    - [Task Roles](#task-roles)
+    - [Limited Guidance: Completing a Task](#limited-guidance-completing-a-task)
+      - [General Steps](#general-steps)
+      - [Planning Tips](#planning-tips)
+    - [Setup](#setup-1)
+      - [Update Postman](#update-postman)
+      - [Get Access Tokens](#get-access-tokens)
+      - [Bonus: Multiple Front-end Client Applications](#bonus-multiple-front-end-client-applications)
+    - [Completing a Task](#completing-a-task)
+      - [Example Solution: Join a Coding Event](#example-solution-join-a-coding-event)
+    - [Tasks](#tasks)
+      - [Join a Coding Event](#join-a-coding-event)
+      - [View Coding Event Members](#view-coding-event-members)
+      - [Add a Tag to a Coding Event](#add-a-tag-to-a-coding-event)
+      - [Remove a Tag From a Coding Event](#remove-a-tag-from-a-coding-event)
+      - [Remove a Member From a Coding Event](#remove-a-member-from-a-coding-event)
+      - [Leave a Coding Event](#leave-a-coding-event)
+      - [Cancel a Coding Event](#cancel-a-coding-event)
 
 ## 7.2. Walkthrough: Explore OAuth & OIDC
 ### Clone Down The Visual OAuth App
@@ -137,7 +172,8 @@ After we have completed these steps we will register an identity using the SUSI 
 
 ## Setup tenant directory and link to an active azure subscription
 1. Navigate to the [azure portal](https://portal.azure.com/#home), and click on `create a resource`
-2. search for `Azure Active Directory B2C`A. click create.
+2. Search for `Azure Active Directory B2C`A
+   * Click create.
 3. Click `Create a new Azure AD B2C Tenant`.
 4. Enter following information:
   + `Organization name`: `<yourname> ADB2C`
@@ -151,7 +187,8 @@ After we have completed these steps we will register an identity using the SUSI 
 
 ## Register Coding Events API Application
 1. in the search bar, search for `<yourname>0921` and select the B2C tenant that pops up.
-2. Click `Azure AD B2C Settings` at the bottom
+2. Click the blue `Open B2C Tenant` link
+   * It can be found under `Azure AD B2C Settings` at the bottom of the page
 3. On left side, click `App registrations`.
 4. Click on `New registration`
 5. fill out form information as follows:
@@ -195,17 +232,28 @@ Now we just need to test the flow.
 8. Click `Create`
 9. A new page should load via jwt.ms and you should be able to see the identity token, you should be able to look through  `Decoded Token` and `Claims` tabs
 
-  
 ## 7.5. Walkthrough: Set Up Access Token Authorization with Azure ADB2C
 ### Checklist
-### The Final Coding Events API Version
-* Use [instructions](https://education.launchcode.org/azure/chapters/intro-oauth-with-aadb2c/walkthrough_aadb2c-access.html#the-final-coding-events-api-version) in the book
 ### Set Up Postman
-* Use [instructions](https://education.launchcode.org/azure/chapters/intro-oauth-with-aadb2c/walkthrough_aadb2c-access.html#set-up-postman) in the book
 #### Import the Coding Events API Collection
-* Use [instructions](https://education.launchcode.org/azure/chapters/intro-oauth-with-aadb2c/walkthrough_aadb2c-access.html#import-the-coding-events-api-collection) in the book
+1. Open a `bash` terminal and cd in the `Coding Events API` project
+2. Switch to the `3-aab2c` branch:
+   * `git checkout 3-aab2c`
+3. Open `Postman`
+4. Select the orange `Import` button
+5. Click the `Upload Files` button
+6. Navigate to the `Coding Events API` project
+7. Select and double click the `Postman_AADB2C-CodingEventsAPI-Collection.json`
+8. Press the orange `Import` button
+9. Once it finishes uploading:
+   1. Hover your mouse over the collection name
+   2. Click the three dots
+   3. Select `Edit`
+10. Click the `Authorization` tab
+11. 
 #### Configure the Access Token Request Form
-NOTE: Once inside the authorization tab scroll down to the `Configure New Token` section. In here you will be able to edit the fields listed. 
+NOTE: Once inside the authorization tab scroll down to the `Configure New Token` section. In here you will be able to edit the fields listed.
+1. Update the `Token Name`: `access token`
 ### Protect the Coding Events API
 
 #### Expose a user_impersonation Scope for the API
@@ -219,7 +267,7 @@ To access the `Expose an API` setting, search for the tenant you created. Then o
 
 
 3. click `Add scope`
-4. click the blue copy button to copy the URL 
+4. click the blue copy button to copy the URL
 5. Go back to postman, replace the `Scope` field with your copied value.
 ### Register & Configure the Postman Client Application
 #### Register the Postman Client Application
@@ -248,8 +296,8 @@ To access the `Expose an API` setting, search for the tenant you created. Then o
 1. In azure, click on `API permissions` on the left hand sidebar
 2. Click on `Add a permission`
 3. Click on `My APIs` tab on the right {insert screenshot here}.
-4. Click on `Coding Events API` 
-5. Enable the `user_impersonation` scope 
+4. Click on `Coding Events API`
+5. Enable the `user_impersonation` scope
 6. click `Add permissions` {insert screenshot}
 7. click on the check mark `Grant admin consent for <Name> ADB2C`
     * Select `Yes` for the confirmation popup
@@ -262,15 +310,15 @@ To access the `Expose an API` setting, search for the tenant you created. Then o
 2. . Click the `metadata document` link
    * This is the link directly under the `Run user flow` title at the top
    * A new page should open
-3. Copy the `authorization_endpoint` url.
+3. Copy the `authorization_endpoint` url
    * Copy *just* the url, not the quotations
 4. Switch back to postman and replace `Auth URL` with the `authorization_endpoint` you just copied
 #### Explore the Access Token
 1. click on `Reply URL` and select `https://jwt.ms`
-   * you should still be on the `Run user flow` page 
+   * you should still be on the `Run user flow` page
 2. Click on `Access Tokens` section
 3. select the `Resource` as `Coding Events API`
-4. click on `Scopes`, only `user_impersonation` should be selected 
+4. click on `Scopes`, only `user_impersonation` should be selected
    * make sure the others are deselected and matches this image: {insert screenshot here}
 5. Click `Run user flow`
    * a separate window should open
@@ -321,3 +369,40 @@ If you need a new access token after 1 hour. Do the following steps
 3. select Request Token to re-authorize and receive a new one
 4. select Use Token (and discard any expired ones)
 5. select Update to save the changes to the collection
+
+## 7.6 Studio Part 1: Deploy Coding Events API with AADB2C
+### Setup
+#### Set Up Local MySQL
+#### Set Up Local Secrets Manager
+#### Update the Coding Events API
+### Run Locally
+#### Checklist
+#### Viewing Documentation
+#### Make Requests to Protected Endpoints
+### Limited Guidance: API Deployment
+#### Provision Resources
+#### Configuration Scripts
+### Gotchas
+#### Expired or Missing Access Token
+#### Incorrect Configuration in appsettings.json
+#### Opening the Correct Port
+### Deliverable
+## 7.7 Studio Part 2: Explore Authorization With the Deployed API
+### Task Roles
+### Limited Guidance: Completing a Task
+#### General Steps
+#### Planning Tips
+### Setup
+#### Update Postman
+#### Get Access Tokens
+#### Bonus: Multiple Front-end Client Applications
+### Completing a Task
+#### Example Solution: Join a Coding Event
+### Tasks
+#### Join a Coding Event
+#### View Coding Event Members
+#### Add a Tag to a Coding Event
+#### Remove a Tag From a Coding Event
+#### Remove a Member From a Coding Event
+#### Leave a Coding Event
+#### Cancel a Coding Event

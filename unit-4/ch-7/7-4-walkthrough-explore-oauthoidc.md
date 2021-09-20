@@ -47,7 +47,7 @@ After we have completed these steps we will register an identity using the SUSI 
 
 ## Setup SUSI Flow
 You should be back at the Azure AD B2C dashboard, like as follows.
-![SUSI Flow Image 1](./assets/ch-7/7-4-set-up-azure-adb2c-tenant-identity-tokens/setup-susi-flow-1.PNG)
+![SUSI Flow Image 1](../assets/ch-7/7-4-set-up-azure-adb2c-tenant-identity-tokens/setup-susi-flow-1.PNG)
 
 1. On the left side, under `Policies`, Click `User flows`.
 2. Click on `New user flow`
@@ -60,7 +60,7 @@ You should be back at the Azure AD B2C dashboard, like as follows.
   + `Multifactor authentication`: leave `MFA enforcement` as `Off` and `Type of method` as `email`
 6. Under `User attributes and token claims`, Click `Show more...`
 7. select the following and hit `Ok` when done:
-![SUSI Flow Image 1](./assets/ch-7/7-4-set-up-azure-adb2c-tenant-identity-tokens/setup-susi-flow-7.PNG)
+![SUSI Flow Image 1](../assets/ch-7/7-4-set-up-azure-adb2c-tenant-identity-tokens/setup-susi-flow-7.PNG)
 8. Click `Create`
 
 ## Test user flow
